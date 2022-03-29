@@ -851,13 +851,13 @@ span.sb-caret { /* Caret Down */
 	padding-top: 0;
 }
 #hero h2 {
-	color: #151515;
+	color: rgb(104, 67, 67);
 	margin-bottom: 20px;
 	display: inline-block;
 	padding: 14px;
 }
 #hero p {
-	color: #333;
+	color: rgb(141, 137, 137);
 	font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
 	font-size: 18px;
 	display: inline-block;
@@ -3328,14 +3328,14 @@ footer .footer_bottom {
 /* Import the font file with the icons in it */
 @font-face { font-family: 'icons'; src:  url('../fonts/icons.woff') format('woff'); font-weight: normal; font-style: normal; }
 /* Apply these base styles to all icons */
-.icon-feed:before, .icon-twitter:before, .icon-google-plus:before, .icon-facebook:before, .icon-sina-weibo, .icon-github{ font-family: 'icons'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; text-decoration: none; }
+.icon-feed:before, .icon-twitter:before, .icon-google-plus:before, .icon-facebook:before, .icon-instagram:before, .icon-github{ font-family: 'icons'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; text-decoration: none; }
 /* Each icon is created by inserting the corret character into the
    content of the :before pseudo element. Like a boss. */
 .icon-feed:before { content: "\e631"; }
 .icon-twitter:before { content: "\e630"; font-size: 1.1em; }
 .icon-google-plus:before { content: "\e62d"; }
 .icon-facebook:before { content: "\e62f"; }
-.icon-sina-weibo:before { content: "\e666"; }
+.icon-instagram:before { content: "\e65f"; }
 .icon-github:before { content: "\e636"; }
 /*---------------- END ------------------------*/
 
