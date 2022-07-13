@@ -43,37 +43,6 @@
     
     
     <entry>
-      <title>beb05-1-1</title>
-      <link href="/2022/04/28/beb05-1-1/"/>
-      <url>/2022/04/28/beb05-1-1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Section-1-HTML-x2F-CSS-기초"><a href="#Section-1-HTML-x2F-CSS-기초" class="headerlink" title="Section 1: HTML &#x2F; CSS 기초"></a>Section 1: HTML &#x2F; CSS 기초</h1><h2 id="220428-HTML-x2F-CSS-기초"><a href="#220428-HTML-x2F-CSS-기초" class="headerlink" title="220428- HTML &#x2F; CSS 기초"></a>220428- HTML &#x2F; CSS 기초</h2><h3 id="Achievement-Goals"><a href="#Achievement-Goals" class="headerlink" title="Achievement Goals"></a>Achievement Goals</h3><ul><li>HTML에 CSS를 적용하고, JavaScript로 개발할 수 있게(Progtammable) 작성</li><li>HTML이 Markup Language 라는 것을 이해<ul><li>“구조를 표현하는 언어” 라는 의미</li></ul></li><li>HTML의 구조와 문법에 대해 이해<ul><li>Openig tag, closing tag, self-closing tag</li></ul></li><li>자주 사용되는 HTML 요소(element)<ul><li>div, span tag의 용도 및 차이</li><li>ul, ol, li</li><li>input type을 설정하고 다양한 종류의 input 사용</li></ul></li><li>동적인 웹 어플리케이션 개발을 위한 HTML 구조 짜기<ul><li>간단한 웹 페이지 기획안을 HTML 문서로 표현</li><li>id와 class를 목적에 맞게 사용하여 사람과 컴퓨터가 읽기 쉬운, 의미 있는(Sementic) 문서를 작성</li><li>HTML5 semantic tag를 적재적소에 사용하여 시멘틱한 HTML 문서 작성</li></ul></li></ul><hr><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML?"></a>HTML?</h2><ul><li><strong>HyperText Markup Language</strong></li><li><strong>웹 페이지의 틀</strong>을 만드는 <strong>마크업 언어</strong></li></ul><h3 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h3><ul><li>Html은 tag들의 집합</li><li>Tag : 부등호(&lt;&gt;)로 묶인 기본 구성 요소</li><li>html 확장자 사용</li></ul><h3 id="TREE-STURCTURE"><a href="#TREE-STURCTURE" class="headerlink" title="TREE STURCTURE"></a>TREE STURCTURE</h3><ul><li>HTML 문서 시작 → <strong><!DOCTYPE html></strong><ul><li><strong>html</strong> → 시작 태그, 문서 전체의 틀 구성<ul><li><strong>head</strong> → 문서의 메타데이터 선언<ul><li><strong>title</strong> : Page title, 문서의 제목 → 브라우저 탭에 노출</li></ul></li><li><strong>body</strong> → 문서의 내용<ul><li><strong>h1</strong> → heading을 의미, 크기에 따라 h1~h6</li><li><strong>div</strong> : Content division → 줄바꿈 됨<ul><li><strong>span</strong> : Content Container → 줄바꿈 없음</li></ul></li></ul></li></ul></li></ul></li></ul><h3 id="Most-Used-TAGS-in-HTML"><a href="#Most-Used-TAGS-in-HTML" class="headerlink" title="Most Used TAGS in HTML"></a>Most Used TAGS in HTML</h3><table><thead><tr><th>태그</th><th>설명</th></tr></thead><tbody><tr><td><div></td><td>Division</td></tr><tr><td><span></td><td>Span</td></tr><tr><td><img></td><td>Image</td></tr><tr><td><a></td><td>Link</td></tr><tr><td><ul> &amp; <li></td><td>Unorderd List &amp; List Item</td></tr><tr><td><input></td><td>Input (Text, Radio, Checkbox)</td></tr><tr><td><textarea></td><td>Multi-line Text Input</td></tr><tr><td><button></td><td>Button</td></tr></tbody></table><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> WEB </category>
-          
-          <category> HTML/CSS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> HTML </tag>
-            
-            <tag> CSS </tag>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2022/03/29/hello-world/"/>
       <url>/2022/03/29/hello-world/</url>
