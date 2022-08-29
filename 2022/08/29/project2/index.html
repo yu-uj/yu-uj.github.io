@@ -1,0 +1,622 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>project2 | YU-UJ</title><meta name="keywords" content="blockchain,project,codestates,BEB05"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="HALP ME!!BEB 05 Second Project Team 05💡Project Intro Web2.0에서 블록체인 인센티브 기반 커뮤니티 사이트를 개발.  목표 : 중앙화된 Web2.0 인센티브 기반 커뮤니티 구현. 기획 구분 : FE, BE, SmartContract.   Incentive Community ? ➡️ 인센티브 기반 ?  자체적인 토">
+<meta property="og:type" content="article">
+<meta property="og:title" content="project2">
+<meta property="og:url" content="http://yu-uj.github.io/2022/08/29/project2/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="HALP ME!!BEB 05 Second Project Team 05💡Project Intro Web2.0에서 블록체인 인센티브 기반 커뮤니티 사이트를 개발.  목표 : 중앙화된 Web2.0 인센티브 기반 커뮤니티 구현. 기획 구분 : FE, BE, SmartContract.   Incentive Community ? ➡️ 인센티브 기반 ?  자체적인 토">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-08-29T10:28:45.000Z">
+<meta property="article:modified_time" content="2022-08-29T10:33:06.637Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="project">
+<meta property="article:tag" content="codestates">
+<meta property="article:tag" content="BEB05">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yu-uj.github.io/2022/08/29/project2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'project2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-08-29 19:33:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">project2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Project/">Project</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="project2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HALP-ME"><a href="#HALP-ME" class="headerlink" title="HALP ME!!"></a>HALP ME!!</h1><h2 id="BEB-05-Second-Project-Team-05"><a href="#BEB-05-Second-Project-Team-05" class="headerlink" title="BEB 05 Second Project Team 05"></a>BEB 05 Second Project Team 05</h2><h2 id="💡Project-Intro"><a href="#💡Project-Intro" class="headerlink" title="💡Project Intro"></a>💡Project Intro</h2><blockquote>
+<p><strong>Web2.0에서 블록체인 인센티브 기반 커뮤니티 사이트를 개발.</strong></p>
+<ul>
+<li>목표 : 중앙화된 Web2.0 인센티브 기반 커뮤니티 구현.</li>
+<li>기획 구분 : FE, BE, SmartContract.</li>
+</ul>
+</blockquote>
+<h2 id="Incentive-Community"><a href="#Incentive-Community" class="headerlink" title="Incentive Community ?"></a>Incentive Community ?</h2><aside>
+➡️ 인센티브 기반 ?
+
+<p><strong>자체적인 토큰을 가지고 참여자를 유도</strong>하는 생태계 빌딩. 사용자가 어떤 행동을 했을 때 <strong>토큰을 인센티브로 지급</strong>하는 것. </p>
+</aside>
+
+<h2 id="프로젝트-구조"><a href="#프로젝트-구조" class="headerlink" title="프로젝트 구조"></a>프로젝트 구조</h2><blockquote>
+<p>인센티브 기반 커뮤니티 구성 : <strong>FE, BE, SmartContract.</strong></p>
+<ul>
+<li>각 부분 마다 달성 <strong>Bare minimum</strong> 존재.</li>
+</ul>
+</blockquote>
+<p>→ 웹페이지 설계 부분은 기본적인 가이드라인 제공.</p>
+<h3 id="기획"><a href="#기획" class="headerlink" title="기획"></a>기획</h3><blockquote>
+<p>**인센티브 커뮤니티(;IC)**는 <strong>특정한 주제를 좋아하는 사람들이 모여서 게시글을 작성</strong>하는 곳. 특정 주제를 좋아하는 사람들이 모여서 정보와 일상을 나누며 활발한 웹페이지가 되는 것이 목표.</p>
+</blockquote>
+<ul>
+<li>사용자가 커뮤니티에 게시글 작성할 때마다 IC 토큰을 보상으로 받는다.</li>
+<li>해당 IC 토큰은 타인에게 전송 가능하다.</li>
+<li>IC 토큰을 사용하여 NFT 민팅을 할 수 있다.</li>
+<li>해당 NFT는 유저가 원하는 사진으로 만든다.</li>
+<li>마이페이지에서 내가 받은 IC 토큰의 개수와 내가 구입한 NFT를 확인할 수 있다.</li>
+<li>마이페이지에서 내가 쓴 글을 볼 수 있다.</li>
+<li>마이페이지에서 타인에게 내가 가진 토큰을 줄 수 있다.</li>
+</ul>
+<p>→ 토큰 보상 유발 행위 : 게시글 작성. But, 게시글 작성 이외 다른 것을 해도 ㄱㅊ.</p>
+<p>→ 기본적인 기획 이외의 추가할 기획이 있으면 추가해도 되지만, 기본적인 기획은 프로젝트에 반드시 포함.</p>
+<h3 id="프로젝트-요구사항"><a href="#프로젝트-요구사항" class="headerlink" title="프로젝트 요구사항"></a>프로젝트 요구사항</h3><ul>
+<li>커뮤니티에 게시글을 작성(혹은 댓글을 다는 등, 자유롭게 설정)할 수 있고, 이에 따른 보상으로 ERC-20 토큰을 지급하는 기능 (핵심 feature)<ul>
+<li>‘특정 주제’를 좋아하는 사람들의 모임을 활성화하기 위함</li>
+<li>‘특정 주제’는 자유롭게 설정이 가능함</li>
+</ul>
+</li>
+<li>ERC-20 토큰을 ERC-721 토큰과 교환할 수 있는 기능<ul>
+<li>ERC-20의 경우, 서버 ↔ 사용자, 사용자 ↔ 사용자 둘 다 가능해야 함</li>
+</ul>
+</li>
+<li>회원가입 시 자동으로 지갑 주소를 부여받는 기능</li>
+<li>Daemon을 개발하여 트랜잭션을 트래킹할 수 있는 기능</li>
+<li>NFT를 민팅할 수 있는 기능</li>
+<li>내 정보를 볼 수 있어야 함</li>
+</ul>
+<hr>
+<h2 id="🚨-팀-소개"><a href="#🚨-팀-소개" class="headerlink" title="🚨 팀 소개"></a>🚨 팀 소개</h2><h3 id="BEB-05-02-05조"><a href="#BEB-05-02-05조" class="headerlink" title="BEB-05-02-05조"></a>BEB-05-02-05조</h3><h3 id="💡Project-HALP-ME"><a href="#💡Project-HALP-ME" class="headerlink" title="💡Project : HALP ME!!"></a>💡Project : HALP ME!!</h3><ul>
+<li><strong>팀명 : HALP ME!</strong></li>
+<li><strong>팀장 : 홍유진</strong></li>
+<li><strong>팀원 : 박수연, 이송영, 안병현</strong></li>
+<li><strong>Site  Link</strong> :</li>
+<li><strong>Date</strong> : 2022&#x2F;08&#x2F;17 - 2022&#x2F;08&#x2F;30</li>
+</ul>
+<h3 id="💡-HALP-Project-Intro"><a href="#💡-HALP-Project-Intro" class="headerlink" title="💡 HALP Project Intro"></a>💡 HALP Project <strong>Intro</strong></h3><aside>
+➡️ 질의응답 커뮤니티. 사용자는 질문에 대한 게시글을 작성하고, 다른 사용자들이 해당 게시글에 답변을 댓글로 작성한다. 질문을 한 사용자는 게시글에 달린 답변 댓글 중 가장 적합한 답변을 채택한다. 채택받은 댓글의 사용자는 IC토큰을 보상으로 받는다.
+
+</aside>
+
+<h3 id="역할"><a href="#역할" class="headerlink" title="역할"></a>역할</h3><table>
+<thead>
+<tr>
+<th>이름</th>
+<th>포지션</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>박수연</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>이송영</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>안병현</td>
+<td>BE, SC</td>
+</tr>
+<tr>
+<td>홍유진</td>
+<td>BE, SC</td>
+</tr>
+</tbody></table>
+<p>💻 <strong>FE</strong></p>
+<blockquote>
+<p>웹의 View를 유저 플로우에 따라 구성할 수 있고, 개발하기.</p>
+</blockquote>
+<p>💻 <strong>SC</strong></p>
+<blockquote>
+<p>스마트 컨트랙트 개발을 위해 솔리디티 언어를 다루고, 분석하고, 적용 가능. 기본으로 제공되는 ERC-20, ERC-721 스마트 컨트랙트 코드 외의 덧붙일 기능은 응용하여 코드 작성해야함.</p>
+</blockquote>
+<p>→ 솔리디티로 작성된 ERC-20,  ERC-721 코드를 파악하고, 응용할 수 있다.</p>
+<p>💻 <strong>BE</strong></p>
+<blockquote>
+<p>백엔드에서 지갑 생성, 서명 및 전송 담당. 서버 구축, 지갑 생성 및 관리, 스마트 컨트랙트와 서버를 연동하여 사용. 동작 확인을 위해 실시간 트래킹.</p>
+</blockquote>
+<h2 id="저장소"><a href="#저장소" class="headerlink" title="저장소"></a>저장소</h2><h3 id="팀-레포"><a href="#팀-레포" class="headerlink" title="팀 레포"></a>팀 레포</h3><p><a target="_blank" rel="noopener" href="https://github.com/codestates/BEB-05-HALPME">https://github.com/codestates/BEB-05-HALPME</a></p>
+<h3 id="개인-레포"><a href="#개인-레포" class="headerlink" title="개인 레포"></a>개인 레포</h3><p><a target="_blank" rel="noopener" href="https://github.com/yu-uj/BEB-05-HALPME">https://github.com/yu-uj/BEB-05-HALPME</a></p>
+<hr>
+<h2 id="기술-스택"><a href="#기술-스택" class="headerlink" title="기술 스택"></a>기술 스택</h2><h3 id="Tech"><a href="#Tech" class="headerlink" title="Tech"></a>Tech</h3><table>
+<thead>
+<tr>
+<th>Language</th>
+<th>JavaScript</th>
+<th>*</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Server Framework</td>
+<td>Node.js</td>
+<td>*</td>
+</tr>
+<tr>
+<td>Contract Language</td>
+<td>Solidity</td>
+<td>SC</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Ganache</td>
+<td>SC</td>
+</tr>
+<tr>
+<td>Web Library</td>
+<td>React</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>Database(DB)</td>
+<td>MySQL</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>Web Library</td>
+<td>Redux</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>Web Library</td>
+<td>Babel</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>Web Library</td>
+<td>Bootstrap</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>Web Framework</td>
+<td>Express.js</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>JavaScript Library</td>
+<td>Web3.js</td>
+<td>SC</td>
+</tr>
+<tr>
+<td>Framework</td>
+<td>Truffle</td>
+<td>SC</td>
+</tr>
+<tr>
+<td>Framework</td>
+<td>OpenZepplin</td>
+<td>SC</td>
+</tr>
+</tbody></table>
+<h3 id="Position-Tech"><a href="#Position-Tech" class="headerlink" title="Position Tech"></a>Position Tech</h3><table>
+<thead>
+<tr>
+<th>Position</th>
+<th>기술 스택</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Front-End</td>
+<td>React, Redux, Bootstrap</td>
+</tr>
+<tr>
+<td>Back-End</td>
+<td>MySQL, Babel, Express</td>
+</tr>
+<tr>
+<td>Smart-Contract</td>
+<td>Solidity, Web3.js, Truffle, OpenZepplin</td>
+</tr>
+</tbody></table>
+<h3 id="개발-환경"><a href="#개발-환경" class="headerlink" title="개발 환경"></a>개발 환경</h3><table>
+<thead>
+<tr>
+<th>OS</th>
+<th>MacOS, Ubuntu</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDE</td>
+<td>VisualStudioCode</td>
+</tr>
+<tr>
+<td>개발 도구</td>
+<td>Git</td>
+</tr>
+<tr>
+<td>개발 언어</td>
+<td>JavaScript, Solidity</td>
+</tr>
+<tr>
+<td>테스트 네트워크</td>
+<td>Ganache(ETH)</td>
+</tr>
+<tr>
+<td>지갑</td>
+<td>MetaMask</td>
+</tr>
+<tr>
+<td>문서 관리</td>
+<td>Notion</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="구현-기능"><a href="#구현-기능" class="headerlink" title="구현 기능"></a>구현 기능</h2><h3 id="🔗-주요-기능"><a href="#🔗-주요-기능" class="headerlink" title="🔗 주요 기능"></a>🔗 주요 기능</h3><p><strong>▶️ 회원관리</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 사용자는 아이디와 패스워드를 입력하여 회원가입할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 아이디와 패스워드를 사용하여 로그인할 수 있다.</li>
+</ul>
+<p><strong>▶️ 게시글</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 사용자는 게시글을 작성할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 게시글 목록을 확인할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 게시글 상세 내용을 확인할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 게시글에 대한 댓글을 작성할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신의 게시글에 달린 댓글 중 하나의 댓글을 채택할 수 있다.</li>
+</ul>
+<p><strong>▶️ 마이페이지</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 사용자는 자신의 정보를 확인할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 소유한 NFT 목록을 확인할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 소유한 토큰의 개수를 확인할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 작성한 게시글을 확인할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신의 토큰을 다른 사용자에게 전송할 수 있다.</li>
+</ul>
+<p><strong>▶️ 토큰</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 작성한 댓글이 채택됨으로, 토큰을 획득할 수 있다.</li>
+</ul>
+<p><strong>▶️ NFT</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 사용자는 NFT를 생성할 수 있다.</li>
+</ul>
+<h3 id="🔗-추가-기능"><a href="#🔗-추가-기능" class="headerlink" title="🔗 추가 기능"></a>🔗 추가 기능</h3><p><strong>▶️ 게시글</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 작성한 게시글을 수정할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 작성한 게시글을 삭제할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 작성한 댓글을 수정할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 자신이 작성한 댓글을 삭제할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 게시글에 좋아요를 표시할 수 있다.</li>
+<li><input disabled="" type="checkbox"> 사용자는 댓글에 좋아요를 표시할 수 있다.</li>
+</ul>
+<h3 id="🔗-Night-Mare"><a href="#🔗-Night-Mare" class="headerlink" title="🔗 Night Mare"></a>🔗 Night Mare</h3><ul>
+<li><input disabled="" type="checkbox"> 사용자는 소유한 nft를 전송할 수 있다</li>
+<li><input disabled="" type="checkbox"> 사용자는 nft를 고정된 가격에 구매하거나 경매할 수 있다</li>
+<li><input disabled="" type="checkbox"> 사용자는 카테고리의 Explore에서 nft 조회 방식을 선택할 수 있다</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Desc.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>General</td>
+<td>Navbar</td>
+<td>Components</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Logo: 누르면 홈으로 이동</li>
+<li>Market</li>
+<li>MyPage</li>
+<li>Signup, Signin</li>
+<li>ETH Faucet |<br>|  | Footer | 팀 정보 및 깃헙 페이지 등 기본적인 정보가 표시된다. |<br>| 회원관리 | General | 아이디와 패스워드를 입력받아 서버에서 지갑을 생성해준다. |<br>|  | 회원가입 | 아이디, 닉네임, 패스워드를 입력한다. |<br>|  | 로그인&#x2F;로그아웃 | 아이디와 패스워드를 입력한다. |<br>| 게시판 | General |  |<br>|  | 게시글 리스트 |  |<br>|  | 게시글 상세 | 번호, 제목, 작성자, 생성일, 조회수 등의 정보가 표시된다.<br>채택된 댓글을 하이라이트로 표시된다. |<br>|  | 게시글 작성 |  |<br>|  | 댓글 작성 |  |<br>| NFT 민팅 | - | 사진 주소 폼과 구입 버튼이 표시된다. |<br>| 마이 페이지 | General | 다음의 내용이 표시된다.</li>
+<li>나의 정보: 닉네임, 지갑주소</li>
+<li>토큰(FT) 개수</li>
+<li>나의 NFT</li>
+<li>작성한 게시글 |<br>|  | 토큰 전송 | 상대방 계정, 보낼 토큰 개수를 입력할 수 있는 칸이 표시된다. |</li>
+</ul>
+<hr>
+<h2 id="시나리오"><a href="#시나리오" class="headerlink" title="시나리오"></a>시나리오</h2><p><strong>Home</strong></p>
+<ul>
+<li>기본 Index 화면.</li>
+<li>왼쪽 상단의 사이트 로고 클릭시 홈(Home)으로 이동한다.</li>
+</ul>
+<p><strong>Navigation</strong></p>
+<ul>
+<li>Home 화면 상단에 위치.</li>
+<li>Login &#x2F; Sign 클릭시 login과 sign 선택 화면으로 이동한다.</li>
+<li>Market 클릭시 market 화면으로 이동한다.</li>
+<li>Create 클릭시 NFTcreate 화면으로 이동한다.</li>
+<li>My Page 클릭시 mypage 화면으로 이동한다.</li>
+</ul>
+<p><strong>Login &#x2F; Sign up</strong></p>
+<ul>
+<li>Home 화면 상단의 오른쪽에 위치.</li>
+<li>Sign 클릭시 회원가입 화면으로 이동한다.</li>
+<li>회원가입에 필요한 Id, Password를 포함한 정보 기입 후, 회원가입 버튼을 클릭하여 가입한다.</li>
+<li>회원가입에 실패하면 error message 송출한다.</li>
+<li>Login 클릭시 로그인 화면으로 이동한다.</li>
+<li>Id, Password 입력 후, 로그인 버튼 클릭으로 로그인한다.</li>
+<li>로그인 실패시 error message 송출한다.</li>
+<li>로그인에 성공하면 화면 오른쪽 상단의 Login 버튼이 Logout 으로 바뀐다.</li>
+<li>Logout 클릭시 사이트에서 로그아웃 된다.</li>
+</ul>
+<p><strong>Market</strong></p>
+<ul>
+<li>게시글 리스트의 게시글 클릭시, 게시글의 상세 페이지로 이동한다.</li>
+<li>게시글 리스트의 상단에 위치한 게시글 작성 버튼을 누르면 게시글 작성 화면으로 이동한다.</li>
+<li>클라이언트는 서버에 NFT 정보를 요청하고 서버는 DB에 저장된 NFT 정보를 응답한다.</li>
+<li>클라이언트는 응답받은 정보를 marketplace 페이지에 보여준다.</li>
+<li>NFT 중 하나를 눌렀을 때 지갑연결이 되어있으면 구매 페이지로, 아니면 지갑 연결 페이지로 이동한다.</li>
+</ul>
+<p><strong>Create (NFT Create)</strong></p>
+<ul>
+<li><strong>지갑 연결 [URClass eth연결]</strong><ul>
+<li>연결이 되지 않은 상황에오른쪽 위 지갑을 누르거나, 오른쪽 위 사용자를 누르거나, Explore에서 NFT를 눌렀을 때 이동한다.</li>
+<li>지갑을 클릭하면 MetaMask 지갑을 표시한다.</li>
+<li>지갑에 로그인하면 사이트에 로그인된다.</li>
+</ul>
+</li>
+<li>사용자는 자신이 보유한 IC토큰을 인증하고, NFT 생성을 위해 Create 버튼을 눌러 create 화면으로 이동한다.</li>
+<li>클라이언트는 사용자에게 NFT CreationFrom을 제공한다.</li>
+<li>사용자는 이미지와 정보를 입력하고 Create NFT 버튼을 클릭하여 NFT 정보를 IPFS에 업로드 요청한다.</li>
+<li>이미지를 IPFS에 저장 후 이미지 IPFS URI를 입력한 정보에 추가하여 metadata.json 파일을 IPFS에 업로드한다.</li>
+<li>업로드 완료 후, 업로드된 이미지는 My Page의 Minted List에서 확인할 수 있다.</li>
+</ul>
+<p><strong>My Page</strong></p>
+<ul>
+<li>로그인한 사용자의 상세 정보 확인.</li>
+<li>사용자가 보유한 IC토큰을 확인.</li>
+<li>사용자가 보유한 NFT 조회.</li>
+<li>구매한 NFT 목록 조회 &#x2F; 민팅한 NFT 목록 조회.</li>
+<li>사용자가 작성한 게시글 확인.</li>
+<li>사용자가 작성한 댓글 확인.</li>
+</ul>
+<p><strong>필수 구현</strong></p>
+<ul>
+<li>로그인 &#x2F; 로그아웃</li>
+<li>회원가입</li>
+<li>게시글 읽기 및 작성</li>
+<li>게시글에 대한 댓글 작성</li>
+<li>게시글의 작성자가 댓글 채택</li>
+<li>채택된 댓글의 작성자는 보상으로 IC토큰을 받음</li>
+<li>IC토큰을 민팅한 NFT 토큰으로 교환</li>
+<li>NFT Create를 하면 데이터베이스에 저장</li>
+<li>Minted List에서 데이터를 받아와서 보유 NFT 표시</li>
+</ul>
+<p><strong>추가 기능 구현</strong></p>
+<ul>
+<li>내 NFT 컬렉션 페이지 조회 기능.</li>
+<li>사용자 NFT 페이지 조회 기능.</li>
+<li>답변 채택이 완료된 게시글은 완료 리스트로 이동하기.</li>
+<li>보유한 IC토큰과 NFT 전송 기능.</li>
+<li>보유한 NFT 판매 기능.</li>
+</ul>
+<hr>
+<h2 id="Flow-Chart"><a href="#Flow-Chart" class="headerlink" title="Flow Chart"></a>Flow Chart</h2><p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24256d43-e657-47b9-9861-10ce12de85e9/HALP_ME_Flowchart.drawio.final.png" alt="HALP ME Flowchart.drawio.final.png"></p>
+<hr>
+<h2 id="ER-Diagram"><a href="#ER-Diagram" class="headerlink" title="ER-Diagram"></a>ER-Diagram</h2><p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc9c3c7f-c521-4367-9c3a-26f79fcdd409/Project2.png" alt="Project2.png"></p>
+<hr>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><table>
+<thead>
+<tr>
+<th>EndPoint</th>
+<th>Description</th>
+<th>METHOD</th>
+<th>Parameters</th>
+<th>res</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“&#x2F;”</td>
+<td>메인화면 필요 데이터</td>
+<td>GET</td>
+<td>X</td>
+<td>{</td>
+<td></td>
+</tr>
+<tr>
+<td>message,</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>data {</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre><code>postId,
+title,
+contents,
+category,
+status,
+createdAt,
+updatedAt,
+id,
+User.nickname,
+</code></pre>
+<p>  }<br>} |  |<br>| “api&#x2F;user-data” | 모든 유저 정보 | GET | X | {<br>  message,<br>  data {<br>    id,<br>    loginId,<br>    password,<br>    nickname,<br>    role,<br>    createdAt,<br>    updatedAt,<br>  }<br>} | 다음 커밋에서password 는 반환하지 않도록 할 예정 |<br>| “api&#x2F;user-data&#x2F;:id” | 특정 유저 정보 | GET | req.params [ id ] | 위와 동일 |  |<br>| “api&#x2F;post-data” | 모든 게시글 정보 | GET | X | {<br>  message,<br>  data {<br>    postId,<br>    title,<br>    contents,<br>    category,<br>    status,<br>    createdAt,<br>    updatedAt,<br>    id,<br>  }<br>} |  |<br>| “api&#x2F;post-data&#x2F;:id” | 특정 게시글 정보 | GET | req.params [ id ] | 위와 동일 | ⇒ 사용자별 게시글 정보 |<br>| “api&#x2F;wallet-data” | 모든 지갑 정보 | GET | X | {<br>  message<br>  data {<br>    address,<br>    balance,<br>    status,<br>    id,<br>  }<br>} |  |<br>| “api&#x2F;wallet-data&#x2F;:id” | 특정 지갑 정보 | GET | req.params [ id ] | 위와 동일 |  |<br>| “api&#x2F;nft-data” | 모든 nft 정보 | GET | X | {<br>  message<br>  data {<br>    tokenId,<br>    URI,<br>    price,<br>    status,<br>    createdAt,<br>    updatedAt,<br>    address,<br>  }<br>} |  |<br>| “api&#x2F;nft-data&#x2F;:address” | 특정 nft 정보 | GET | req.params [ address ] | 위와 동일 |  |<br>| “&#x2F;user&#x2F;signup” | 회원가입 | POST | req.body [ loginId, password, nickname ] | {<br>  message<br>} | 로그인 시에 userId 를 첨부할 예정 이를 통해 다른 api 를 이용 가능 |<br>| “&#x2F;action&#x2F;write&#x2F;post” | 게시글 작성 | POST | req.body [ title, contents, category ]<br>req.query [id] | {<br>  message<br>  “data”: {<br>    “status”<br>    “postId”<br>    “id”<br>    “title”<br>    “category”<br>    “contents”<br>    “updatedAt”<br>    “createdAt”<br>} |  |<br>| “&#x2F;user&#x2F;login” | 로그인 | POST | req.body [ loginId, password ] | {<br>  message<br>  data: {<br>    id,<br>    nickname,<br>    role<br>} |  |<br>| “&#x2F;action&#x2F;write&#x2F;comment&#x2F;:commentId” | 댓글 작성 | POST | req.body [ contents ],<br>req.params [ commentId ]<br>req.query [id] | {<br>“message”<br>  “data”: {<br>    “status”<br>    “commentId”<br>    “id”<br>    “postId”<br>    “contents”<br>    “updatedAt”<br>    “createdAt”<br>  }<br>} |  |<br>| &#x2F;api&#x2F;comment-data&#x2F;:postId | 특정 게시글의 댓글 조회 | GET | X | {<br>“message”<br>  “data”: {<br>    “status”<br>    “commentId”<br>    “id”<br>    “postId”<br>    “contents”<br>    “updatedAt”<br>    “createdAt”<br>  }<br>} |  |<br>| &#x2F;action&#x2F;comment&#x2F;select&#x2F;:commentId | 특정 댓글 채택 | POST | req.params [ commentId ]<br> | {<br>  message<br>  data : {<br>    1<br>  }<br>} | 추후 response 수정 예정 |<br>| &#x2F;action&#x2F;transfer&#x2F;token | 토큰 전송 | POST | req.query [from, id]<br>req.body [to, amount] | {<br>  message<br>} |  |</p>
+<hr>
+<h3 id="참고-레퍼런스"><a href="#참고-레퍼런스" class="headerlink" title="참고 레퍼런스"></a>참고 레퍼런스</h3></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blockchain/">blockchain</a><a class="post-meta__tags" href="/tags/project/">project</a><a class="post-meta__tags" href="/tags/codestates/">codestates</a><a class="post-meta__tags" href="/tags/BEB05/">BEB05</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/16/project1/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">project1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/08/16/project1/" title="project1"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">project1</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HALP-ME"><span class="toc-number">1.</span> <span class="toc-text">HALP ME!!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BEB-05-Second-Project-Team-05"><span class="toc-number">1.1.</span> <span class="toc-text">BEB 05 Second Project Team 05</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%A1Project-Intro"><span class="toc-number">1.2.</span> <span class="toc-text">💡Project Intro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Incentive-Community"><span class="toc-number">1.3.</span> <span class="toc-text">Incentive Community ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0"><span class="toc-number">1.4.</span> <span class="toc-text">프로젝트 구조</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B8%B0%ED%9A%8D"><span class="toc-number">1.4.1.</span> <span class="toc-text">기획</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD"><span class="toc-number">1.4.2.</span> <span class="toc-text">프로젝트 요구사항</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%A8-%ED%8C%80-%EC%86%8C%EA%B0%9C"><span class="toc-number">1.5.</span> <span class="toc-text">🚨 팀 소개</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BEB-05-02-05%EC%A1%B0"><span class="toc-number">1.5.1.</span> <span class="toc-text">BEB-05-02-05조</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%92%A1Project-HALP-ME"><span class="toc-number">1.5.2.</span> <span class="toc-text">💡Project : HALP ME!!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%92%A1-HALP-Project-Intro"><span class="toc-number">1.5.3.</span> <span class="toc-text">💡 HALP Project Intro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%97%AD%ED%95%A0"><span class="toc-number">1.5.4.</span> <span class="toc-text">역할</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%A0%80%EC%9E%A5%EC%86%8C"><span class="toc-number">1.6.</span> <span class="toc-text">저장소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%8C%80-%EB%A0%88%ED%8F%AC"><span class="toc-number">1.6.1.</span> <span class="toc-text">팀 레포</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B0%9C%EC%9D%B8-%EB%A0%88%ED%8F%AC"><span class="toc-number">1.6.2.</span> <span class="toc-text">개인 레포</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B8%B0%EC%88%A0-%EC%8A%A4%ED%83%9D"><span class="toc-number">1.7.</span> <span class="toc-text">기술 스택</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tech"><span class="toc-number">1.7.1.</span> <span class="toc-text">Tech</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Position-Tech"><span class="toc-number">1.7.2.</span> <span class="toc-text">Position Tech</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD"><span class="toc-number">1.7.3.</span> <span class="toc-text">개발 환경</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B5%AC%ED%98%84-%EA%B8%B0%EB%8A%A5"><span class="toc-number">1.8.</span> <span class="toc-text">구현 기능</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%97-%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5"><span class="toc-number">1.8.1.</span> <span class="toc-text">🔗 주요 기능</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%97-%EC%B6%94%EA%B0%80-%EA%B8%B0%EB%8A%A5"><span class="toc-number">1.8.2.</span> <span class="toc-text">🔗 추가 기능</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%97-Night-Mare"><span class="toc-number">1.8.3.</span> <span class="toc-text">🔗 Night Mare</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4"><span class="toc-number">1.9.</span> <span class="toc-text">시나리오</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flow-Chart"><span class="toc-number">1.10.</span> <span class="toc-text">Flow Chart</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ER-Diagram"><span class="toc-number">1.11.</span> <span class="toc-text">ER-Diagram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-number">1.12.</span> <span class="toc-text">API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%B0%B8%EA%B3%A0-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4"><span class="toc-number">1.12.1.</span> <span class="toc-text">참고 레퍼런스</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2"/></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2">project2</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/16/project1/" title="project1"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project1"/></a><div class="content"><a class="title" href="/2022/08/16/project1/" title="project1">project1</a><time datetime="2022-08-16T08:06:50.000Z" title="Created 2022-08-16 17:06:50">2022-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/13/test1/" title="test1"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="test1"/></a><div class="content"><a class="title" href="/2022/07/13/test1/" title="test1">test1</a><time datetime="2022-07-13T09:54:49.000Z" title="Created 2022-07-13 18:54:49">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/beb-05-day15/" title="beb_05_day15"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="beb_05_day15"/></a><div class="content"><a class="title" href="/2022/05/18/beb-05-day15/" title="beb_05_day15">beb_05_day15</a><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/beb-05-day14/" title="beb_05_day14"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="beb_05_day14"/></a><div class="content"><a class="title" href="/2022/05/18/beb-05-day14/" title="beb_05_day14">beb_05_day14</a><time datetime="2022-05-18T05:12:10.000Z" title="Created 2022-05-18 14:12:10">2022-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a  href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/08/29/project2/'
+    this.page.identifier = '/2022/08/29/project2/'
+    this.page.title = 'project2'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
