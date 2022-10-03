@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Node.js 모듈 사용 / Fetch 네트워크 요청 | YU-UJ</title><meta name="keywords" content="blockchain,codestates,BEB05,Web,비동기,Node.js,Fetch"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청220518 - [JS&#x2F;Node] 비동기 2 Node.js 모듈 사용법브라우저에서 사용할 수 있는 비동기 흐름은 타이머 혹은 DOM 이벤트와 관련된 상황으로 다소 한정적. BUT! Node.js의 경우 많은 API가 비동기로 작성됨. Node.js ?로컬 환경에서 자바스크립트를 실행할 수">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청">
+<meta property="og:url" content="http://yu-uj.github.io/2022/05/18/beb-05-day15/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청220518 - [JS&#x2F;Node] 비동기 2 Node.js 모듈 사용법브라우저에서 사용할 수 있는 비동기 흐름은 타이머 혹은 DOM 이벤트와 관련된 상황으로 다소 한정적. BUT! Node.js의 경우 많은 API가 비동기로 작성됨. Node.js ?로컬 환경에서 자바스크립트를 실행할 수">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-05-18T05:19:20.000Z">
+<meta property="article:modified_time" content="2022-10-03T15:54:18.280Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="codestates">
+<meta property="article:tag" content="BEB05">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="비동기">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="Fetch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/05/18/beb-05-day15/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Node.js 모듈 사용 / Fetch 네트워크 요청',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-10-04 00:54:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Node.js 모듈 사용 / Fetch 네트워크 요청</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Node.js 모듈 사용 / Fetch 네트워크 요청"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Node-js-모듈-사용-x2F-Fetch-네트워크-요청"><a href="#Node-js-모듈-사용-x2F-Fetch-네트워크-요청" class="headerlink" title="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청"></a>Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청</h1><h3 id="220518-JS-x2F-Node-비동기-2"><a href="#220518-JS-x2F-Node-비동기-2" class="headerlink" title="220518 - [JS&#x2F;Node] 비동기 2"></a>220518 - [JS&#x2F;Node] 비동기 2</h3><hr>
+<h2 id="Node-js-모듈-사용법"><a href="#Node-js-모듈-사용법" class="headerlink" title="Node.js 모듈 사용법"></a>Node.js 모듈 사용법</h2><p>브라우저에서 사용할 수 있는 비동기 흐름은 타이머 혹은 DOM 이벤트와 관련된 상황으로 다소 한정적.</p>
+<p>BUT!</p>
+<p>Node.js의 경우 많은 API가 비동기로 작성됨.</p>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js ?"></a>Node.js ?</h2><p>로컬 환경에서 자바스크립트를 실행할 수 있는 자바스크립트 런타임이다. 브라우저에서 불가능한 기능이 가능.</p>
+<blockquote>
+<p><strong>모듈 ?</strong> 어떤 기능을 조립할 수 있는 형태로 만든 부분. fs(File System) 모듈은 PC의 파일을 읽거나 저장하는 일을 지원함.</p>
+</blockquote>
+<p>서버사이트 스크립트 언어가 아닌 프로그램(환경)이다.</p>
+<p>웹서버와 같이 확장성 있는 네트워크 프로그램 제작을 위해 만들어졌다. ⇒ 한가지 언어로 전체 웹 페이지를 만들 수 있게 됨. </p>
+<h3 id="Node-js의-특징"><a href="#Node-js의-특징" class="headerlink" title="Node.js의 특징"></a>Node.js의 특징</h3><ul>
+<li>자바스크립트 언어 사용</li>
+<li>자바스크립트 엔진 사용으로 속도가 빠르다</li>
+<li>이벤트 기반 비동기 방식(Non-Blocking)<ul>
+<li>Node.js 에서 모든 API가 비동기 방식이므로, 호출 후 응답을 기다리지 않고 다른 API를 호출. 이전에 호출한 API의 응답이 오면 이벤트 루프가 확인하여 처리함.</li>
+<li>이벤트 루프(event loop)는 여러 이벤트가 동시 발생했을 때 어떤 순서로 콜백함수를 호출할지 판단.</li>
+<li>비동기란 이전 작업이 완료될 때까지 대기하지 않고 동시에 작업을 수행하는 것.</li>
+</ul>
+</li>
+<li>단일 스레드<ul>
+<li>스레드 : 프로세스 내에서 실행되는 흐름의 단위. 프로세스는 스레드를 여러 개 생성하여 여러 작업을 동시에 처리. 스레드들은 부모 프로세스의 자원을 공유. 같은 주소의 메모리에 접근 가능하여 데이터 공유할 수 있다.</li>
+<li>프로세스 : 운영체제에서 할당하는 작업의 단위. 노드나 웹 브라우저 등의 프로그램은 개별적인 프로세스. 프로세스 간 메모리 자원 공유 x.</li>
+<li>복잡한 비동기 I&#x2F;O 응용 프로그램을 싱글 스레드 자바스크립트로 작성하여 결과물 실행 속도와 개발 편의성이 좋음. 그러나 CPU의 높은 연산력을 요구하는 프로그램을 짜면 성능이 좋지 않음.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Node-js-내장-모듈-사용-방법"><a href="#Node-js-내장-모듈-사용-방법" class="headerlink" title="Node.js 내장 모듈 사용 방법"></a>Node.js 내장 모듈 사용 방법</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v14.x/docs/api/">[Node.js 내장 모듈 목록]</a></p>
+<ul>
+<li>DNS 모듈 사용법 :</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v12.x/docs/api/dns.html">DNS | Node.js v18.2.0 Documentation</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v12.x/docs/api/fs.html">파일 시스템 모듈</a> → 파일을 읽거나 저장하는 기능을 구현하도록 돕는 메소드</li>
+<li>파일 읽을 때  적합한 메소드 → <a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_readfile_path_options_callback">readFile</a></li>
+<li>파일 저장할 때 적합한 메소드 → <a target="_blank" rel="noopener" href="https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_writefile_file_data_options_callback">writeFile</a></li>
+</ul>
+<h2 id="모듈을-사용하기-위해-불러오는-과정"><a href="#모듈을-사용하기-위해-불러오는-과정" class="headerlink" title="모듈을 사용하기 위해 불러오는 과정"></a>모듈을 사용하기 위해 불러오는 과정</h2><h3 id="Node-js-에서-다른-파일을-불러오기-위한-require-구문"><a href="#Node-js-에서-다른-파일을-불러오기-위한-require-구문" class="headerlink" title="Node.js 에서 다른 파일을 불러오기 위한 require 구문"></a>Node.js 에서 다른 파일을 불러오기 위한 require 구문</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 자바스크립트 코드 가장 상단에 require 구문 이용</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">// 파일 시스템 모듈 불러오기</span></span><br><span class="line"><span class="keyword">const</span> dns = <span class="built_in">require</span>(<span class="string">&#x27;dns&#x27;</span>); <span class="comment">// DNS 모듈 불러오기</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// fs.readFile 메소드 등을 사용할 수 있음</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3rd-party-모듈-사용하는-방법"><a href="#3rd-party-모듈-사용하는-방법" class="headerlink" title="3rd-party 모듈 사용하는 방법"></a>3rd-party 모듈 사용하는 방법</h3><p>**써드 파티 모듈(3rd-party module)**은 해당 프로그래밍 언어에서 공식적으로 제공하는 빌트인 모듈이 아닌 모든 <strong>외부 모듈</strong>을 말한다. </p>
+<p>ex) Node.js에서 underscore는 Node.js 공식문서에 없는 모듈이기 때문에 써드 파티 모듈이라고 할 수 있음.</p>
+<p>⇒ <strong>써드 파티 모듈을 다운</strong> 받기 위해 터미널에서 <strong>npm을 사용</strong>해야 함</p>
+<p><strong>[ 터미널에서 underscore 모듈 설치하기 ]</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install underscore</span><br></pre></td></tr></table></figure>
+
+<p>⇒ node_modules에 underscore 설치한 후, </p>
+<p>Node.js 내장 모듈을 사용하듯 <strong>require 구문</strong>을 사용해 underscore을 사용할 수 있음</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;underscore&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Node.js의 3rd-party 모듈인 &#x27;underscore&#x27;사용</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="fs-readFile-path-options-callback"><a href="#fs-readFile-path-options-callback" class="headerlink" title="fs.readFile(path, [options], callback)"></a>fs.readFile(path, [options], callback)</h2><p>메소드 fs.readFile은 비동기적으로 파일 내용 전체를 읽는다. 로컬에 존재하는 파일을 읽어온다. 이 메소드는 실행할 때 인자 세 개를 넘길 수 있다.</p>
+<ul>
+<li><strong>path</strong> → &lt;string&gt;, &lt;Buffer&gt;, &lt;URL&gt;, &lt;integer&gt;<ul>
+<li>path 에는 파일 이름을 인자로 넘길 수 있다. 위의 네가지 종류 타입을 넘길 수 있지만 일반적으로는 문자열 타입으로 넘김</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /ect/passwd 파일을 불러오는 예제</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;/etc/passwd&#x27;</span>, ..., ...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>options</strong> → &lt;Object&gt;, &lt;string&gt;<ul>
+<li>대괄호로 감싼 두번째 인자 options는 선택적으로 넣거나 생략할 수 있는 인자.</li>
+<li>객체 형태 또는 문자열 타입으로 넘길 수 있다. 문자열의 경우 인코딩을 넘긴다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options = &#123;</span><br><span class="line">	<span class="attr">encoding</span>: <span class="string">&#x27;utf8&#x27;</span> <span class="comment">// UTF-8 인코딩 방식으로 열기</span></span><br><span class="line">	<span class="attr">flag</span>: <span class="string">&#x27;r&#x27;</span> <span class="comment">// 읽기 위해 열기</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 옵션을 사용하여 passwd 파일을 읽는다</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;/etc/passwd&#x27;</span>, options, ...)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>callback</strong> → &lt;Function&gt;<ul>
+<li><strong>err</strong> → \ <Error></li>
+<li><strong>data</strong> → &lt;string&gt; , &lt;Buffer&gt;<ul>
+<li>콜백 함수를 전달한다. 파일을 읽은 후에 비동기적으로 실행되는 함수.</li>
+<li>두 가지 파라미터가 존재한다. 에러가 발생하지 않으면 err ⇒ null 이 되고, data 에 문자열이너 Buffer 라는 객체가 전달된다. (data는 파일의 내용)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fs.readeFile 메소드로 파일의 데이터를 읽어 들인다</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (err) &#123;</span><br><span class="line">		<span class="keyword">throw</span> err; <span class="comment">// 에러를 던짐</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="fetch를-이용한-네트워크-요청"><a href="#fetch를-이용한-네트워크-요청" class="headerlink" title="fetch를 이용한 네트워크 요청"></a>fetch를 이용한 네트워크 요청</h1><p>비동기 요청의 가장 대표적인 사례는 <strong>네트워크 요청</strong>이다. 네트워크를 통해 이뤄지는 요청은 형태가 다양하며 URL로 요청하는 경우가 가장 흔함.  </p>
+<p>⇒ <strong>URL 요청</strong>을 가능하게 해주는 API가 <strong>fetch API</strong>이다.</p>
+<p>포털사이트는 <strong>변하는 정보</strong>와 <strong>고정적인 정보</strong>가 따로 분리된 구성이다. <strong>최신 뉴스나 날씨 정보 등 동적으로 데이터를 받아와야 하는 정보</strong>는 해당 정보만 업데이트하기 위해 요청 API를 이용한다. 그 중 대표적인 <strong>fetch API</strong>를 이용해 <strong>해당 정보를 원격 URL로부터 불러오는 경우</strong>, <strong>원격 URL로부터 정보를 받아</strong>와서 <strong>DOM 엘리먼트를 업데이트</strong> 한다.</p>
+<p>→ <strong>URL에 요청</strong>을 보내고 <strong>필요한 정보</strong>를 받아온다.</p>
+<p><strong>fetch API는  특정 URL로부터 정보를 받아오는 역할</strong>을 하는데, 이 과정이 <strong>비동기</strong>로 이루어져 다소 시간이 걸릴 수 있다. 시간이 소요되는 작업을 요구할 경우에는 blocking이 발생하면 안되므로 DOM에 정보가 표시될 때 까지 로딩 창을 대신 띄우는 경우도 있다.</p>
+<h2 id="fetch-API-사용법"><a href="#fetch-API-사용법" class="headerlink" title="fetch API 사용법"></a>fetch API 사용법</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fetch API는 Promise의 형식으로 이루어져 있음</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&quot;---주소---&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetch</span>(url)</span><br><span class="line">	.<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> response.<span class="title function_">json</span>()) <span class="comment">// 자체적으로 json() 메소드가 있어, 응답을 JSON 형태로 변환시킨 후 다음 Promise로 전달</span></span><br><span class="line">	.<span class="title function_">then</span>(<span class="function">(<span class="params">json</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(json)) <span class="comment">// 콘솔에 json을 출력</span></span><br><span class="line">	.<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(error)); <span class="comment">// 에러가 발생한 경우, 에러를 띄운다</span></span><br></pre></td></tr></table></figure>
+
+<p>→ 자세한 내용 : <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">MDN</a> 참고</p>
+<br/>
+<br/></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blockchain/">blockchain</a><a class="post-meta__tags" href="/tags/codestates/">codestates</a><a class="post-meta__tags" href="/tags/BEB05/">BEB05</a><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/%EB%B9%84%EB%8F%99%EA%B8%B0/">비동기</a><a class="post-meta__tags" href="/tags/Node-js/">Node.js</a><a class="post-meta__tags" href="/tags/Fetch/">Fetch</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/13/test1/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">test1</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/18/beb-05-day14/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">비동기 - UnderBar 라이브러리</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/18/beb-05-day14/" title="비동기 - UnderBar 라이브러리"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">비동기 - UnderBar 라이브러리</div></div></a></div><div><a href="/2022/08/16/project1/" title="project1"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">project1</div></div></a></div><div><a href="/2022/08/29/project2/" title="project2"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">project2</div></div></a></div><div><a href="/2022/10/03/project3/" title="project3"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-03</div><div class="title">project3</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9-x2F-Fetch-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9A%94%EC%B2%AD"><span class="toc-number">1.</span> <span class="toc-text">Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#220518-JS-x2F-Node-%EB%B9%84%EB%8F%99%EA%B8%B0-2"><span class="toc-number">1.0.1.</span> <span class="toc-text">220518 - [JS&#x2F;Node] 비동기 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9%EB%B2%95"><span class="toc-number">1.1.</span> <span class="toc-text">Node.js 모듈 사용법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js"><span class="toc-number">1.2.</span> <span class="toc-text">Node.js ?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js%EC%9D%98-%ED%8A%B9%EC%A7%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">Node.js의 특징</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-%EB%82%B4%EC%9E%A5-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95"><span class="toc-number">1.3.</span> <span class="toc-text">Node.js 내장 모듈 사용 방법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%AA%A8%EB%93%88%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%B4-%EB%B6%88%EB%9F%AC%EC%98%A4%EB%8A%94-%EA%B3%BC%EC%A0%95"><span class="toc-number">1.4.</span> <span class="toc-text">모듈을 사용하기 위해 불러오는 과정</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js-%EC%97%90%EC%84%9C-%EB%8B%A4%EB%A5%B8-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0-%EC%9C%84%ED%95%9C-require-%EA%B5%AC%EB%AC%B8"><span class="toc-number">1.4.1.</span> <span class="toc-text">Node.js 에서 다른 파일을 불러오기 위한 require 구문</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3rd-party-%EB%AA%A8%EB%93%88-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">3rd-party 모듈 사용하는 방법</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs-readFile-path-options-callback"><span class="toc-number">1.5.</span> <span class="toc-text">fs.readFile(path, [options], callback)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fetch%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9A%94%EC%B2%AD"><span class="toc-number">2.</span> <span class="toc-text">fetch를 이용한 네트워크 요청</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#fetch-API-%EC%82%AC%EC%9A%A9%EB%B2%95"><span class="toc-number">2.1.</span> <span class="toc-text">fetch API 사용법</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="project3"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project3"/></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="project3">project3</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2"/></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2">project2</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/16/project1/" title="project1"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project1"/></a><div class="content"><a class="title" href="/2022/08/16/project1/" title="project1">project1</a><time datetime="2022-08-16T08:06:50.000Z" title="Created 2022-08-16 17:06:50">2022-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/13/test1/" title="test1"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="test1"/></a><div class="content"><a class="title" href="/2022/07/13/test1/" title="test1">test1</a><time datetime="2022-07-13T09:54:49.000Z" title="Created 2022-07-13 18:54:49">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/beb-05-day15/" title="Node.js 모듈 사용 / Fetch 네트워크 요청"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Node.js 모듈 사용 / Fetch 네트워크 요청"/></a><div class="content"><a class="title" href="/2022/05/18/beb-05-day15/" title="Node.js 모듈 사용 / Fetch 네트워크 요청">Node.js 모듈 사용 / Fetch 네트워크 요청</a><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a  href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/05/18/beb-05-day15/'
+    this.page.identifier = '/2022/05/18/beb-05-day15/'
+    this.page.title = 'Node.js 모듈 사용 / Fetch 네트워크 요청'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
