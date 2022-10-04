@@ -22,11 +22,11 @@
             
             <tag> blockchain </tag>
             
-            <tag> project </tag>
-            
             <tag> codestates </tag>
             
             <tag> BEB05 </tag>
+            
+            <tag> project </tag>
             
         </tags>
       
@@ -53,11 +53,11 @@
             
             <tag> blockchain </tag>
             
-            <tag> project </tag>
-            
             <tag> codestates </tag>
             
             <tag> BEB05 </tag>
+            
+            <tag> project </tag>
             
         </tags>
       
@@ -84,11 +84,11 @@
             
             <tag> blockchain </tag>
             
-            <tag> project </tag>
-            
             <tag> codestates </tag>
             
             <tag> BEB05 </tag>
+            
+            <tag> project </tag>
             
         </tags>
       
@@ -128,17 +128,17 @@
             
             <tag> blockchain </tag>
             
+            <tag> Web </tag>
+            
             <tag> codestates </tag>
             
             <tag> BEB05 </tag>
             
-            <tag> Web </tag>
+            <tag> 비동기 </tag>
             
             <tag> Node.js </tag>
             
             <tag> Fetch </tag>
-            
-            <tag> 비동기 </tag>
             
         </tags>
       
@@ -165,15 +165,15 @@
             
             <tag> blockchain </tag>
             
+            <tag> Web </tag>
+            
             <tag> codestates </tag>
             
             <tag> BEB05 </tag>
             
-            <tag> Web </tag>
+            <tag> 고차함수 </tag>
             
             <tag> 비동기 </tag>
-            
-            <tag> 고차함수 </tag>
             
             <tag> callback </tag>
             
