@@ -134,11 +134,11 @@
             
             <tag> Web </tag>
             
-            <tag> 비동기 </tag>
-            
             <tag> Node.js </tag>
             
             <tag> Fetch </tag>
+            
+            <tag> 비동기 </tag>
             
         </tags>
       
@@ -171,9 +171,9 @@
             
             <tag> Web </tag>
             
-            <tag> 고차함수 </tag>
-            
             <tag> 비동기 </tag>
+            
+            <tag> 고차함수 </tag>
             
             <tag> callback </tag>
             
