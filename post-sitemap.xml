@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/2022/10/03/project3/</loc>
+        <lastmod>2022-10-06T11:35:06.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/2022/08/29/project2/</loc>
+        <lastmod>2022-10-06T11:34:56.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/2022/08/16/project1/</loc>
+        <lastmod>2022-10-06T11:34:37.018Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/2022/05/18/beb-05-day14/</loc>
         <lastmod>2022-10-03T15:58:06.195Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,30 +43,6 @@
     <url>
         <loc>http://yu-uj.github.io/2022/05/18/beb-05-day15/</loc>
         <lastmod>2022-10-03T15:54:18.280Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/2022/10/03/project3/</loc>
-        <lastmod>2022-10-03T15:10:48.554Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/2022/08/29/project2/</loc>
-        <lastmod>2022-10-03T12:21:26.843Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/2022/08/16/project1/</loc>
-        <lastmod>2022-08-29T10:32:10.897Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

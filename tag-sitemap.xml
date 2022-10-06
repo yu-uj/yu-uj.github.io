@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/tags/project/</loc>
+        <lastmod>2022-10-06T11:35:06.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/BEB05/</loc>
+        <lastmod>2022-10-06T11:35:06.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/codestates/</loc>
+        <lastmod>2022-10-06T11:35:06.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/blockchain/</loc>
+        <lastmod>2022-10-06T11:35:06.942Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/tags/await/</loc>
         <lastmod>2022-10-03T15:58:06.195Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -45,28 +73,7 @@
     </url>
 
     <url>
-        <loc>http://yu-uj.github.io/tags/BEB05/</loc>
-        <lastmod>2022-10-03T15:58:06.195Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/codestates/</loc>
-        <lastmod>2022-10-03T15:58:06.195Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yu-uj.github.io/tags/Web/</loc>
-        <lastmod>2022-10-03T15:58:06.195Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/blockchain/</loc>
         <lastmod>2022-10-03T15:58:06.195Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -82,13 +89,6 @@
     <url>
         <loc>http://yu-uj.github.io/tags/Node-js/</loc>
         <lastmod>2022-10-03T15:54:18.280Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/project/</loc>
-        <lastmod>2022-10-03T15:10:48.554Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
