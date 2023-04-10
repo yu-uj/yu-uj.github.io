@@ -3,6 +3,62 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/tags/Terminal/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/CLI/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/Linux/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/Node-js/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/BEB05/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/codestates/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/Web/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/blockchain/</loc>
+        <lastmod>2023-04-10T11:17:32.768Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/tags/Css/</loc>
         <lastmod>2023-04-10T11:05:24.549Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,34 +67,6 @@
 
     <url>
         <loc>http://yu-uj.github.io/tags/Html/</loc>
-        <lastmod>2023-04-10T11:05:24.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/BEB05/</loc>
-        <lastmod>2023-04-10T11:05:24.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/codestates/</loc>
-        <lastmod>2023-04-10T11:05:24.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/Web/</loc>
-        <lastmod>2023-04-10T11:05:24.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/blockchain/</loc>
         <lastmod>2023-04-10T11:05:24.549Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -95,13 +123,6 @@
 
     <url>
         <loc>http://yu-uj.github.io/tags/Fetch/</loc>
-        <lastmod>2022-10-03T15:54:18.280Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/Node-js/</loc>
         <lastmod>2022-10-03T15:54:18.280Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
