@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HTML / CSS 기초 | YU-UJ</title><meta name="keywords" content="blockchain,Web,codestates,BEB05,비동기,Node.js,Fetch"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="HTML &#x2F; CSS 기초HTML? HyperText Markup Language 웹 페이지의 틀을 만드는 마크업 언어  사용법 Html은 tag들의 집합 Tag : 부등호(&lt;&gt;)로 묶인 기본 구성 요소 html 확장자 사용  TREE STURCTURE HTML 문서 시작 →  html → 시작 태그, 문서 전체의 틀 구성 head → 문">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML &#x2F; CSS 기초">
+<meta property="og:url" content="http://yu-uj.github.io/2022/04/28/beb-05-day20/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="HTML &#x2F; CSS 기초HTML? HyperText Markup Language 웹 페이지의 틀을 만드는 마크업 언어  사용법 Html은 tag들의 집합 Tag : 부등호(&lt;&gt;)로 묶인 기본 구성 요소 html 확장자 사용  TREE STURCTURE HTML 문서 시작 →  html → 시작 태그, 문서 전체의 틀 구성 head → 문">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-04-28T05:57:36.000Z">
+<meta property="article:modified_time" content="2023-04-10T10:37:22.931Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="codestates">
+<meta property="article:tag" content="BEB05">
+<meta property="article:tag" content="비동기">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="Fetch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/04/28/beb-05-day20/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTML / CSS 기초',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-10 19:37:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HTML / CSS 기초</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-04-28T05:57:36.000Z" title="Created 2022-04-28 14:57:36">2022-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="HTML / CSS 기초"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HTML-x2F-CSS-기초"><a href="#HTML-x2F-CSS-기초" class="headerlink" title="HTML &#x2F; CSS 기초"></a>HTML &#x2F; CSS 기초</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML?"></a>HTML?</h2><ul>
+<li><strong>HyperText Markup Language</strong></li>
+<li><strong>웹 페이지의 틀</strong>을 만드는 <strong>마크업 언어</strong></li>
+</ul>
+<h3 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h3><ul>
+<li>Html은 tag들의 집합</li>
+<li>Tag : 부등호(&lt;&gt;)로 묶인 기본 구성 요소</li>
+<li>html 확장자 사용</li>
+</ul>
+<h3 id="TREE-STURCTURE"><a href="#TREE-STURCTURE" class="headerlink" title="TREE STURCTURE"></a>TREE STURCTURE</h3><ul>
+<li>HTML 문서 시작 → <strong><!DOCTYPE html></strong><ul>
+<li><strong>html</strong> → 시작 태그, 문서 전체의 틀 구성<ul>
+<li><strong>head</strong> → 문서의 메타데이터 선언<ul>
+<li><strong>title</strong> : Page title, 문서의 제목 → 브라우저 탭에 노출</li>
+</ul>
+</li>
+<li><strong>body</strong> → 문서의 내용<ul>
+<li><strong>h1</strong> → heading을 의미, 크기에 따라 h1~h6</li>
+<li><strong>div</strong> : Content division → 줄바꿈 됨<ul>
+<li><strong>span</strong> : Content Container → 줄바꿈 없음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Most-Used-TAGS-in-HTML"><a href="#Most-Used-TAGS-in-HTML" class="headerlink" title="Most Used TAGS in HTML"></a>Most Used TAGS in HTML</h3><table>
+<thead>
+<tr>
+<th>태그</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><div></div></td>
+<td>Division</td>
+</tr>
+<tr>
+<td><span></span></td>
+<td>Span</td>
+</tr>
+<tr>
+<td><img></td>
+<td>Image</td>
+</tr>
+<tr>
+<td><a></a></td>
+<td>Link</td>
+</tr>
+<tr>
+<td><ul> &amp; <li></li></ul></td>
+<td>Unorderd List &amp; List Item</td>
+</tr>
+<tr>
+<td><input></td>
+<td>Input (Text, Radio, Checkbox)</td>
+</tr>
+<tr>
+<td><textarea></textarea></td>
+<td>Multi-line Text Input</td>
+</tr>
+<tr>
+<td><button></button></td>
+<td>Button</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS?"></a>CSS?</h2><p>HTML, CSS, 그리고 JS는 웹 어플리케이션을 만드는 세가지의 주축이다. CSS는 스타일링을 담당한다. </p>
+<ul>
+<li>콘텐츠의 배치와 위치 (레이아웃 디자인)</li>
+<li>텍스트를 강조하거나 밑줄을 치는 등, 최소한의 타이포그래피 (Typography)</li>
+</ul>
+<p>위의 요소를 갖춘다면 더 나은 사용자 경험(UX, User Experience)을 제공할 수 있다. </p>
+<p>CSS를 작성해서 간단한 UI를 만드는 것은 개발자의 기본적 소양이다. 콘텐츠를 적당한 위치에 배치하는 레이아웃 디자인은 디자이너가 아니라도 할 수 있어야 한다.</p>
+<h3 id="일반-사용자를-대상으로-하는-어플리케이션은-UI-User-Interface-가-없으면-소용이-없다"><a href="#일반-사용자를-대상으로-하는-어플리케이션은-UI-User-Interface-가-없으면-소용이-없다" class="headerlink" title="일반 사용자를 대상으로 하는 어플리케이션은, UI(User Interface)가 없으면 소용이 없다."></a>일반 사용자를 대상으로 하는 어플리케이션은, UI(User Interface)가 없으면 소용이 없다.</h3><p>사용자 인터페이스(UI)는 사람과 컴퓨터 프로그램이 소통할 수 있도록 만들어진 요소.</p>
+<p>훌륭한 내부 기능도 UI가 없으면 소용이 없다.</p>
+<h3 id="프론트엔드-개발자에게-요구되는-능력"><a href="#프론트엔드-개발자에게-요구되는-능력" class="headerlink" title="프론트엔드 개발자에게 요구되는 능력"></a>프론트엔드 개발자에게 요구되는 능력</h3><ul>
+<li>화면의 구성이나 배치 (레이아웃 디자인)</li>
+<li>굵은 글씨와 같은 타이포그래피와 색상을 적용하는 일</li>
+<li>정렬이나 배색에 대한 감각</li>
+<li>UX에 대해 고민하고, 잘 적용된 웹이나 앱 예제를 분석해본 경험</li>
+</ul>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525">*Reference : Jang, p. → CSS 모범 사례</a></p>
+<hr>
+<p><strong>#시멘틱 태그</strong></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/ko/docs/Web/HTML/Element#%EC%BD%98%ED%85%90%EC%B8%A0_%EA%B5%AC%ED%9A%8D">: 요소 참고 링크</a></p>
+<h3 id="CSS-문법-구성"><a href="#CSS-문법-구성" class="headerlink" title="CSS 문법 구성"></a>CSS 문법 구성</h3><p>셀렉터는 태그의 이름이나 id, class를 선택한다. 셀렉터로 특정 요소를 선택하고, 중괄호 안에 요소에 적용할 내용을 작성한다. 요소에 적용할 수 있는 내용을 속성이라고 한다. 색상이나 글자 크기등의 속성이 있다. 속성에 적용할 값을 입력하여 스타일을 표현한다. 속성과 값의 끝에는 세미콜론( ; )을 붙여 속성끼리 구분한다.</p>
+<h3 id="CSS-파일-추가하기"><a href="#CSS-파일-추가하기" class="headerlink" title="CSS 파일 추가하기"></a>CSS 파일 추가하기</h3><p>css 파일을 html 파일에 연결할 때는, <strong>link 태그 안에서 href 속성</strong>을 통해 파일을 연결한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">”stylesheet”</span> <span class="attr">href</span>=<span class="string">”index.css”</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>link 태그는 HTML <strong>파일과 다른 파일을 연결</strong>하는 목적으로 사용한다. </p>
+<p>→ <strong>rel</strong>은 연결하려는 <strong>파일의 역할이나 특징</strong>을 나타낸다. CSS는 Style sheet. </p>
+<p>→ <strong>href</strong> 속성에는 <strong>파일의 위치</strong>를 추가해야 한다. 절대결로 혹은 상대경로를 입력.</p>
+<h3 id="CSS-스타일-적용법-3가지"><a href="#CSS-스타일-적용법-3가지" class="headerlink" title="CSS 스타일 적용법 (3가지)"></a>CSS 스타일 적용법 (3가지)</h3><ul>
+<li><strong>인라인 스타일</strong> : 같은 줄에서 스타일 적용</li>
+<li><strong>내부 스타일 시트</strong> : 별도의 파일로 구분하지 않고 style 태그 내에 작성</li>
+<li><strong>외부 스타일 시트</strong> : CSS 파일 내에 작성하는 내용</li>
+</ul>
+<h2 id="기본적인-셀렉터-selector"><a href="#기본적인-셀렉터-selector" class="headerlink" title="기본적인 셀렉터 (selector)"></a>기본적인 셀렉터 (selector)</h2><table>
+<thead>
+<tr>
+<th>id</th>
+<th>class</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#</td>
+<td>.</td>
+</tr>
+<tr>
+<td>한 문서에 단 하나의 요소에만 적용</td>
+<td>동일한 값을 갖는 요소가 많음</td>
+</tr>
+<tr>
+<td>특정 요소에 이름을 붙이는 데 사용</td>
+<td>스타일의 분류(classification)에 사용</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Font-글꼴"><a href="#Font-글꼴" class="headerlink" title="Font[글꼴]"></a>Font[글꼴]</h2><h3 id="웹-폰트-기술과-최신-동향"><a href="#웹-폰트-기술과-최신-동향" class="headerlink" title="웹 폰트 기술과 최신 동향"></a>웹 폰트 기술과 최신 동향</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://d2.naver.com/helloworld/4969726">NAVER D2</a></p>
+<h3 id="구글-폰트-Google-Fonts"><a href="#구글-폰트-Google-Fonts" class="headerlink" title="구글 폰트(Google Fonts)"></a>구글 폰트(Google Fonts)</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://fonts.google.com/">Google Fonts</a></p>
+<p>⇒ HTML link 태그를 사용하여 간단하게 embed 가능</p>
+<h3 id="글자-크기"><a href="#글자-크기" class="headerlink" title="글자 크기"></a>글자 크기</h3><ul>
+<li><strong>속성 → font-size: ;</strong><ul>
+<li>절대 단위 : <strong>px, pt</strong></li>
+<li>상대 단위 : <strong>%, em, rem, ch, vw, ch</strong></li>
+</ul>
+</li>
+</ul>
+<p>*참고 링크 : <a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#numbers_lengths_and_percentages">MDN</a>, <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.w3schools.com/cssref/css_units.asp">w3schools</a></p>
+<ol>
+<li><p>기기나 브라우저 사이즈 등의 <strong>환경에 영향을 받지 않는 절대적</strong>인 크기</p>
+<ul>
+<li><p><strong>px(픽셀)</strong> : px는 글꼴의 크기를 고정하는 단위. 사용자 접근성이 불리함.</p>
+<p>  ⇒ 크기가 고정되어 인쇄와 같이 화면의 사이즈가 정해진 경우</p>
+</li>
+</ul>
+</li>
+<li><p>일반적인 경우</p>
+<ul>
+<li><p><strong>rem</strong> : <strong>상대 단위</strong>, root의 글자 크기(&#x3D;브라우저의 기본 글자 크기)는 1rem &#x2F; 두배로 크게 적용시 2rem &#x2F; 작게 적용 0.8rem 등 조절해서 사용</p>
+<p>  ⇒ 사용자 설정 기본 글꼴 크기를 따라 접근성에 유리</p>
+<p>  ⇒ em은 부모 엘리먼트에 따라 상대적으로 크기가 변경되어 계산이 어려움</p>
+</li>
+</ul>
+</li>
+<li><p><strong>반응형 웹(responsive web)에서 기준점</strong>을 만들 때</p>
+<ul>
+<li>반응형 웹은 디바이스 너비(width)에 따라 유동적인 레이아웃이 적용되는 엡사이트. 데스크탑, 스마트폰의 가로 모드-세로모드, 태블릿 등. 디바이스 크기 별로 CSS를 달리 적용해야 한다면 디바이스 크기를 나누는 기준은 보통 px로 정한다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="글자-스타일링"><a href="#글자-스타일링" class="headerlink" title="글자 스타일링"></a>글자 스타일링</h3><ul>
+<li>굵기 : <strong>font-weight</strong></li>
+<li>밑줄, 가로줄 : <strong>text-decoration</strong></li>
+<li>자간 : <strong>letter-spacing</strong></li>
+<li>행간 : <strong>line-height</strong></li>
+</ul>
+<h3 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h3><ul>
+<li>가로 정렬 : <strong>text-align</strong><ul>
+<li>유효값 : <strong>left, right, center, justify(양쪽 정렬)</strong></li>
+</ul>
+</li>
+<li>세로 정렬</li>
+</ul>
+<hr>
+<h1 id="HTML-문서-레이아웃"><a href="#HTML-문서-레이아웃" class="headerlink" title="HTML 문서 레이아웃"></a>HTML 문서 레이아웃</h1><h3 id="줄바꿈이-되는-박스-block-x2F-옆으로-붙는-박스-inline-inline-block"><a href="#줄바꿈이-되는-박스-block-x2F-옆으로-붙는-박스-inline-inline-block" class="headerlink" title="줄바꿈이 되는 박스(block) &#x2F; 옆으로 붙는 박스(inline, inline-block)"></a>줄바꿈이 되는 박스(block) &#x2F; 옆으로 붙는 박스(inline, inline-block)</h3><ul>
+<li><strong>block</strong> 박스 : 줄바꿈이 됨 ⇒ <strong><div> <p></p></div></strong></li>
+<li><strong>inline</strong> 박스 : 줄바꿈 x, 크기지정이 불가능 ⇒ <strong><span></span></strong></li>
+<li><strong>inline-block</strong> 박스 : 줄바꿈이 일어나지 않는 동시에 block 박스의 특징을 가짐</li>
+</ul>
+<h3 id="줄바꿈이-되는-태그-x2F-되지-않는-태그"><a href="#줄바꿈이-되는-태그-x2F-되지-않는-태그" class="headerlink" title="줄바꿈이 되는 태그 &#x2F; 되지 않는 태그"></a>줄바꿈이 되는 태그 &#x2F; 되지 않는 태그</h3><ul>
+<li><strong>줄바꿈</strong>이 되는 태그 : <strong><h1> <p></p></h1></strong></li>
+<li>줄바꿈이 되지 않는 태그 : <strong><span></span></strong></li>
+</ul>
+<p>→ <strong>개발자 도구</strong> elements tab : <strong>cmd + opt + i 단축키</strong></p>
+<p>→ MDN <a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements">block 엘리먼트 목록</a> &#x2F; <a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">inline 엘리먼트 요소</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>block</th>
+<th>inline-block</th>
+<th>inline</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>줄바꿈</td>
+<td>O</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>기본 너비 (width)</td>
+<td>100%</td>
+<td>글자가 차지하는 만큼</td>
+<td>글자가 차지하는 만큼</td>
+</tr>
+<tr>
+<td>width, height 사용</td>
+<td>가능</td>
+<td>가능</td>
+<td>불가능</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="박스-구성-요소"><a href="#박스-구성-요소" class="headerlink" title="박스 구성 요소"></a>박스 구성 요소</h2><h3 id="border-테두리"><a href="#border-테두리" class="headerlink" title="border (테두리)"></a>border (테두리)</h3><ul>
+<li>border-<strong>width</strong> : 테두리 두께</li>
+<li>border**-style :** 테두리 스타일</li>
+<li>border-<strong>color</strong> : 테두리 색상<ul>
+<li>border-<strong>style mdn</strong> → 세부 속성 검색</li>
+</ul>
+</li>
+</ul>
+<h3 id="margin-바깥-여백"><a href="#margin-바깥-여백" class="headerlink" title="margin (바깥 여백)"></a>margin (바깥 여백)</h3><p>margint : <strong>top right bottom left</strong> ; ⇒ 값 하나만 적용시 모든 방향의 바깥 여백 적용</p>
+<h3 id="padding-안쪽-여백"><a href="#padding-안쪽-여백" class="headerlink" title="padding (안쪽 여백)"></a>padding (안쪽 여백)</h3><p>padding : <strong>top right bottom left</strong> ; ⇒ 값 하나만 적용시 모든 방향의 안쪽 여백 적용</p>
+<h3 id="박스를-벗어나는-컨텐츠-처리-⇒-overflow"><a href="#박스를-벗어나는-컨텐츠-처리-⇒-overflow" class="headerlink" title="박스를 벗어나는 컨텐츠 처리 ⇒ overflow"></a>박스를 벗어나는 컨텐츠 처리 ⇒ overflow</h3><p>박스 크기에 맞게 컨텐츠를 표시하지 않거나, 스크롤을 추가하여 확인하는 방법</p>
+<ul>
+<li><strong>overflow</strong> : (overflow-x &#x2F; overflow-y);<ul>
+<li><strong>auto</strong> : 컨텐츠가 넘칠 때 스크롤 생성</li>
+<li><strong>hidden</strong> : 컨텐츠가 넘칠 때 보이지 않기</li>
+</ul>
+</li>
+</ul>
+<h3 id="셀렉터"><a href="#셀렉터" class="headerlink" title="셀렉터 *"></a>셀렉터 *</h3><p>모든 요소를 선택하는 셀렉터 * 에 속성 추가</p>
+<p>→ <strong>box-sizing</strong> : border-box;</p>
+<p>모든 박스에서 여백과 테두리를 포함한 크기로 계산</p>
+<ul>
+<li><strong>content-box</strong> : 박스 크기를 측정하는 기본값</li>
+<li><strong>border-box</strong> : 여백과 테두리를 포함하는 박스 크기 계산법</li>
+</ul>
+<hr>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blockchain/">blockchain</a><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/codestates/">codestates</a><a class="post-meta__tags" href="/tags/BEB05/">BEB05</a><a class="post-meta__tags" href="/tags/%EB%B9%84%EB%8F%99%EA%B8%B0/">비동기</a><a class="post-meta__tags" href="/tags/Node-js/">Node.js</a><a class="post-meta__tags" href="/tags/Fetch/">Fetch</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/05/18/beb-05-day14/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">비동기 - UnderBar 라이브러리</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/18/beb-05-day15/" title="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청</div></div></a></div><div><a href="/2022/05/18/beb-05-day14/" title="비동기 - UnderBar 라이브러리"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">비동기 - UnderBar 라이브러리</div></div></a></div><div><a href="/2022/08/16/project1/" title="project1 UnderTheSea"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">project1 UnderTheSea</div></div></a></div><div><a href="/2022/10/03/project3/" title="project3 JDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-03</div><div class="title">project3 JDEX</div></div></a></div><div><a href="/2022/08/29/project2/" title="project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">project2 HALP ME!!</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML-x2F-CSS-%EA%B8%B0%EC%B4%88"><span class="toc-number">1.</span> <span class="toc-text">HTML &#x2F; CSS 기초</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number">1.1.</span> <span class="toc-text">HTML?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%82%AC%EC%9A%A9%EB%B2%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">사용법</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TREE-STURCTURE"><span class="toc-number">1.1.2.</span> <span class="toc-text">TREE STURCTURE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Most-Used-TAGS-in-HTML"><span class="toc-number">1.1.3.</span> <span class="toc-text">Most Used TAGS in HTML</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">1.2.</span> <span class="toc-text">CSS?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9D%BC%EB%B0%98-%EC%82%AC%EC%9A%A9%EC%9E%90%EB%A5%BC-%EB%8C%80%EC%83%81%EC%9C%BC%EB%A1%9C-%ED%95%98%EB%8A%94-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%80-UI-User-Interface-%EA%B0%80-%EC%97%86%EC%9C%BC%EB%A9%B4-%EC%86%8C%EC%9A%A9%EC%9D%B4-%EC%97%86%EB%8B%A4"><span class="toc-number">1.2.1.</span> <span class="toc-text">일반 사용자를 대상으로 하는 어플리케이션은, UI(User Interface)가 없으면 소용이 없다.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%97%90%EA%B2%8C-%EC%9A%94%EA%B5%AC%EB%90%98%EB%8A%94-%EB%8A%A5%EB%A0%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">프론트엔드 개발자에게 요구되는 능력</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%EB%AC%B8%EB%B2%95-%EA%B5%AC%EC%84%B1"><span class="toc-number">1.2.3.</span> <span class="toc-text">CSS 문법 구성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0"><span class="toc-number">1.2.4.</span> <span class="toc-text">CSS 파일 추가하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-%EC%8A%A4%ED%83%80%EC%9D%BC-%EC%A0%81%EC%9A%A9%EB%B2%95-3%EA%B0%80%EC%A7%80"><span class="toc-number">1.2.5.</span> <span class="toc-text">CSS 스타일 적용법 (3가지)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EC%85%80%EB%A0%89%ED%84%B0-selector"><span class="toc-number">1.3.</span> <span class="toc-text">기본적인 셀렉터 (selector)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Font-%EA%B8%80%EA%BC%B4"><span class="toc-number">1.4.</span> <span class="toc-text">Font[글꼴]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9B%B9-%ED%8F%B0%ED%8A%B8-%EA%B8%B0%EC%88%A0%EA%B3%BC-%EC%B5%9C%EC%8B%A0-%EB%8F%99%ED%96%A5"><span class="toc-number">1.4.1.</span> <span class="toc-text">웹 폰트 기술과 최신 동향</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B5%AC%EA%B8%80-%ED%8F%B0%ED%8A%B8-Google-Fonts"><span class="toc-number">1.4.2.</span> <span class="toc-text">구글 폰트(Google Fonts)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B8%80%EC%9E%90-%ED%81%AC%EA%B8%B0"><span class="toc-number">1.4.3.</span> <span class="toc-text">글자 크기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B8%80%EC%9E%90-%EC%8A%A4%ED%83%80%EC%9D%BC%EB%A7%81"><span class="toc-number">1.4.4.</span> <span class="toc-text">글자 스타일링</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%A0%95%EB%A0%AC"><span class="toc-number">1.4.5.</span> <span class="toc-text">정렬</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML-%EB%AC%B8%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83"><span class="toc-number">2.</span> <span class="toc-text">HTML 문서 레이아웃</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%A4%84%EB%B0%94%EA%BF%88%EC%9D%B4-%EB%90%98%EB%8A%94-%EB%B0%95%EC%8A%A4-block-x2F-%EC%98%86%EC%9C%BC%EB%A1%9C-%EB%B6%99%EB%8A%94-%EB%B0%95%EC%8A%A4-inline-inline-block"><span class="toc-number">2.0.1.</span> <span class="toc-text">줄바꿈이 되는 박스(block) &#x2F; 옆으로 붙는 박스(inline, inline-block)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%A4%84%EB%B0%94%EA%BF%88%EC%9D%B4-%EB%90%98%EB%8A%94-%ED%83%9C%EA%B7%B8-x2F-%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%ED%83%9C%EA%B7%B8"><span class="toc-number">2.0.2.</span> <span class="toc-text">줄바꿈이 되는 태그 &#x2F; 되지 않는 태그</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text"> </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%B0%95%EC%8A%A4-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="toc-number">3.1.</span> <span class="toc-text">박스 구성 요소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#border-%ED%85%8C%EB%91%90%EB%A6%AC"><span class="toc-number">3.1.1.</span> <span class="toc-text">border (테두리)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#margin-%EB%B0%94%EA%B9%A5-%EC%97%AC%EB%B0%B1"><span class="toc-number">3.1.2.</span> <span class="toc-text">margin (바깥 여백)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#padding-%EC%95%88%EC%AA%BD-%EC%97%AC%EB%B0%B1"><span class="toc-number">3.1.3.</span> <span class="toc-text">padding (안쪽 여백)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%B0%95%EC%8A%A4%EB%A5%BC-%EB%B2%97%EC%96%B4%EB%82%98%EB%8A%94-%EC%BB%A8%ED%85%90%EC%B8%A0-%EC%B2%98%EB%A6%AC-%E2%87%92-overflow"><span class="toc-number">3.1.4.</span> <span class="toc-text">박스를 벗어나는 컨텐츠 처리 ⇒ overflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%85%80%EB%A0%89%ED%84%B0"><span class="toc-number">3.1.5.</span> <span class="toc-text">셀렉터 *</span></a></li></ol></li></ol></li></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="project3 JDEX">project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2 HALP ME!!"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2 HALP ME!!"></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2 HALP ME!!">project2 HALP ME!!</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/16/project1/" title="project1 UnderTheSea"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project1 UnderTheSea"></a><div class="content"><a class="title" href="/2022/08/16/project1/" title="project1 UnderTheSea">project1 UnderTheSea</a><time datetime="2022-08-16T08:06:50.000Z" title="Created 2022-08-16 17:06:50">2022-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/beb-05-day15/" title="Node.js 모듈 사용 / Fetch 네트워크 요청"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Node.js 모듈 사용 / Fetch 네트워크 요청"></a><div class="content"><a class="title" href="/2022/05/18/beb-05-day15/" title="Node.js 모듈 사용 / Fetch 네트워크 요청">Node.js 모듈 사용 / Fetch 네트워크 요청</a><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/beb-05-day14/" title="비동기 - UnderBar 라이브러리"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="비동기 - UnderBar 라이브러리"></a><div class="content"><a class="title" href="/2022/05/18/beb-05-day14/" title="비동기 - UnderBar 라이브러리">비동기 - UnderBar 라이브러리</a><time datetime="2022-05-18T05:12:10.000Z" title="Created 2022-05-18 14:12:10">2022-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/04/28/beb-05-day20/'
+    this.page.identifier = '/2022/04/28/beb-05-day20/'
+    this.page.title = 'HTML / CSS 기초'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
