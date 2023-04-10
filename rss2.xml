@@ -112,8 +112,8 @@
     
     <item>
       <title>Node.js 모듈 사용 / Fetch 네트워크 요청</title>
-      <link>http://yu-uj.github.io/2022/05/18/beb-05-day15/</link>
-      <guid>http://yu-uj.github.io/2022/05/18/beb-05-day15/</guid>
+      <link>http://yu-uj.github.io/2022/05/18/nodejs-fetch/</link>
+      <guid>http://yu-uj.github.io/2022/05/18/nodejs-fetch/</guid>
       <pubDate>Wed, 18 May 2022 05:19:20 GMT</pubDate>
       
         
@@ -144,14 +144,14 @@
       <category domain="http://yu-uj.github.io/tags/Fetch/">Fetch</category>
       
       
-      <comments>http://yu-uj.github.io/2022/05/18/beb-05-day15/#disqus_thread</comments>
+      <comments>http://yu-uj.github.io/2022/05/18/nodejs-fetch/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>비동기 - UnderBar 라이브러리</title>
-      <link>http://yu-uj.github.io/2022/05/18/beb-05-day14/</link>
-      <guid>http://yu-uj.github.io/2022/05/18/beb-05-day14/</guid>
+      <link>http://yu-uj.github.io/2022/05/18/asynchronous/</link>
+      <guid>http://yu-uj.github.io/2022/05/18/asynchronous/</guid>
       <pubDate>Wed, 18 May 2022 05:12:10 GMT</pubDate>
       
         
@@ -188,14 +188,14 @@
       <category domain="http://yu-uj.github.io/tags/await/">await</category>
       
       
-      <comments>http://yu-uj.github.io/2022/05/18/beb-05-day14/#disqus_thread</comments>
+      <comments>http://yu-uj.github.io/2022/05/18/asynchronous/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>HTML / CSS 기초</title>
-      <link>http://yu-uj.github.io/2022/04/28/beb-05-day20/</link>
-      <guid>http://yu-uj.github.io/2022/04/28/beb-05-day20/</guid>
+      <link>http://yu-uj.github.io/2022/04/28/html-css/</link>
+      <guid>http://yu-uj.github.io/2022/04/28/html-css/</guid>
       <pubDate>Thu, 28 Apr 2022 05:57:36 GMT</pubDate>
       
         
@@ -226,7 +226,7 @@
       <category domain="http://yu-uj.github.io/tags/Fetch/">Fetch</category>
       
       
-      <comments>http://yu-uj.github.io/2022/04/28/beb-05-day20/#disqus_thread</comments>
+      <comments>http://yu-uj.github.io/2022/04/28/html-css/#disqus_thread</comments>
       
     </item>
     
