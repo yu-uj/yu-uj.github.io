@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/2022/04/28/html-css/</loc>
+        <lastmod>2023-04-11T11:37:04.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/2022/04/29/git/</loc>
         <lastmod>2023-04-11T11:33:41.974Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,14 +27,6 @@
     <url>
         <loc>http://yu-uj.github.io/2022/04/29/linux-git-md/</loc>
         <lastmod>2023-04-10T11:21:43.438Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/2022/04/28/html-css/</loc>
-        <lastmod>2023-04-10T11:05:24.549Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
