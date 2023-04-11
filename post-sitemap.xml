@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/2023/04/11/git/</loc>
+        <lastmod>2023-04-11T11:22:01.860Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/2022/04/29/linux-git-md/</loc>
         <lastmod>2023-04-10T11:21:43.438Z</lastmod>
         <changefreq>weekly</changefreq>

@@ -9,8 +9,23 @@
     <atom:link href="http://yu-uj.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>BlockChain Dev</description>
-    <pubDate>Thu, 06 Oct 2022 11:35:06 GMT</pubDate>
+    <pubDate>Tue, 11 Apr 2023 11:22:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>git</title>
+      <link>http://yu-uj.github.io/2023/04/11/git/</link>
+      <guid>http://yu-uj.github.io/2023/04/11/git/</guid>
+      <pubDate>Tue, 11 Apr 2023 11:22:01 GMT</pubDate>
+      
+      
+      
+      
+      
+      
+      <comments>http://yu-uj.github.io/2023/04/11/git/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>project3 JDEX</title>
