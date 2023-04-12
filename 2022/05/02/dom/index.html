@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>dom | YU-UJ</title><meta name="keywords" content="blockchain,Web,codestates,BEB05,Dom,HTML"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="[JS&#x2F;브라우저] DOM 이해하기DOM ?DOM은 Document Object Model의 약자로, HTML 요소를 Object(JavaScript Object)처럼 조작할 수 있는 모델이다. 자바스크립트를 사용할 수 있으면, DOM으로 HTML을 조작할 수 있다. HTML을 조작할 수 있다는 것은 DOM을 위해 여러 뛰어난 웹 개발자들이 모여 H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dom">
+<meta property="og:url" content="http://yu-uj.github.io/2022/05/02/dom/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="[JS&#x2F;브라우저] DOM 이해하기DOM ?DOM은 Document Object Model의 약자로, HTML 요소를 Object(JavaScript Object)처럼 조작할 수 있는 모델이다. 자바스크립트를 사용할 수 있으면, DOM으로 HTML을 조작할 수 있다. HTML을 조작할 수 있다는 것은 DOM을 위해 여러 뛰어난 웹 개발자들이 모여 H">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-05-02T14:08:58.000Z">
+<meta property="article:modified_time" content="2023-04-12T14:13:52.089Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="codestates">
+<meta property="article:tag" content="BEB05">
+<meta property="article:tag" content="Dom">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/05/02/dom/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'dom',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-12 23:13:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">dom</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-05-02T14:08:58.000Z" title="Created 2022-05-02 23:08:58">2022-05-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="dom"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="JS-x2F-브라우저-DOM-이해하기"><a href="#JS-x2F-브라우저-DOM-이해하기" class="headerlink" title="[JS&#x2F;브라우저] DOM 이해하기"></a>[JS&#x2F;브라우저] DOM 이해하기</h1><h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM ?"></a>DOM ?</h2><p>DOM은 Document Object Model의 약자로, HTML 요소를 Object(JavaScript Object)처럼 조작할 수 있는 모델이다. 자<strong>바스크립트를 사용할 수 있으면, DOM으로 HTML을 조작</strong>할 수 있다.</p>
+<p>HTML을 조작할 수 있다는 것은 DOM을 위해 여러 뛰어난 웹 개발자들이 모여 HTML을 철저히 분석했다. 분석한 내용으로 아**주 작은 부분까지 접근할 수 있는 구조(Model; Structure)**을 만들어냈다. 이렇게 만들어진 구조를 이용하여 <strong>HTML로 구성된 웹 페이지를 동적으로 움직이게</strong> 만들 수 있다. 앞서 학습한 조건문과 반복문, 배열, 객체를 활용하면 SNS에서 새롭게 생성되는 게시물을 저장하고 분류하는 작업을 할 수 있다.</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://youtu.be/p5vI5OrLJU8">자바스크립트는 다양한 일</a>을 할 수 있지만 웹 페이지를 제어하기 위한 목적으로 사용되었다. DOM을 학습하여 자바스크립트로 홈페이지를 다이나믹하게 만든다.</p>
+<br>
+
+<hr>
+<h3 id="자바스크립트로-할-수-있는-것들-첨부-동영상"><a href="#자바스크립트로-할-수-있는-것들-첨부-동영상" class="headerlink" title="자바스크립트로 할 수 있는 것들 [첨부 동영상]"></a>자바스크립트로 할 수 있는 것들 [첨부 동영상]</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://youtu.be/p5vI5OrLJU8">자바스크립트로 할 수 있는 7가지</a></p>
+<h2 id="HTML에-JavaScript-적용하기"><a href="#HTML에-JavaScript-적용하기" class="headerlink" title="HTML에 JavaScript 적용하기"></a>HTML에 JavaScript 적용하기</h2><h3 id="태그-이용하기"><a href="#태그-이용하기" class="headerlink" title=" 태그 이용하기"></a><script> 태그 이용하기</h3><p><img src="/image/Web/dom1.png"></p>
+<p>웹 브라우저가 작성된 코드를 해석하는 과정에서 <script> 요소를 만나면, HTML 해석을 잠시 멈추고 스크립트 요소를 먼저 실행한다. <script> 요소는 등장과 함께 실행 된다.</p>
+<br/>
+
+<h3 id="HTML-구조-분석"><a href="#HTML-구조-분석" class="headerlink" title="HTML 구조 분석"></a>HTML 구조 분석</h3><p>자바스크립트에서 <strong>DOM은 document 객체에 구현</strong>되어 있다. 브라우저에서 작동되는 자바스크립트 코드에서 document 객체를 조회할 수 있다.</p>
+<p>→ 크롬 <strong>개발자도구</strong>에서 <strong>document.body 조회</strong>하기</p>
+<p><img src="/image/Web/dom2.png"></p>
+<p>DOM 구조를 조회할 때 <strong>console.dir</strong>은 console.log와 달리 <strong>객체의 모습</strong>으로 출력. </p>
+<br/>
+
+<h3 id="1-자식-엘리먼트-찾기"><a href="#1-자식-엘리먼트-찾기" class="headerlink" title="#1. 자식 엘리먼트 찾기"></a>#1. 자식 엘리먼트 찾기</h3><p>**console.dir(document.body)**의 출력된 객체에서, <strong>children(자식 엘리먼트) 속성</strong>을 찾을 수 있다. 혹은 <strong>document.body.children</strong> 으로 바로 조회할 수 있다.</p>
+<br/>
+
+<h3 id="2-부모-엘리먼트-찾기"><a href="#2-부모-엘리먼트-찾기" class="headerlink" title="#2. 부모 엘리먼트 찾기"></a>#2. 부모 엘리먼트 찾기</h3><p><img src="/image/Web/3.png"></p>
+<p>id가 news-contents인 <strong>div</strong> 엘리먼트의 <strong>부모 엘리먼트</strong>는 <strong>body</strong> 엘리먼트이다. <strong>document.body.children</strong>의 <strong>첫 번째 엘리먼트</strong>를 조회한다. 이때 반복적으로 document.body를 찾는 것 보다 <strong>변수를 선언</strong>하여 <strong>정보를 저장</strong>하고, <strong>참조</strong>하여 사용한다.</p>
+<br/>
+
+<h3 id="3-DOM-순회하기"><a href="#3-DOM-순회하기" class="headerlink" title="#3. DOM 순회하기"></a>#3. DOM 순회하기</h3><p><img src="/image/Web/dom3.png"></p>
+<p>DOM 구조는 회사의 조직도와 비슷함. <strong>가장 상위에 있는 요소</strong>와 <strong>아래에 여러 구성요소</strong>가 서로 <strong>부모-자식 관계</strong>를 가지고 있다. 이런 자료 구조를 <strong>”트리 구조”</strong>.</p>
+<p>⇒ 트리 구조는 <strong>하나의 부모가 자식을 여럿</strong> 가지는 구조가 <strong>반복.</strong> </p>
+<p>⇒ So, <strong>부모가 가진 하나~여러 자식 엘리먼트를 조회</strong>하는 코드 작성시, <strong>여러 번 반복 실행하는 코드가 필요</strong>함.</p>
+<br/>
+
+<h3 id="엘리먼트를-조회하는-코드-작성을-위한-수도-코드"><a href="#엘리먼트를-조회하는-코드-작성을-위한-수도-코드" class="headerlink" title="엘리먼트를 조회하는 코드 작성을 위한 수도 코드"></a>엘리먼트를 조회하는 코드 작성을 위한 수도 코드</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">consoleLogAllElement</span>(<span class="params">element</span>)&#123;</span><br><span class="line"><span class="comment">// nav의 class 이름을 console.log</span></span><br><span class="line"><span class="comment">// nav의 자식 엘리먼트가 있는지 검색 (logo, menu-wrapper)</span></span><br><span class="line">  <span class="comment">//logo의 class 이름을 console.log </span></span><br><span class="line">  <span class="comment">//logo의 자식 엘리먼트가 있는지 검색 (없음)</span></span><br><span class="line">  <span class="comment">//menu-wrapper의 class 이름을 console.log</span></span><br><span class="line">  <span class="comment">//menu-wrapper의 자식 엘리먼트가 있는지 검색 (menu, menu, menu, profile-photo)</span></span><br><span class="line">    <span class="comment">//첫 번째 menu의 class 이름을 console.log</span></span><br><span class="line">    <span class="comment">//첫 번째 menu의 자식 엘리먼트가 있는지 검색 (없음)</span></span><br><span class="line">    <span class="comment">//두 번째 menu의 class 이름을 console.log</span></span><br><span class="line">    <span class="comment">//두 번째 menu의 자식 엘리먼트가 있는지 검색 (없음)</span></span><br><span class="line">    <span class="comment">//세 번째 menu의 class 이름을 console.log</span></span><br><span class="line">    <span class="comment">//세 번째 menu의 자식 엘리먼트가 있는지 검색 (없음)</span></span><br><span class="line">    <span class="comment">//profile-photo의 class 이름을 console.log</span></span><br><span class="line">    <span class="comment">//profile-photo의 자식 엘리먼트가 있는지 검색 (없음)</span></span><br><span class="line"> <span class="comment">//자식 엘리먼트를 모두 탐색했음으로, 함수 실행이 종료</span></span><br><span class="line"><span class="comment">//자식 엘리먼트를 모두 탐색했음으로, 함수 실행이 종료</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br/></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blockchain/">blockchain</a><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/codestates/">codestates</a><a class="post-meta__tags" href="/tags/BEB05/">BEB05</a><a class="post-meta__tags" href="/tags/Dom/">Dom</a><a class="post-meta__tags" href="/tags/HTML/">HTML</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></h3></article></div></main></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/18/asynchronous/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">비동기 - UnderBar 라이브러리</div></div></a></div><div class="next-post pull-right"><a href="/2022/04/29/git/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Git Work Flow</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">비동기 - UnderBar 라이브러리</div></div></a></div><div><a href="/2022/04/28/html-css/" title="HTML &#x2F; CSS 기초"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-28</div><div class="title">HTML &#x2F; CSS 기초</div></div></a></div><div><a href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청</div></div></a></div><div><a href="/2022/04/29/linux-git-md/" title="Linux &#x2F; Git"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-29</div><div class="title">Linux &#x2F; Git</div></div></a></div><div><a href="/2022/04/29/git/" title="Git Work Flow"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-29</div><div class="title">Git Work Flow</div></div></a></div><div><a href="/2022/08/29/project2/" title="project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">project2 HALP ME!!</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS-x2F-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-DOM-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0"><span class="toc-number">1.</span> <span class="toc-text">[JS&#x2F;브라우저] DOM 이해하기</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-number">1.1.</span> <span class="toc-text">DOM ?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%93%A4-%EC%B2%A8%EB%B6%80-%EB%8F%99%EC%98%81%EC%83%81"><span class="toc-number">1.1.1.</span> <span class="toc-text">자바스크립트로 할 수 있는 것들 [첨부 동영상]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%EC%97%90-JavaScript-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="toc-number">1.2.</span> <span class="toc-text">HTML에 JavaScript 적용하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%83%9C%EA%B7%B8-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 태그 이용하기&lt;&#x2F;h3&gt;&lt;p&gt;&lt;img src&#x3D;&quot;&#x2F;image&#x2F;Web&#x2F;dom1.png&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;웹 브라우저가 작성된 코드를 해석하는 과정에서 &lt;script&gt; 요소를 만나면, HTML 해석을 잠시 멈추고 스크립트 요소를 먼저 실행한다. &lt;script&gt; 요소는 등장과 함께 실행 된다.&lt;&#x2F;p&gt;
+&lt;br&#x2F;&gt;
+
+&lt;h3 id&#x3D;&quot;HTML-구조-분석&quot;&gt;&lt;a href&#x3D;&quot;#HTML-구조-분석&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;HTML 구조 분석&quot;&gt;&lt;&#x2F;a&gt;HTML 구조 분석&lt;&#x2F;h3&gt;&lt;p&gt;자바스크립트에서 &lt;strong&gt;DOM은 document 객체에 구현&lt;&#x2F;strong&gt;되어 있다. 브라우저에서 작동되는 자바스크립트 코드에서 document 객체를 조회할 수 있다.&lt;&#x2F;p&gt;
+&lt;p&gt;→ 크롬 &lt;strong&gt;개발자도구&lt;&#x2F;strong&gt;에서 &lt;strong&gt;document.body 조회&lt;&#x2F;strong&gt;하기&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src&#x3D;&quot;&#x2F;image&#x2F;Web&#x2F;dom2.png&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;DOM 구조를 조회할 때 &lt;strong&gt;console.dir&lt;&#x2F;strong&gt;은 console.log와 달리 &lt;strong&gt;객체의 모습&lt;&#x2F;strong&gt;으로 출력. &lt;&#x2F;p&gt;
+&lt;br&#x2F;&gt;
+
+&lt;h3 id&#x3D;&quot;1-자식-엘리먼트-찾기&quot;&gt;&lt;a href&#x3D;&quot;#1-자식-엘리먼트-찾기&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;#1. 자식 엘리먼트 찾기&quot;&gt;&lt;&#x2F;a&gt;#1. 자식 엘리먼트 찾기&lt;&#x2F;h3&gt;&lt;p&gt;**console.dir(document.body)**의 출력된 객체에서, &lt;strong&gt;children(자식 엘리먼트) 속성&lt;&#x2F;strong&gt;을 찾을 수 있다. 혹은 &lt;strong&gt;document.body.children&lt;&#x2F;strong&gt; 으로 바로 조회할 수 있다.&lt;&#x2F;p&gt;
+&lt;br&#x2F;&gt;
+
+&lt;h3 id&#x3D;&quot;2-부모-엘리먼트-찾기&quot;&gt;&lt;a href&#x3D;&quot;#2-부모-엘리먼트-찾기&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;#2. 부모 엘리먼트 찾기&quot;&gt;&lt;&#x2F;a&gt;#2. 부모 엘리먼트 찾기&lt;&#x2F;h3&gt;&lt;p&gt;&lt;img src&#x3D;&quot;&#x2F;image&#x2F;Web&#x2F;3.png&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;id가 news-contents인 &lt;strong&gt;div&lt;&#x2F;strong&gt; 엘리먼트의 &lt;strong&gt;부모 엘리먼트&lt;&#x2F;strong&gt;는 &lt;strong&gt;body&lt;&#x2F;strong&gt; 엘리먼트이다. &lt;strong&gt;document.body.children&lt;&#x2F;strong&gt;의 &lt;strong&gt;첫 번째 엘리먼트&lt;&#x2F;strong&gt;를 조회한다. 이때 반복적으로 document.body를 찾는 것 보다 &lt;strong&gt;변수를 선언&lt;&#x2F;strong&gt;하여 &lt;strong&gt;정보를 저장&lt;&#x2F;strong&gt;하고, &lt;strong&gt;참조&lt;&#x2F;strong&gt;하여 사용한다.&lt;&#x2F;p&gt;
+&lt;br&#x2F;&gt;
+
+&lt;h3 id&#x3D;&quot;3-DOM-순회하기&quot;&gt;&lt;a href&#x3D;&quot;#3-DOM-순회하기&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;#3. DOM 순회하기&quot;&gt;&lt;&#x2F;a&gt;#3. DOM 순회하기&lt;&#x2F;h3&gt;&lt;p&gt;&lt;img src&#x3D;&quot;&#x2F;image&#x2F;Web&#x2F;dom3.png&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;DOM 구조는 회사의 조직도와 비슷함. &lt;strong&gt;가장 상위에 있는 요소&lt;&#x2F;strong&gt;와 &lt;strong&gt;아래에 여러 구성요소&lt;&#x2F;strong&gt;가 서로 &lt;strong&gt;부모-자식 관계&lt;&#x2F;strong&gt;를 가지고 있다. 이런 자료 구조를 &lt;strong&gt;”트리 구조”&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;⇒ 트리 구조는 &lt;strong&gt;하나의 부모가 자식을 여럿&lt;&#x2F;strong&gt; 가지는 구조가 &lt;strong&gt;반복.&lt;&#x2F;strong&gt; &lt;&#x2F;p&gt;
+&lt;p&gt;⇒ So, &lt;strong&gt;부모가 가진 하나~여러 자식 엘리먼트를 조회&lt;&#x2F;strong&gt;하는 코드 작성시, &lt;strong&gt;여러 번 반복 실행하는 코드가 필요&lt;&#x2F;strong&gt;함.&lt;&#x2F;p&gt;
+&lt;br&#x2F;&gt;
+
+&lt;h3 id&#x3D;&quot;엘리먼트를-조회하는-코드-작성을-위한-수도-코드&quot;&gt;&lt;a href&#x3D;&quot;#엘리먼트를-조회하는-코드-작성을-위한-수도-코드&quot; class&#x3D;&quot;headerlink&quot; title&#x3D;&quot;엘리먼트를 조회하는 코드 작성을 위한 수도 코드&quot;&gt;&lt;&#x2F;a&gt;엘리먼트를 조회하는 코드 작성을 위한 수도 코드&lt;&#x2F;h3&gt;&lt;figure class&#x3D;&quot;highlight jsx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;15&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;16&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;17&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;18&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;keyword&quot;&gt;function&lt;&#x2F;span&gt; &lt;span class&#x3D;&quot;title function_&quot;&gt;consoleLogAllElement&lt;&#x2F;span&gt;(&lt;span class&#x3D;&quot;params&quot;&gt;element&lt;&#x2F;span&gt;)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; nav의 class 이름을 console.log&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F; nav의 자식 엘리먼트가 있는지 검색 (logo, menu-wrapper)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;logo의 class 이름을 console.log &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;logo의 자식 엘리먼트가 있는지 검색 (없음)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;menu-wrapper의 class 이름을 console.log&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;menu-wrapper의 자식 엘리먼트가 있는지 검색 (menu, menu, menu, profile-photo)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;첫 번째 menu의 class 이름을 console.log&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;첫 번째 menu의 자식 엘리먼트가 있는지 검색 (없음)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;두 번째 menu의 class 이름을 console.log&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;두 번째 menu의 자식 엘리먼트가 있는지 검색 (없음)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;세 번째 menu의 class 이름을 console.log&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;세 번째 menu의 자식 엘리먼트가 있는지 검색 (없음)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;profile-photo의 class 이름을 console.log&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;profile-photo의 자식 엘리먼트가 있는지 검색 (없음)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt; &lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;자식 엘리먼트를 모두 탐색했음으로, 함수 실행이 종료&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;span class&#x3D;&quot;comment&quot;&gt;&#x2F;&#x2F;자식 엘리먼트를 모두 탐색했음으로, 함수 실행이 종료&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;
+
+&lt;hr&gt;
+&lt;br&#x2F;&gt;</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="project3 JDEX">project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2 HALP ME!!"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2 HALP ME!!"></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2 HALP ME!!">project2 HALP ME!!</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/16/project1/" title="project1 UnderTheSea"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project1 UnderTheSea"></a><div class="content"><a class="title" href="/2022/08/16/project1/" title="project1 UnderTheSea">project1 UnderTheSea</a><time datetime="2022-08-16T08:06:50.000Z" title="Created 2022-08-16 17:06:50">2022-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 / Fetch 네트워크 요청"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Node.js 모듈 사용 / Fetch 네트워크 요청"></a><div class="content"><a class="title" href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 / Fetch 네트워크 요청">Node.js 모듈 사용 / Fetch 네트워크 요청</a><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="비동기 - UnderBar 라이브러리"></a><div class="content"><a class="title" href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리">비동기 - UnderBar 라이브러리</a><time datetime="2022-05-18T05:12:10.000Z" title="Created 2022-05-18 14:12:10">2022-05-18</time></div></div></div></div></div></div><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/05/02/dom/'
+    this.page.identifier = '/2022/05/02/dom/'
+    this.page.title = 'dom'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
