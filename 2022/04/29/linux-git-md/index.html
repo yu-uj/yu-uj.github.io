@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux / Git | YU-UJ</title><meta name="keywords" content="blockchain,Web,codestates,BEB05,Node.js,Linux,CLI,Terminal"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="Linux &#x2F; Git 기초 🚨 **Linked list** : 기본적으로 알아야 하는 CLI 명령어 &#x2F; 패키지와 패키지 매니저 &#x2F; nvm, node.js, npm &#x2F; Sprint - 짝수 생성기     프롬프트(Prompt)터미널은 CLI(Command-Line Interface)이다. 입력하는 글자와 출력되는 글자로 컴퓨터와 소통 할 수 있다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux &#x2F; Git">
+<meta property="og:url" content="http://yu-uj.github.io/2022/04/29/linux-git-md/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="Linux &#x2F; Git 기초 🚨 **Linked list** : 기본적으로 알아야 하는 CLI 명령어 &#x2F; 패키지와 패키지 매니저 &#x2F; nvm, node.js, npm &#x2F; Sprint - 짝수 생성기     프롬프트(Prompt)터미널은 CLI(Command-Line Interface)이다. 입력하는 글자와 출력되는 글자로 컴퓨터와 소통 할 수 있다.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-04-29T11:11:57.000Z">
+<meta property="article:modified_time" content="2023-04-10T11:21:43.438Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="codestates">
+<meta property="article:tag" content="BEB05">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="CLI">
+<meta property="article:tag" content="Terminal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/04/29/linux-git-md/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux / Git',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-10 20:21:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux / Git</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-04-29T11:11:57.000Z" title="Created 2022-04-29 20:11:57">2022-04-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="Linux / Git"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux-x2F-Git-기초"><a href="#Linux-x2F-Git-기초" class="headerlink" title="Linux &#x2F; Git 기초"></a>Linux &#x2F; Git 기초</h1><aside>
+🚨 **Linked list** : 기본적으로 알아야 하는 CLI 명령어 / 패키지와 패키지 매니저 / nvm, node.js, npm / Sprint - 짝수 생성기
+
+</aside>
+
+
+<h3 id="프롬프트-Prompt"><a href="#프롬프트-Prompt" class="headerlink" title="프롬프트(Prompt)"></a>프롬프트(Prompt)</h3><p>터미널은 CLI(Command-Line Interface)이다. 입력하는 글자와 출력되는 글자로 컴퓨터와 소통 할 수 있다.</p>
+<p>키보드의 입력을 확인하고 편집할 수 있는 한 줄의 공간을 프롬프트라고 한다.</p>
+<br>
+
+<h1 id="리눅스-터미널-기본적인-명령어"><a href="#리눅스-터미널-기본적인-명령어" class="headerlink" title="리눅스 터미널 기본적인 명령어"></a>리눅스 터미널 기본적인 명령어</h1><h3 id="리눅스-터미널에서-명령-실행하기"><a href="#리눅스-터미널에서-명령-실행하기" class="headerlink" title="리눅스 터미널에서 명령 실행하기"></a>리눅스 터미널에서 명령 실행하기</h3><ul>
+<li><code>pwd</code> : 현재 위치를 확인</li>
+<li><code>mkdir</code> : 새로운 폴더를 생성</li>
+<li><code>ls</code> : 폴더나 파일의 목록을 출력</li>
+<li><code>open</code> : 현재 폴더를 파일 탐색기로 열기</li>
+<li><code>cd</code> : 폴더에 진입<ul>
+<li>. : 현재 폴더</li>
+<li>.. : 현재 폴더보다 앞에 있는 폴더</li>
+</ul>
+</li>
+<li><code>cat</code> : 파일의 내용을 터미널에 출력</li>
+<li><code>touch</code> : 새로운 파일을 생성</li>
+<li><code>rm</code> : 폴더나 파일을 삭제</li>
+<li><code>mv</code> : 폴더나 파일의 위치를 이동하거나, 이름을 변경<ul>
+<li>mv [폴더나 파일의 이름] [도착 폴더의 이름]</li>
+<li>mv [파일의 이름] [변경할 파일 이름]</li>
+</ul>
+</li>
+<li><code>cp</code> : 폴더나 파일을 복사<ul>
+<li>cp [원본 파일 이름] [복사할 파일 이름]</li>
+</ul>
+</li>
+<li><code>sudo</code> : 관리자 권한을 이해</li>
+<li><code>/</code> : 루트 디렉토리</li>
+<li><code>~</code> : 홈 디렉토리</li>
+</ul>
+<br>
+
+<h3 id="절대-경로-x2F-상대-경로"><a href="#절대-경로-x2F-상대-경로" class="headerlink" title="절대 경로 &#x2F; 상대 경로"></a>절대 경로 &#x2F; 상대 경로</h3><aside>
+💡 절대 경로와 상대 경로의 차이
+
+</aside>
+
+<ul>
+<li>절대 경로의 시작이 루트 디렉토리( &#x2F; )인 것을 이해할 수 있다.</li>
+</ul>
+<p>: 절대 경로는 명령어 pwd로 확인할 수 있다</p>
+<p>: 절대 경로는 기준점으로부터의 절대적인 위치를 나타내는데, 이 기준점을 루트폴더( &#x2F; )라고 한다. 특정 폴더나 파일이 루트폴더로부터 어떤 폴더로 진입하는 경우 만날 수 있는지.</p>
+<ul>
+<li>상대 경로의 시작이 현재 디렉토리( . )인 것을 이해할 수 있다.</li>
+</ul>
+<p>: 상대 경로는 현재 위치로부터 상대적인 위치를 나타낸다.</p>
+<p>: 상대 경로는 특정 폴더 또는 파일의 위치를 현재 위치를 기준점으로 나타내는데, 현재 위치한 폴더는 점( . ), 상위 폴더는 두 개의 점( .. )으로 표현.</p>
+<p>: ls를 통해 확인되는 폴더나 파일은 상대 경로로써 .&#x2F; (&#x3D; 현재 폴더 아래 라는 뜻)을 붙여 표현할 수 있다.</p>
+<br>
+
+<h3 id="ls-명령어-설명-첨부"><a href="#ls-명령어-설명-첨부" class="headerlink" title="ls 명령어 설명 첨부"></a>ls 명령어 설명 첨부</h3><ul>
+<li>ls -l : 옵션 l은 폴더나 파일의 포맷을 전부 표현하라는 의미</li>
+<li>ls -a : “all”의 함축어, 숨어있는 폴더나 파일을 포함한 모든 항목을 터미널에 출력</li>
+<li>ls -la</li>
+</ul>
+<br>
+
+<h3 id="cp-폴더나-파일을-복사"><a href="#cp-폴더나-파일을-복사" class="headerlink" title="cp : 폴더나 파일을 복사"></a>cp : 폴더나 파일을 복사</h3><p>*현재 위치는 ~를 대신해 &#x2F;Users&#x2F;[username] (macOS)로 나타남</p>
+<p><code>cp [원본 파일 이름] [복사할 파일 이름]</code></p>
+<p><code>cp -rf [원본 폴더 이름] [복사할 폴더 이름]</code></p>
+<br>
+
+<h3 id="관리자-root-권한"><a href="#관리자-root-권한" class="headerlink" title="관리자(root) 권한"></a>관리자(root) 권한</h3><p>절대 경로의 기준점인 루트폴더(&#x2F;)는 리눅스의 관리자 영역이다. 일반 사용자의 권한으로는 어떤 폴더나 파일도 생성, 변경, 삭제할 수 없다.</p>
+<p>Linux 관리자의 특징은 어떤 일이 있어도 일반 사용자에게 관리자 권한(&#x3D;루트 권한)을 완전하게 넘기지 않는다. 프로그램을 설치, 변경 또는 삭제할 수 있는 관리자 권한만 전달한다. 사용자와 관리자를 명확히 분리 → 사용자의 실수로 발생하는 시스템 에러로부터 운영체제를 보호한다.</p>
+<p>루트폴더로 이동하여 명령어  mkdir을 이용해 폴더를 생성하면  “Read-only file system” 이라는 에러를 만나는데, 읽기전용이라는 말은 폴더나 파일을 생성, 변경, 삭제할 수 없다는 의미이다.</p>
+<p>*현재 로그인된 사용자를 확인하는 명령어 : <code>whoami</code></p>
+<p>*사용자 폴더의 경로(Path)는 <del>&#x2F; 로 표시된다. 물결기호(</del>)는 루트폴더(&#x2F;)로부터 사용자 폴더(username)까지의 경로를 축약한 형태</p>
+<p>사용자가 새로운 프로그램을 설치하거나 변경 또는 삭제할 때에 사용자가 관리자 권한을 이요할 수 있는 명령어로  sudo를 사용한다.</p>
+<h3 id="sudo-관리자-권한을-획득하는-명령어"><a href="#sudo-관리자-권한을-획득하는-명령어" class="headerlink" title="sudo : 관리자 권한을 획득하는 명령어"></a>sudo : 관리자 권한을 획득하는 명령어</h3><p>명령어 ls -l 을 통해 특정 폴더나 파일이 사용자 또는 관리자의 소유로 생성되었는지 확인할 수 있다. </p>
+<p><code>sudo mkdir [생성할 폴더명]</code></p>
+<p>명령어 sudo를 이용해 생성한 폴더의 소유자는 루트이다. 사용자 권한이 아닌 관리자 권한으로 생성되었다는 뜻이다.</p>
+<br>
+
+<hr>
+<h2 id="텍스트-에디터-nano-사용법"><a href="#텍스트-에디터-nano-사용법" class="headerlink" title="텍스트 에디터 nano 사용법"></a>텍스트 에디터 nano 사용법</h2><p>CLI의 유명한 에디터 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://nolboo.kim/blog/2016/11/15/vim-for-beginner/">vim(vi)</a>, 가장 쉬운 에디터 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.nano-editor.org/">nano</a>.</p>
+<br>
+
+<h3 id="nano-실행"><a href="#nano-실행" class="headerlink" title="nano 실행"></a>nano 실행</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">code hello.js <span class="comment"># hello.js를 VS Code에서 열기.</span></span><br><span class="line"></span><br><span class="line">nano hello.js <span class="comment"># hello.js를 nano에서 열기.</span></span><br><span class="line">nano <span class="comment"># 그냥 실행하기</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="파일-열기"><a href="#파일-열기" class="headerlink" title="파일 열기"></a>파일 열기</h3><p>단축키 <strong>^R (ctrl+R키)</strong></p>
+<p>**^T (ctrl+T키)**를 누른 후 <strong>화살표키</strong>를 이용해 파일 및 디렉토리를 탐색한 후 불러오기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano 파일이름 <span class="comment"># 터미널에서 파일을 지정해서 열기</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="파일-편집-후-종료"><a href="#파일-편집-후-종료" class="headerlink" title="파일 편집 후 종료"></a>파일 편집 후 종료</h3><p>**^X (ctrl+X)**를 누르면 다음과 같은 프롬프트가 등장.</p>
+<p>Save modified buffer (ANSWERING “No” WILL DESTROY CHANGES) ?</p>
+<p>키보드의 Y와 N을 눌러서 저장 여부를 결정.</p>
+<br>
+
+<h3 id="파일-저장"><a href="#파일-저장" class="headerlink" title="파일 저장"></a>파일 저장</h3><p><strong>^0 WriteOut</strong>을 이용하면 해당 내용을 파일에 저장하는 단축키.</p>
+<br>
+
+<hr>
+<h2 id="패키지와-패키지-매니저"><a href="#패키지와-패키지-매니저" class="headerlink" title="패키지와 패키지 매니저"></a>패키지와 패키지 매니저</h2><h3 id="MacOS-패키지-매니저"><a href="#MacOS-패키지-매니저" class="headerlink" title="[MacOS 패키지 매니저]"></a>[MacOS 패키지 매니저]</h3><ul>
+<li><strong>brew update</strong></li>
+<li><strong>brew outdated</strong></li>
+<li><strong>brew upgrade</strong></li>
+<li><strong>brew info</strong></li>
+<li><strong>brew install</strong></li>
+<li><strong>brew list</strong></li>
+<li><strong>brew uninstall</strong></li>
+</ul>
+<br>
+
+<hr>
+<h3 id="JavaScript-런타임-runtime"><a href="#JavaScript-런타임-runtime" class="headerlink" title="JavaScript 런타임(runtime)"></a>JavaScript 런타임(runtime)</h3><p>⇒ 크롬, 사파리 같은 <strong>앱 브라우저</strong></p>
+<br>
+
+<h3 id="런타임"><a href="#런타임" class="headerlink" title="런타임?"></a>런타임?</h3><p>: <strong>프로그래밍 언어가 실행되는 환경</strong></p>
+<p>프로그래밍 언어가 구동되는 환경이다. 어떤 프로그램이 동작할 때, 프로그램이 동작하는 곳이다. 자바스크립트를 이용해 코드를 적었으면 코드가 실행되는 곳이 런타임이다.</p>
+<br>
+
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>이전에는 JavaScript 런타임이 웹 브라우저 밖에 없었으나, node.js의 등장으로 브라우저가 아닌 곳에서 실행될 수 있게 되었다. </p>
+<p>CLI에서  <code>node &lt;file name&gt;</code> 명령어를 입력 → 작성한 코드가 node.js 런타임으로 실행</p>
+<br>
+
+<hr>
+<h2 id="nvm-amp-node-js"><a href="#nvm-amp-node-js" class="headerlink" title="nvm &amp; node.js"></a>nvm &amp; node.js</h2><p>nvm(Node Vesion Manager)을 이용하면 <strong>node.js의 다양한 버전을 설치, 사용</strong>할 수 있음</p>
+<br>
+
+<h3 id="nvm-설치"><a href="#nvm-설치" class="headerlink" title="nvm 설치"></a>nvm 설치</h3><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/nvm-sh/nvm#install--update-script">GitHub - nvm-sh&#x2F;nvm: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</a></p>
+<br>
+
+<h3 id="설치-확인"><a href="#설치-확인" class="headerlink" title="설치 확인"></a>설치 확인</h3><p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5456302e-e7f5-4b7c-913b-9b1caa9d23b0/Untitled.png" alt="Untitled"></p>
+<p>nvm 설치 성공시 화면 → <code>nvm -—version</code> 명령어로 버전 확인</p>
+<br>
+
+<h3 id="node-js-설치"><a href="#node-js-설치" class="headerlink" title="node.js 설치"></a>node.js 설치</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm install <span class="literal">--lts</span> <span class="comment"># 최신 버전 설치</span></span><br><span class="line"></span><br><span class="line">node <span class="literal">-v</span> <span class="comment"># 버전 확인</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://nodejs.org/en/">Node.js</a></p>
+<br>
+
+<hr>
+<h2 id="nvm-사용법"><a href="#nvm-사용법" class="headerlink" title="nvm 사용법"></a>nvm 사용법</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 설치된 버전</span></span><br><span class="line">nvm <span class="built_in">ls</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 특정 버전의 node 설치</span></span><br><span class="line">nvm install <span class="number">12.18</span>.<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 다른 버전으로 변경하여 사용</span></span><br><span class="line">nvm use 버전넘버 </span><br></pre></td></tr></table></figure>
+
+<br>
+
+<hr>
+<h2 id="npm-과-package-json"><a href="#npm-과-package-json" class="headerlink" title="npm 과 package.json"></a>npm 과 package.json</h2><p><strong>남이 만들어놓은 검증된 코드(모듈)</strong> ⇒ npm 모듈</p>
+<p>npm 모듈 활용을 위해 <strong>모듈 정보를 담아둔 파일</strong> ⇒ package.json </p>
+<p>npm은 필요한 모듈을 다운로드할 수 있는, 모듈들이 모여있는 모듈 스토어이다.</p>
+<p>macOS 패키지 매니저가 brew 이듯, node.js 생태계의 패키지 매니저는 npm 이다.</p>
+<br>
+
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>프로그램 실행을 위해 <strong>필요한 모듈들, 프로그램 실행 방법, 테스트 방법</strong> 등이 명시. 실제 모듈은 따로 node_modules 라는 폴더에 저장됨</p>
+<p>프로젝트 코드를 전달시 <code>npm install</code> 명령어를 통해, package.json에서 필요하다고 하는 모듈을 다운로드 할 수 있다.</p>
+<br>
+
+<h3 id="dependency-의존성-모듈"><a href="#dependency-의존성-모듈" class="headerlink" title="dependency(의존성 모듈)"></a>dependency(의존성 모듈)</h3><p>프로그램 <strong>실행과 관계없이 개발을 위해 필요한 모듈</strong>. 개발이나 실행에 해당 모듈을 “의존”한다고 해서 <strong>“의존성 모듈”</strong>. <strong>키에 적힌 것은 모듈 이름, 값은 버전</strong>이다.</p>
+<p><strong>devDependencies</strong> 에 프로젝트 개발하는 환경에서 필요한 모듈들이 무엇인지  적혀 있다.  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mocha는 테스트를 위해 필요한 모듈</span></span><br><span class="line">npm install mocha <span class="literal">--save-dev</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># --save-dev 옵션과 함께 install 실행시 자동으로 devDependencies에 추가</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>dependencies</strong> 는 직접 실행과 관련 있는 모듈. 프로젝트가 돌아가기 위해 반드시 필요한 모듈들이 적혀있음. underscore, React 등…</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;react&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^16.7.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="attr">&quot;react-dom&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^16.7.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># react 라이브러리 사용</span></span><br><span class="line">npm install react</span><br><span class="line">npm install <span class="literal">--save</span> react</span><br><span class="line"></span><br><span class="line"><span class="comment"># --save 옵션과 함께 install 실행시 자동으로 dependencies에 추가</span></span><br><span class="line"><span class="comment"># --save 생략 가능</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="scripts-항목"><a href="#scripts-항목" class="headerlink" title="scripts 항목"></a>scripts 항목</h3><p>CLI에서 사용가능한 명령을 기술(&#x3D;npm script)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;start&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node index.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;mocha test/index.test.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eslint&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;submit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;codestates-submission&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<aside>
+➡️ npm run <스크립트 이름> 으로 실행
+
+</스크립트></aside>
+
+<table>
+<thead>
+<tr>
+<th>작업 내용</th>
+<th>실행 스크립트</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>node.js 앱 실행</td>
+<td>npm run start</td>
+</tr>
+<tr>
+<td>테스트 실행</td>
+<td>npm run test</td>
+</tr>
+<tr>
+<td>코드 검사</td>
+<td>npm run lint</td>
+</tr>
+<tr>
+<td>과제 제출(프로그램시)</td>
+<td>npm run submit</td>
+</tr>
+</tbody></table>
+<hr>
+<br>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blockchain/">blockchain</a><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/codestates/">codestates</a><a class="post-meta__tags" href="/tags/BEB05/">BEB05</a><a class="post-meta__tags" href="/tags/Node-js/">Node.js</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/CLI/">CLI</a><a class="post-meta__tags" href="/tags/Terminal/">Terminal</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/04/29/git/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Git Work Flow</div></div></a></div><div class="next-post pull-right"><a href="/2022/04/28/html-css/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">HTML / CSS 기초</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청</div></div></a></div><div><a href="/2022/04/29/git/" title="Git Work Flow"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-29</div><div class="title">Git Work Flow</div></div></a></div><div><a href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">비동기 - UnderBar 라이브러리</div></div></a></div><div><a href="/2022/04/28/html-css/" title="HTML &#x2F; CSS 기초"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-28</div><div class="title">HTML &#x2F; CSS 기초</div></div></a></div><div><a href="/2022/05/02/dom/" title="DOM의 이해"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-02</div><div class="title">DOM의 이해</div></div></a></div><div><a href="/2022/08/29/project2/" title="project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">project2 HALP ME!!</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-x2F-Git-%EA%B8%B0%EC%B4%88"><span class="toc-number">1.</span> <span class="toc-text">Linux &#x2F; Git 기초</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-Prompt"><span class="toc-number">1.0.1.</span> <span class="toc-text">프롬프트(Prompt)</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#%EB%A6%AC%EB%88%85%EC%8A%A4-%ED%84%B0%EB%AF%B8%EB%84%90-%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-%EB%AA%85%EB%A0%B9%EC%96%B4"><span class="toc-number">2.</span> <span class="toc-text">리눅스 터미널 기본적인 명령어</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%A6%AC%EB%88%85%EC%8A%A4-%ED%84%B0%EB%AF%B8%EB%84%90%EC%97%90%EC%84%9C-%EB%AA%85%EB%A0%B9-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0"><span class="toc-number">2.0.1.</span> <span class="toc-text">리눅스 터미널에서 명령 실행하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%A0%88%EB%8C%80-%EA%B2%BD%EB%A1%9C-x2F-%EC%83%81%EB%8C%80-%EA%B2%BD%EB%A1%9C"><span class="toc-number">2.0.2.</span> <span class="toc-text">절대 경로 &#x2F; 상대 경로</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%84%A4%EB%AA%85-%EC%B2%A8%EB%B6%80"><span class="toc-number">2.0.3.</span> <span class="toc-text">ls 명령어 설명 첨부</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%ED%8F%B4%EB%8D%94%EB%82%98-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EB%B3%B5%EC%82%AC"><span class="toc-number">2.0.4.</span> <span class="toc-text">cp : 폴더나 파일을 복사</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B4%80%EB%A6%AC%EC%9E%90-root-%EA%B6%8C%ED%95%9C"><span class="toc-number">2.0.5.</span> <span class="toc-text">관리자(root) 권한</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sudo-%EA%B4%80%EB%A6%AC%EC%9E%90-%EA%B6%8C%ED%95%9C%EC%9D%84-%ED%9A%8D%EB%93%9D%ED%95%98%EB%8A%94-%EB%AA%85%EB%A0%B9%EC%96%B4"><span class="toc-number">2.0.6.</span> <span class="toc-text">sudo : 관리자 권한을 획득하는 명령어</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%97%90%EB%94%94%ED%84%B0-nano-%EC%82%AC%EC%9A%A9%EB%B2%95"><span class="toc-number">2.1.</span> <span class="toc-text">텍스트 에디터 nano 사용법</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nano-%EC%8B%A4%ED%96%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">nano 실행</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%8C%8C%EC%9D%BC-%EC%97%B4%EA%B8%B0"><span class="toc-number">2.1.2.</span> <span class="toc-text">파일 열기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%8C%8C%EC%9D%BC-%ED%8E%B8%EC%A7%91-%ED%9B%84-%EC%A2%85%EB%A3%8C"><span class="toc-number">2.1.3.</span> <span class="toc-text">파일 편집 후 종료</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%8C%8C%EC%9D%BC-%EC%A0%80%EC%9E%A5"><span class="toc-number">2.1.4.</span> <span class="toc-text">파일 저장</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%ED%8C%A8%ED%82%A4%EC%A7%80%EC%99%80-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%A7%A4%EB%8B%88%EC%A0%80"><span class="toc-number">2.2.</span> <span class="toc-text">패키지와 패키지 매니저</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MacOS-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%A7%A4%EB%8B%88%EC%A0%80"><span class="toc-number">2.2.1.</span> <span class="toc-text">[MacOS 패키지 매니저]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%EB%9F%B0%ED%83%80%EC%9E%84-runtime"><span class="toc-number">2.2.2.</span> <span class="toc-text">JavaScript 런타임(runtime)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%9F%B0%ED%83%80%EC%9E%84"><span class="toc-number">2.2.3.</span> <span class="toc-text">런타임?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js"><span class="toc-number">2.2.4.</span> <span class="toc-text">Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm-amp-node-js"><span class="toc-number">2.3.</span> <span class="toc-text">nvm &amp; node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nvm-%EC%84%A4%EC%B9%98"><span class="toc-number">2.3.1.</span> <span class="toc-text">nvm 설치</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%84%A4%EC%B9%98-%ED%99%95%EC%9D%B8"><span class="toc-number">2.3.2.</span> <span class="toc-text">설치 확인</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js-%EC%84%A4%EC%B9%98"><span class="toc-number">2.3.3.</span> <span class="toc-text">node.js 설치</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm-%EC%82%AC%EC%9A%A9%EB%B2%95"><span class="toc-number">2.4.</span> <span class="toc-text">nvm 사용법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-%EA%B3%BC-package-json"><span class="toc-number">2.5.</span> <span class="toc-text">npm 과 package.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package-json"><span class="toc-number">2.6.</span> <span class="toc-text">package.json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dependency-%EC%9D%98%EC%A1%B4%EC%84%B1-%EB%AA%A8%EB%93%88"><span class="toc-number">2.6.1.</span> <span class="toc-text">dependency(의존성 모듈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scripts-%ED%95%AD%EB%AA%A9"><span class="toc-number">2.6.2.</span> <span class="toc-text">scripts 항목</span></a></li></ol></li></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="project3 JDEX">project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2 HALP ME!!"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2 HALP ME!!"></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2 HALP ME!!">project2 HALP ME!!</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/16/project1/" title="project1 UnderTheSea"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project1 UnderTheSea"></a><div class="content"><a class="title" href="/2022/08/16/project1/" title="project1 UnderTheSea">project1 UnderTheSea</a><time datetime="2022-08-16T08:06:50.000Z" title="Created 2022-08-16 17:06:50">2022-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 / Fetch 네트워크 요청"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Node.js 모듈 사용 / Fetch 네트워크 요청"></a><div class="content"><a class="title" href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 / Fetch 네트워크 요청">Node.js 모듈 사용 / Fetch 네트워크 요청</a><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="비동기 - UnderBar 라이브러리"></a><div class="content"><a class="title" href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리">비동기 - UnderBar 라이브러리</a><time datetime="2022-05-18T05:12:10.000Z" title="Created 2022-05-18 14:12:10">2022-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/04/29/linux-git-md/'
+    this.page.identifier = '/2022/04/29/linux-git-md/'
+    this.page.title = 'Linux / Git'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
