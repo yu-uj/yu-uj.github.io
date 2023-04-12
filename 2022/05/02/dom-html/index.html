@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>dom-html | YU-UJ</title><meta name="keywords" content="blockchain,Web,codestates,BEB05,Dom,HTML,CRUD"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="[JS&#x2F;브라우저] DOM 으로 HTML 조작하기 🚨 CRUD(Create, Read, Update, Delete)에 집중하고, 이해하자. 이후 다양한 trivia에 대해 알아야 한다. DOM에는 HTML에 적용(APPEND)하는 메소드가 따로 있다는 것을 주의!     Goal DOM을 JavaScript로 조작하여 HTML Element를 추가">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dom-html">
+<meta property="og:url" content="http://yu-uj.github.io/2022/05/02/dom-html/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="[JS&#x2F;브라우저] DOM 으로 HTML 조작하기 🚨 CRUD(Create, Read, Update, Delete)에 집중하고, 이해하자. 이후 다양한 trivia에 대해 알아야 한다. DOM에는 HTML에 적용(APPEND)하는 메소드가 따로 있다는 것을 주의!     Goal DOM을 JavaScript로 조작하여 HTML Element를 추가">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-05-02T14:27:06.000Z">
+<meta property="article:modified_time" content="2023-04-12T14:32:29.802Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="Web">
+<meta property="article:tag" content="codestates">
+<meta property="article:tag" content="BEB05">
+<meta property="article:tag" content="Dom">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="CRUD">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/05/02/dom-html/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'dom-html',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-12 23:32:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">dom-html</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-05-02T14:27:06.000Z" title="Created 2022-05-02 23:27:06">2022-05-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/">Web</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="dom-html"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="JS-x2F-브라우저-DOM-으로-HTML-조작하기"><a href="#JS-x2F-브라우저-DOM-으로-HTML-조작하기" class="headerlink" title="[JS&#x2F;브라우저] DOM 으로 HTML 조작하기"></a>[JS&#x2F;브라우저] DOM 으로 HTML 조작하기</h1><aside>
+🚨 CRUD(Create, Read, Update, Delete)에 집중하고, 이해하자. 이후 다양한 trivia에 대해 알아야 한다. DOM에는 HTML에 적용(APPEND)하는 메소드가 따로 있다는 것을 주의!
+</aside>
+
+<br>
+
+<h3 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h3><ul>
+<li>DOM을 JavaScript로 조작하여 HTML Element를 추가 &#x2F; 삭제 &#x2F; 내용 변경<ul>
+<li>createElement - CREATE</li>
+<li>querySelector, querySelectorAll - READ</li>
+<li>textContent, id, classList, setAttribute - UPDATE</li>
+<li>remove, removeChild, <code>innerHTML = “”</code>, <code>textContent = “”</code> - DELETE</li>
+<li>appendChild - APPEND</li>
+<li>innerHTML와 textContent의 차이</li>
+</ul>
+</li>
+<li>DOM을 JavaScript로 조작하여 HTML Element를 추가 &#x2F; 삭제 &#x2F; 내용 변경<ul>
+<li>createElement - CREATE</li>
+<li>querySelector, querySelectorAll - READ</li>
+</ul>
+</li>
+</ul>
+<hr>
+<br>
+
+<h2 id="CREATE-createElement"><a href="#CREATE-createElement" class="headerlink" title="CREATE -createElement"></a>CREATE -createElement</h2><p>document 객체의 createElement 메소드를 이용하여 새로운 div element 만든다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>자바스크립트의 어떤 작업 결과를 담으려면, 변수를 선언하고 작업의 결과를 변수에 할당한다. 여기서 div element를 변수 tweetDiv에 할당한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tweetDiv = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>⇒ 이렇게 생성된 tweetDiv라는 요소는 어디에 연결되지 않은 공중 부양중인 노드이다.</p>
+<p><img src="/image/Web/domhtml1.png"></p>
+<p> 공중에 떠있는 엘리먼트를 확인하려면 ‘APPEND’ 한다.</p>
+<br>
+
+<hr>
+<h2 id="APPEND-append-appendChild"><a href="#APPEND-append-appendChild" class="headerlink" title="APPEND - append, appendChild"></a>APPEND - append, appendChild</h2><p>tweetDiv 변수를 트리 구조와 연결하기 위해 append 라는 메소드를 사용해서 body에 넣는다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">append</span>(tweetDiv)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<hr>
+<h2 id="READ-querySelector-querySelectorAll"><a href="#READ-querySelector-querySelectorAll" class="headerlink" title="READ - querySelector, querySelectorAll"></a>READ - querySelector, querySelectorAll</h2><p>자바스크립트에서 원시 자료형인 변수의 값을 조회하기 위해서는, 변수의 이름으로 직접 조회할 수 있다. </p>
+<ul>
+<li>참조 자료형인 배열 ⇒ <strong>index</strong></li>
+<li>객체 ⇒ <strong>key</strong></li>
+</ul>
+<p>BUT, DOM으로 HTML 엘리먼트의 정보를 조외하기 위해서 <strong>querySelectior</strong>의 첫 번째 인자로 <strong>셀렉터(Selectior)를 전달</strong>하여 확인할 수 있다. 셀렉터로는 <strong>HTML 태그(”[태그명]”), id(”#[id명]”), class(.클래스명)</strong> 세 가지가 주로 사용.</p>
+<p> → <strong>querySelector</strong>는 <strong>셀렉터를 조회</strong>한다는 의미를 가지고 있다. <strong>query</strong>의 의미는 <strong>질문하다</strong>라는 의미.</p>
+<br>
+
+<h3 id="querySelector"><a href="#querySelector" class="headerlink" title="querySelector"></a>querySelector</h3><p>querySelector에 <strong>‘.tweet’</strong>을 첫 번째 인자로 넣으면, <strong>클래스 이름이 tweet인 엘리먼트 중 첫 번째 엘리먼트</strong>를 조회 </p>
+<p>→ 한 개</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [변수] = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.tweet&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="querySelectorAll"><a href="#querySelectorAll" class="headerlink" title="querySelectorAll"></a>querySelectorAll</h3><p><strong>여러 개의 엘리먼트를 한 번에</strong> 가져오려면 <strong>querySelectorAll</strong>을 사용한다. 조회한 HTML 엘리먼트들은 <strong>배열처럼 for문</strong>을 사용할 수 있다. 근데 이제 배열은 아닌… 배열이 아닌 배열 </p>
+<p>→ <strong>유사 배열, 배열형 객체 &#x3D; Array-like Object</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [변수] = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.tweet&#x27;</span>)</span><br><span class="line"><span class="comment">// querySelectorAll로 클래스 이름이 tweet인 모든 html 엘리먼트를 유사 배열로 받아온다</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="getElementById-x3D-querySelector"><a href="#getElementById-x3D-querySelector" class="headerlink" title="getElementById &#x3D; querySelector"></a>getElementById &#x3D; querySelector</h3><p><strong>get으로 시작</strong>하는 <strong>DOM 조회 메소드</strong>는 <strong>querySelector와 비슷한 역할</strong>을 하는 오래된 방식이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> A = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;container&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> B = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#containter&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(A === B) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="⇒-트리-구조에-새-엘리먼트-추가하기"><a href="#⇒-트리-구조에-새-엘리먼트-추가하기" class="headerlink" title="⇒ 트리 구조에 새 엘리먼트 추가하기"></a>⇒ 트리 구조에 새 엘리먼트 추가하기</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">querySelectory</span>(<span class="string">&#x27;#container&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> tweetDiv = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">container.<span class="title function_">append</span>(tweetDiv)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CREATE에서 생성한 div 엘리먼트를 container의 맨 마지막 자식 엘리먼트로 추가한다.</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/image/Web/domhtml2.png"></p>
+<br>
+
+<hr>
+<h2 id="UPDATE-textContent-classList-add"><a href="#UPDATE-textContent-classList-add" class="headerlink" title="UPDATE - textContent, classList.add"></a>UPDATE - textContent, classList.add</h2><p><strong>UPDATE</strong>는 기존에 <strong>빈 div 태그를 업데이트</strong>한다. <strong>textContent</strong>를 사용하여 <strong>빈 div 엘리먼트에 문자열을 입력</strong>한다</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oneDiv) <span class="comment">//&lt;div&gt;&lt;/div&gt;</span></span><br><span class="line">oneDiv.<span class="property">textContent</span> = <span class="string">&#x27;dev&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oneDiv) <span class="comment">//&lt;div&gt;dev&lt;/div&gt;</span></span><br><span class="line"><span class="comment">// textContent를 이용해 문자열을 입력</span></span><br><span class="line"></span><br><span class="line">oneDiv.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;tweet&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oneDiv) <span class="comment">// &lt;div class=&quot;tweet&quot;&gt;dev&lt;/div&gt;</span></span><br><span class="line"><span class="comment">// classList.add를 이용해 &#x27;tweet&#x27; 클래스를 추가</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#container&#x27;</span>)</span><br><span class="line">container.<span class="title function_">append</span>(oneDiv)</span><br><span class="line"><span class="comment">// append를 이용해 container의 자식 요소에 oneDiv를 추가</span></span><br></pre></td></tr></table></figure>
+
+<p>*class, id 외의 다른 attribute를 추가하기</p>
+<p>⇒ MDN에서 <strong>setAttribute</strong> 메소드 검색</p>
+<br>
+
+<hr>
+<h2 id="DELETE-remove-removeChild"><a href="#DELETE-remove-removeChild" class="headerlink" title="DELETE - remove, removeChild"></a>DELETE - remove, removeChild</h2><p>CRUD의 Delete, 삭제하는 법.</p>
+<br>
+
+<h3 id="remove-메소드-삭제할-엘리먼트-위치를-알고-있을-때"><a href="#remove-메소드-삭제할-엘리먼트-위치를-알고-있을-때" class="headerlink" title="remove 메소드 : 삭제할 엘리먼트 위치를 알고 있을 때"></a>remove 메소드 : 삭제할 엘리먼트 위치를 알고 있을 때</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#container&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> tweetDiv = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">container.<span class="title function_">append</span>(tweetDiv)</span><br><span class="line"></span><br><span class="line"><span class="comment">// append 했던 엘리먼트를 삭제</span></span><br><span class="line">tweetDiv.<span class="title function_">remove</span>()</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="innerHTML-여러-개의-자식-엘리먼트를-지울-때"><a href="#innerHTML-여러-개의-자식-엘리먼트를-지울-때" class="headerlink" title="innerHTML : 여러 개의 자식 엘리먼트를 지울 때"></a>innerHTML : 여러 개의 자식 엘리먼트를 지울 때</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#container&#x27;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="comment">// id가 contianer인 엘리먼트 아래의 모든 엘리먼트를 지우기</span></span><br></pre></td></tr></table></figure>
+
+<p>→ innerHTML을 이용하면 간편하지만 보안 문제를 가지고 있어 다른 메소드를 사용함</p>
+<br>
+
+<h3 id="removeChild-자식-엘리먼트를-지정해서-삭제하는-메소드"><a href="#removeChild-자식-엘리먼트를-지정해서-삭제하는-메소드" class="headerlink" title="removeChild : 자식 엘리먼트를 지정해서 삭제하는 메소드"></a>removeChild : 자식 엘리먼트를 지정해서 삭제하는 메소드</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#container&#x27;</span>);</span><br><span class="line"><span class="keyword">while</span> (container.<span class="property">firstChild</span>) &#123;</span><br><span class="line">	container.<span class="title function_">removeChild</span>(container.<span class="property">firstChild</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 모든 자식 엘리먼트를 삭제하기 위해서 반복문[while, for, etc.] 활용</span></span><br><span class="line"><span class="comment">// 자식 엘리먼트가 남아있지 않을 때까지 첫번째 자식 엘리먼트를 삭제하는 코드</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<hr>
+<h3 id="심화로-공부할-것"><a href="#심화로-공부할-것" class="headerlink" title="심화로 공부할 것."></a>심화로 공부할 것.</h3><ul>
+<li>element &#x2F; node 차이<ul>
+<li>difference between element and node in javascript dom</li>
+</ul>
+</li>
+<li>children &#x2F; childNodes 차이<ul>
+<li>difference between children and childNodes in javascript dom</li>
+</ul>
+</li>
+<li>removeChild &#x2F; remove 차이<ul>
+<li>difference between removeChild and remove in javascript dom</li>
+</ul>
+</li>
+<li>forEach는 되는데, reduce는 안되는 이유<ul>
+<li>why array method is not working on nodelist</li>
+</ul>
+</li>
+<li>유사 배열에서 배열로 바꾸는 방법<ul>
+<li>how to convert nodelist into javascript array</li>
+</ul>
+</li>
+</ul>
+<hr>
+<br>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/blockchain/">blockchain</a><a class="post-meta__tags" href="/tags/Web/">Web</a><a class="post-meta__tags" href="/tags/codestates/">codestates</a><a class="post-meta__tags" href="/tags/BEB05/">BEB05</a><a class="post-meta__tags" href="/tags/Dom/">Dom</a><a class="post-meta__tags" href="/tags/HTML/">HTML</a><a class="post-meta__tags" href="/tags/CRUD/">CRUD</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/18/asynchronous/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">비동기 - UnderBar 라이브러리</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/02/dom/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">DOM의 이해</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/05/02/dom/" title="DOM의 이해"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-02</div><div class="title">DOM의 이해</div></div></a></div><div><a href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">비동기 - UnderBar 라이브러리</div></div></a></div><div><a href="/2022/04/28/html-css/" title="HTML &#x2F; CSS 기초"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-28</div><div class="title">HTML &#x2F; CSS 기초</div></div></a></div><div><a href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-18</div><div class="title">Node.js 모듈 사용 &#x2F; Fetch 네트워크 요청</div></div></a></div><div><a href="/2022/04/29/git/" title="Git Work Flow"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-29</div><div class="title">Git Work Flow</div></div></a></div><div><a href="/2022/04/29/linux-git/" title="Linux &#x2F; Git"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-29</div><div class="title">Linux &#x2F; Git</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS-x2F-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-DOM-%EC%9C%BC%EB%A1%9C-HTML-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0"><span class="toc-number">1.</span> <span class="toc-text">[JS&#x2F;브라우저] DOM 으로 HTML 조작하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Goal"><span class="toc-number">1.0.1.</span> <span class="toc-text">Goal</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CREATE-createElement"><span class="toc-number">1.1.</span> <span class="toc-text">CREATE -createElement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APPEND-append-appendChild"><span class="toc-number">1.2.</span> <span class="toc-text">APPEND - append, appendChild</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#READ-querySelector-querySelectorAll"><span class="toc-number">1.3.</span> <span class="toc-text">READ - querySelector, querySelectorAll</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#querySelector"><span class="toc-number">1.3.1.</span> <span class="toc-text">querySelector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#querySelectorAll"><span class="toc-number">1.3.2.</span> <span class="toc-text">querySelectorAll</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getElementById-x3D-querySelector"><span class="toc-number">1.3.3.</span> <span class="toc-text">getElementById &#x3D; querySelector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%87%92-%ED%8A%B8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EC%97%90-%EC%83%88-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0"><span class="toc-number">1.3.4.</span> <span class="toc-text">⇒ 트리 구조에 새 엘리먼트 추가하기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UPDATE-textContent-classList-add"><span class="toc-number">1.4.</span> <span class="toc-text">UPDATE - textContent, classList.add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DELETE-remove-removeChild"><span class="toc-number">1.5.</span> <span class="toc-text">DELETE - remove, removeChild</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#remove-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AD%EC%A0%9C%ED%95%A0-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-%EC%9C%84%EC%B9%98%EB%A5%BC-%EC%95%8C%EA%B3%A0-%EC%9E%88%EC%9D%84-%EB%95%8C"><span class="toc-number">1.5.1.</span> <span class="toc-text">remove 메소드 : 삭제할 엘리먼트 위치를 알고 있을 때</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#innerHTML-%EC%97%AC%EB%9F%AC-%EA%B0%9C%EC%9D%98-%EC%9E%90%EC%8B%9D-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8%EB%A5%BC-%EC%A7%80%EC%9A%B8-%EB%95%8C"><span class="toc-number">1.5.2.</span> <span class="toc-text">innerHTML : 여러 개의 자식 엘리먼트를 지울 때</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#removeChild-%EC%9E%90%EC%8B%9D-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8%EB%A5%BC-%EC%A7%80%EC%A0%95%ED%95%B4%EC%84%9C-%EC%82%AD%EC%A0%9C%ED%95%98%EB%8A%94-%EB%A9%94%EC%86%8C%EB%93%9C"><span class="toc-number">1.5.3.</span> <span class="toc-text">removeChild : 자식 엘리먼트를 지정해서 삭제하는 메소드</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%8B%AC%ED%99%94%EB%A1%9C-%EA%B3%B5%EB%B6%80%ED%95%A0-%EA%B2%83"><span class="toc-number">1.5.4.</span> <span class="toc-text">심화로 공부할 것.</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="project3 JDEX">project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2 HALP ME!!"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2 HALP ME!!"></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2 HALP ME!!">project2 HALP ME!!</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/16/project1/" title="project1 UnderTheSea"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project1 UnderTheSea"></a><div class="content"><a class="title" href="/2022/08/16/project1/" title="project1 UnderTheSea">project1 UnderTheSea</a><time datetime="2022-08-16T08:06:50.000Z" title="Created 2022-08-16 17:06:50">2022-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 / Fetch 네트워크 요청"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Node.js 모듈 사용 / Fetch 네트워크 요청"></a><div class="content"><a class="title" href="/2022/05/18/nodejs-fetch/" title="Node.js 모듈 사용 / Fetch 네트워크 요청">Node.js 모듈 사용 / Fetch 네트워크 요청</a><time datetime="2022-05-18T05:19:20.000Z" title="Created 2022-05-18 14:19:20">2022-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="비동기 - UnderBar 라이브러리"></a><div class="content"><a class="title" href="/2022/05/18/asynchronous/" title="비동기 - UnderBar 라이브러리">비동기 - UnderBar 라이브러리</a><time datetime="2022-05-18T05:12:10.000Z" title="Created 2022-05-18 14:12:10">2022-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/05/02/dom-html/'
+    this.page.identifier = '/2022/05/02/dom-html/'
+    this.page.title = 'dom-html'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
