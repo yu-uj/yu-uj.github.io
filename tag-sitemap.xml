@@ -3,6 +3,41 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/tags/BTA03/</loc>
+        <lastmod>2023-04-13T13:50:41.767Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/NEO/</loc>
+        <lastmod>2023-04-13T13:50:41.767Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/Bithumb/</loc>
+        <lastmod>2023-04-13T13:50:41.767Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/project/</loc>
+        <lastmod>2023-04-13T13:50:41.767Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/blockchain/</loc>
+        <lastmod>2023-04-13T13:50:41.767Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/tags/CRUD/</loc>
         <lastmod>2023-04-12T14:33:29.383Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,13 +74,6 @@
 
     <url>
         <loc>http://yu-uj.github.io/tags/Web/</loc>
-        <lastmod>2023-04-12T14:33:29.383Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/blockchain/</loc>
         <lastmod>2023-04-12T14:33:29.383Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -96,13 +124,6 @@
     <url>
         <loc>http://yu-uj.github.io/tags/Node-js/</loc>
         <lastmod>2023-04-10T11:23:44.163Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/project/</loc>
-        <lastmod>2022-10-06T11:35:06.942Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
