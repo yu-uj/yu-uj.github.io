@@ -7,7 +7,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
 <meta property="article:published_time" content="2022-05-04T12:45:31.000Z">
-<meta property="article:modified_time" content="2023-04-19T12:52:33.338Z">
+<meta property="article:modified_time" content="2023-04-19T12:55:03.233Z">
 <meta property="article:author" content="yu-uj">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="codestates">
@@ -62,7 +62,7 @@ gtag('config', 'G-EKXH2KF4FY');
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2023-04-19 21:52:33'
+  postUpdate: '2023-04-19 21:55:03'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -159,14 +159,14 @@ gtag('config', 'G-EKXH2KF4FY');
 <li><strong>다른 함수의 결과로서 리턴</strong>될 수 있음</li>
 </ul>
 <p><strong>함수를 변수에 할당</strong>할 수 있어서 <strong>함수를 배열의 요소나 객체의 속성값으로 저장</strong>할 수 있다. </p>
-<p>⇒ <strong>함수를 데이터</strong>**[string &#x2F; number &#x2F; boolean &#x2F; array &#x2F; object ]**를 다루듯이 다룰 수 있다는 의미</p>
+<p>⇒ <strong>함수를 데이터</strong> **[string &#x2F; number &#x2F; boolean &#x2F; array &#x2F; object ]**를 다루듯이 다룰 수 있다는 의미</p>
 <br>
 
 <h3 id="1-변수에-함수를-할당하는-경우"><a href="#1-변수에-함수를-할당하는-경우" class="headerlink" title="1. 변수에 함수를 할당하는 경우"></a>1. 변수에 함수를 할당하는 경우</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* **변수 square에 함수를 할당하는 함수 표현식**,</span></span><br><span class="line"><span class="comment"> * 자바스크립트에서 함수는 일급 객체라 변수에 저장 가능함.</span></span><br><span class="line"><span class="comment"> * But, 함수 표현식은 할당 전에는 사용할 수 없음. */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> square = <span class="keyword">function</span> (<span class="params">num</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> num * num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// square에 함수(=일급객체)가 저장되어 있어서 함수 호출 연산자인 ()를 사용 가능</span></span><br><span class="line">output = <span class="title function_">square</span>(<span class="number">7</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(output); <span class="comment">// 49</span></span><br></pre></td></tr></table></figure>
 
 <br>
 
-<p>위의 <strong>함수 표현식</strong>**(function expression)<strong>은 <strong>함수 선언식</strong></strong>(function declaration)*<em>과 다르게 <strong>[호이스팅(Hoistion)]</strong></em>*(<a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)**%EC%9D%B4">https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)**이</a> 적용되지 않음.</p>
+<p>위의 <strong>함수 표현식</strong>(function expression)은 <strong>함수 선언식</strong>(function declaration)과 다르게 <strong>[호이스팅(Hoistion)]</strong>(<a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)%EC%9D%B4">https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)이</a> 적용되지 않음.</p>
 <ul>
 <li><strong>호이스팅</strong>은 <strong>선언된 위치</strong>에 관계없이 <strong>어디서든 함수를 사용</strong>할 수 있게 함</li>
 <li>코드가 실행되는 과정에서 <strong>함수 선언부</strong>를 <strong>코드의 최상단으로</strong> 끌어올리는 것처럼 보이게 함</li>
@@ -195,10 +195,10 @@ gtag('config', 'G-EKXH2KF4FY');
 <br>
 
 <hr>
-<h2 id="고차-함수"><a href="#고차-함수" class="headerlink" title="고차 함수 ?"></a>고차 함수 ?</h2><p><strong>고차 함수</strong>(higher order function)는 <strong>함수를 인자</strong>**(argument)**로 받을 수 있고, <strong>함수의 형태로 리턴</strong>할 수 있는 함수.</p>
+<h2 id="고차-함수"><a href="#고차-함수" class="headerlink" title="고차 함수 ?"></a>고차 함수 ?</h2><p><strong>고차 함수</strong>(higher order function)는 <strong>함수를 인자</strong>(argument)로 받을 수 있고, <strong>함수의 형태로 리턴</strong>할 수 있는 함수.</p>
 <p>함수는 변수에 저장할 수 있다. 그리고 함수는 함수를 담은 변수를 인자로 전달 받을 수 있다. 마찬가지로, 함수 내부에서 변수에 함수를 할당할 수 있다. 그리고 함수는 이 변수를 리턴할 수 있다. 여기서 변수에 할당하지 않고 함수를 바로 이용할 수 있다. 어떤 고차 함수에 함수를 인자로 전달하고, 고차 함수는 함수 자체를 리턴한다. 변수가 빠졌을 뿐, 동일하게 동작한다.</p>
-<p>이때 <strong>다른 함수</strong>(caller)의 <strong>인자</strong>(argument)로 <strong>전달</strong>되는 함수를 콜**백 함수(callback function)**라고 한다. 어떤 작업이 완료되었을 때 호출하는 경우가 많다.</p>
-<p><strong>콜백 함수를 전달받은 고차 함수</strong>는 <strong>함수 내부</strong>에서 이 콜<strong>백 함수를 호출(invoke)</strong> 할 수 있다. <strong>caller</strong>는 <strong>조건</strong>에 따라 <strong>콜백 함수의 실행 여부를 결정</strong>할 수 있다. <strong>호출하지 않을 수</strong>도 있고, <strong>여러 번 실행</strong>할 수도 있다. </p>
+<p>이때 <strong>다른 함수</strong>(caller)의 <strong>인자</strong>(argument)로 <strong>전달</strong>되는 함수를 **콜백 함수(callback function)**라고 한다. 어떤 작업이 완료되었을 때 호출하는 경우가 많다.</p>
+<p><strong>콜백 함수를 전달받은 고차 함수</strong>는 <strong>함수 내부</strong>에서 이 <strong>콜백 함수를 호출(invoke)</strong> 할 수 있다. <strong>caller</strong>는 <strong>조건</strong>에 따라 <strong>콜백 함수의 실행 여부를 결정</strong>할 수 있다. <strong>호출하지 않을 수</strong>도 있고, <strong>여러 번 실행</strong>할 수도 있다. </p>
 <p>‘<strong>함수를 리턴하는 함수</strong>‘를 고안해 낸 논리학자 하스켈 커리의 이름을 따 <strong>커리 함수</strong>라고 한다. 따로 커리 함수라는 용어를 사용하는 경우에 고차 함수란 용어를 ‘<strong>함수를 인자로 받는 함수</strong>‘에만 한정해서 사용하기도 한다. 그러나 정확하게는 <strong>고차 함수</strong>가 <strong>커리 함수를 포함</strong>한다. </p>
 <br>
 
