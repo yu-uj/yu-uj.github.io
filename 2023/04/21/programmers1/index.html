@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Programmers - 중앙값 구하기 | YU-UJ</title><meta name="keywords" content="programmers,코딩테스트,중앙값 구하기,JavaScript"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="중앙값 구하기문제 설명중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다. 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 정수 배열 array가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요. 제한사항 array의 길이는 홀수입니다. 0 &lt; array의">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Programmers - 중앙값 구하기">
+<meta property="og:url" content="http://yu-uj.github.io/2023/04/21/programmers1/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="중앙값 구하기문제 설명중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다. 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 정수 배열 array가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요. 제한사항 array의 길이는 홀수입니다. 0 &lt; array의">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2023-04-21T02:12:35.000Z">
+<meta property="article:modified_time" content="2023-04-21T02:19:17.100Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="programmers">
+<meta property="article:tag" content="코딩테스트">
+<meta property="article:tag" content="중앙값 구하기">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2023/04/21/programmers1/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Programmers - 중앙값 구하기',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-21 11:19:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Programmers - 중앙값 구하기</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2023-04-21T02:12:35.000Z" title="Created 2023-04-21 11:12:35">2023-04-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/PROGRAMMERS/">PROGRAMMERS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="Programmers - 중앙값 구하기"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="중앙값-구하기"><a href="#중앙값-구하기" class="headerlink" title="중앙값 구하기"></a>중앙값 구하기</h1><h3 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a><strong>문제 설명</strong></h3><p>중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다. 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 정수 배열 <code>array</code>가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요.</p>
+<h3 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h3><ul>
+<li><code>array</code>의 길이는 홀수입니다.</li>
+<li>0 &lt; <code>array</code>의 길이 &lt; 100</li>
+<li>1,000 &lt; <code>array</code>의 원소 &lt; 1,000</li>
+</ul>
+<h3 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h3><table>
+<thead>
+<tr>
+<th>array</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[1, 2, 7, 10, 11]</td>
+<td>7</td>
+</tr>
+<tr>
+<td>[9, -1, 0]</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h3 id="입출력-예-설명"><a href="#입출력-예-설명" class="headerlink" title="입출력 예 설명"></a>입출력 예 설명</h3><p>입출력 예 #1</p>
+<ul>
+<li>본문과 동일합니다.</li>
+</ul>
+<p>입출력 예 #2</p>
+<ul>
+<li>9, -1, 0을 오름차순 정렬하면 -1, 0, 9이고 가장 중앙에 위치하는 값은 0입니다.</li>
+</ul>
+<hr>
+<h2 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">array</span>) &#123;</span><br><span class="line">	<span class="comment">// 배열에서 뽑은 값을 배열로 넣기</span></span><br><span class="line">  <span class="keyword">var</span> answer = [];</span><br><span class="line">	<span class="comment">// 배열의 오름차순 정렬, 오름차순으로 정리 안했을시 오류</span></span><br><span class="line">  array.<span class="title function_">sort</span>(<span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">	  <span class="keyword">return</span> a - b;</span><br><span class="line">  &#125;);</span><br><span class="line">	<span class="comment">// 배열의 중간 순번을 정수로 추출하여 저장</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="built_in">parseInt</span>(array.<span class="property">length</span> / <span class="number">2</span>);</span><br><span class="line">	<span class="comment">// 배열에서 중간값을 빼내 출력할 배열로 저장</span></span><br><span class="line">  answer.<span class="title function_">push</span>(array[i]);</span><br><span class="line">	<span class="comment">// 배열로 저장했기 때문에 정수로 다시 출력</span></span><br><span class="line">	<span class="keyword">return</span> <span class="title class_">Number</span>(answer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="다른-사람-풀이"><a href="#다른-사람-풀이" class="headerlink" title="다른 사람 풀이"></a>다른 사람 풀이</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">array</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> array.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)[<span class="title class_">Math</span>.<span class="title function_">floor</span>(array.<span class="property">length</span> / <span class="number">2</span>)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/programmers/">programmers</a><a class="post-meta__tags" href="/tags/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/">코딩테스트</a><a class="post-meta__tags" href="/tags/%EC%A4%91%EC%95%99%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0/">중앙값 구하기</a><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/04/14/project5/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Project5 YDEX</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%A4%91%EC%95%99%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0"><span class="toc-number">1.</span> <span class="toc-text">중앙값 구하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%AC%B8%EC%A0%9C-%EC%84%A4%EB%AA%85"><span class="toc-number">1.0.1.</span> <span class="toc-text">문제 설명</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%A0%9C%ED%95%9C%EC%82%AC%ED%95%AD"><span class="toc-number">1.0.2.</span> <span class="toc-text">제한사항</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9E%85%EC%B6%9C%EB%A0%A5-%EC%98%88"><span class="toc-number">1.0.3.</span> <span class="toc-text">입출력 예</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9E%85%EC%B6%9C%EB%A0%A5-%EC%98%88-%EC%84%A4%EB%AA%85"><span class="toc-number">1.0.4.</span> <span class="toc-text">입출력 예 설명</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%82%B4-%ED%92%80%EC%9D%B4"><span class="toc-number">1.1.</span> <span class="toc-text">내 풀이</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%8B%A4%EB%A5%B8-%EC%82%AC%EB%9E%8C-%ED%92%80%EC%9D%B4"><span class="toc-number">1.2.</span> <span class="toc-text">다른 사람 풀이</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Programmers - 중앙값 구하기"></a><div class="content"><a class="title" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기">Programmers - 중앙값 구하기</a><time datetime="2023-04-21T02:12:35.000Z" title="Created 2023-04-21 11:12:35">2023-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/14/project5/" title="Project5 YDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project5 YDEX"></a><div class="content"><a class="title" href="/2023/04/14/project5/" title="Project5 YDEX">Project5 YDEX</a><time datetime="2023-04-14T07:01:55.000Z" title="Created 2023-04-14 16:01:55">2023-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/13/project4/" title="project4 Bithumb Dagao Neo"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project4 Bithumb Dagao Neo"></a><div class="content"><a class="title" href="/2023/04/13/project4/" title="project4 Bithumb Dagao Neo">project4 Bithumb Dagao Neo</a><time datetime="2023-04-13T13:47:43.000Z" title="Created 2023-04-13 22:47:43">2023-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="project3 JDEX">project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/29/project2/" title="project2 HALP ME!!"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="project2 HALP ME!!"></a><div class="content"><a class="title" href="/2022/08/29/project2/" title="project2 HALP ME!!">project2 HALP ME!!</a><time datetime="2022-08-29T10:28:45.000Z" title="Created 2022-08-29 19:28:45">2022-08-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2023/04/21/programmers1/'
+    this.page.identifier = '/2023/04/21/programmers1/'
+    this.page.title = 'Programmers - 중앙값 구하기'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

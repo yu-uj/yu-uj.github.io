@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/tags/JavaScript/</loc>
+        <lastmod>2023-04-21T02:19:17.100Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/%EC%A4%91%EC%95%99%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2023-04-21T02:19:17.100Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2023-04-21T02:19:17.100Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/programmers/</loc>
+        <lastmod>2023-04-21T02:19:17.100Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/tags/Built-in-higher-order-functions/</loc>
         <lastmod>2023-04-20T13:25:20.657Z</lastmod>
         <changefreq>weekly</changefreq>

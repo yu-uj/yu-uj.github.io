@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Programmers - 중앙값 구하기</title>
+      <link href="/2023/04/21/programmers1/"/>
+      <url>/2023/04/21/programmers1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="중앙값-구하기"><a href="#중앙값-구하기" class="headerlink" title="중앙값 구하기"></a>중앙값 구하기</h1><h3 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a><strong>문제 설명</strong></h3><p>중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다. 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 정수 배열 <code>array</code>가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요.</p><h3 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h3><ul><li><code>array</code>의 길이는 홀수입니다.</li><li>0 &lt; <code>array</code>의 길이 &lt; 100</li><li>1,000 &lt; <code>array</code>의 원소 &lt; 1,000</li></ul><h3 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h3><table><thead><tr><th>array</th><th>result</th></tr></thead><tbody><tr><td>[1, 2, 7, 10, 11]</td><td>7</td></tr><tr><td>[9, -1, 0]</td><td>0</td></tr></tbody></table><h3 id="입출력-예-설명"><a href="#입출력-예-설명" class="headerlink" title="입출력 예 설명"></a>입출력 예 설명</h3><p>입출력 예 #1</p><ul><li>본문과 동일합니다.</li></ul><p>입출력 예 #2</p><ul><li>9, -1, 0을 오름차순 정렬하면 -1, 0, 9이고 가장 중앙에 위치하는 값은 0입니다.</li></ul><hr><h2 id="내-풀이"><a href="#내-풀이" class="headerlink" title="내 풀이"></a>내 풀이</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">array</span>) &#123;</span><br><span class="line"><span class="comment">// 배열에서 뽑은 값을 배열로 넣기</span></span><br><span class="line">  <span class="keyword">var</span> answer = [];</span><br><span class="line"><span class="comment">// 배열의 오름차순 정렬, 오름차순으로 정리 안했을시 오류</span></span><br><span class="line">  array.<span class="title function_">sort</span>(<span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">// 배열의 중간 순번을 정수로 추출하여 저장</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="built_in">parseInt</span>(array.<span class="property">length</span> / <span class="number">2</span>);</span><br><span class="line"><span class="comment">// 배열에서 중간값을 빼내 출력할 배열로 저장</span></span><br><span class="line">  answer.<span class="title function_">push</span>(array[i]);</span><br><span class="line"><span class="comment">// 배열로 저장했기 때문에 정수로 다시 출력</span></span><br><span class="line"><span class="keyword">return</span> <span class="title class_">Number</span>(answer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h2 id="다른-사람-풀이"><a href="#다른-사람-풀이" class="headerlink" title="다른 사람 풀이"></a>다른 사람 풀이</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">array</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> array.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)[<span class="title class_">Math</span>.<span class="title function_">floor</span>(array.<span class="property">length</span> / <span class="number">2</span>)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><br/>]]></content>
+      
+      
+      <categories>
+          
+          <category> PROGRAMMERS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> programmers </tag>
+            
+            <tag> 코딩테스트 </tag>
+            
+            <tag> 중앙값 구하기 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Project5 YDEX</title>
       <link href="/2023/04/14/project5/"/>
       <url>/2023/04/14/project5/</url>
