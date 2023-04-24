@@ -3,15 +3,36 @@
 
 
     <url>
-        <loc>http://yu-uj.github.io/tags/De-fi/</loc>
-        <lastmod>2023-04-24T14:13:40.070Z</lastmod>
+        <loc>http://yu-uj.github.io/tags/Decentralized-Finance/</loc>
+        <lastmod>2023-04-24T14:20:22.880Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/DeFi/</loc>
+        <lastmod>2023-04-24T14:20:22.880Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/%ED%83%88%EC%A4%91%EC%95%99%ED%99%94-%EA%B1%B0%EB%9E%98%EC%86%8C/</loc>
+        <lastmod>2023-04-24T14:20:22.880Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/Decentralize-Exchange/</loc>
+        <lastmod>2023-04-24T14:20:22.880Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yu-uj.github.io/tags/DEX/</loc>
-        <lastmod>2023-04-24T14:13:40.070Z</lastmod>
+        <lastmod>2023-04-24T14:20:22.880Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
