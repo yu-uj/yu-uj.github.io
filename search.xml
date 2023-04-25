@@ -30,6 +30,8 @@
             
             <tag> Decentralized Finance </tag>
             
+            <tag> BlockChain </tag>
+            
         </tags>
       
     </entry>
@@ -219,6 +221,39 @@
             <tag> BEB05 </tag>
             
             <tag> project </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DID (Decentralized Identity)</title>
+      <link href="/2022/07/25/did/"/>
+      <url>/2022/07/25/did/</url>
+      
+        <content type="html"><![CDATA[<h1 id="DID-Decentralized-Identity-탈중앙-신원증명"><a href="#DID-Decentralized-Identity-탈중앙-신원증명" class="headerlink" title="DID(Decentralized Identity, 탈중앙 신원증명) ?"></a>DID(Decentralized Identity, 탈중앙 신원증명) ?</h1><p><strong>데이터의 주권이 개개인에게 있고, 개개인의 데이터를 중앙화된 시스템을 거치지 않고 증명할 수 있는 기술</strong>이다. <strong>분산원장기술(Distributed Ledger Technology, DLT)을 기반</strong>으로 사용자 데이터를 저장하여 <strong>안전하고 편리하게 인증</strong>할 수 있다.</p><ul><li><p>DID는 <strong>데이터 저장소(Registry), 데이터 제공자(Provider), 인증기관(Certificate Authorities)을 분리함.</strong></p></li><li><p><strong>탈중앙화 방식으로 동작</strong>할 수 있도록 설계.</p></li><li><p>DID는 <strong>SSI의 개념을 탈중앙화 방식의 신원증명을 통해 구현</strong>한 것.</p><blockquote><p>**SSI(Self-Sovereign Identity)**란, 당사자 <strong>본인이 신원 증명에 대한 권한</strong>을 갖도록 하는 개념이다.</p></blockquote></li></ul><br/><hr><h2 id="데이터-주권-W3C-과-DID"><a href="#데이터-주권-W3C-과-DID" class="headerlink" title="데이터 주권(W3C)과 DID"></a>데이터 주권(W3C)과 DID</h2><aside>➡️ DID 표준이 등장한 배경을 기술적인 맥락으로 이해하려면 W3C 내의 탈중앙 운동에 대해 이해할 필요가 있다.</aside><br/><h3 id="W3C의-탈중앙-운동"><a href="#W3C의-탈중앙-운동" class="headerlink" title="W3C의 탈중앙 운동"></a>W3C의 탈중앙 운동</h3><blockquote><p><strong>W3C(World Wide Web Consortium; WWW; W3)</strong></p><p>월드 와이드 웹을 위한 표준을 개발 및 장려하는 조직, 팀 버너스 리 중심으로 1994년 10월에 설립.</p></blockquote><p>World Wide Web 창시자 팀 버너스 리는 <strong>W3C 재단을 창립하여 HTML을 표준화</strong>한다. W3C 활동의 본질적 목적은 <strong>웹에서 사용자들이 상호간에 자유롭게 데이터를 주고받게 하기 위함</strong>이었다. </p><p>→ But, 2000년대 이후, 플랫폼 대기업의 등장. 동시에 플랫폼 서비스 <strong>사용자 개개인에 대한 데이터의 주권이 사용자 자신이 아닌 플랫폼 기업에 종속되는 현상</strong> 발생. <strong>데이터 주권이 중앙화 되는 것의 발단.</strong></p><p>→ 글로벌 플랫폼 기업(구글, 페이스북 등)들은 사용자의 데이터를 독점적으로 차지함. 페이스북은 사용자 데이터를 수집하여 맞춤 광고를 제공하는 방식으로 전체 매출의 90% 이상을 내지만, 사용자는 페이스북이 사용중인 자신의 데이터를 확인 불가능.</p><p>→ <strong>데이터의 주권이 특정 기업에 종속되는 현상</strong>이 웹 생태계에 만연, W3C에서 문제 의식을 느낀 후 팀 버너스 리와 탈중앙 운동 전개.</p><br/><h3 id="W3C의-데이터-탈중앙화를-위한-표준화"><a href="#W3C의-데이터-탈중앙화를-위한-표준화" class="headerlink" title="W3C의 데이터 탈중앙화를 위한 표준화"></a>W3C의 데이터 탈중앙화를 위한 표준화</h3><p>W3C의 <strong>데이터 탈중앙 운동</strong>에서 핵심 포인트는 <strong>데이터의 연동.</strong></p><p>→ 글로벌 플랫폼 기업이 데이터를 독점할 수 있는 원인이 보유한 사용자 데이터를 <strong>타 서비스와 연동 불가능</strong>한 이유.</p><p>→ 사용자가 본인 <strong>데이터에 대한 주권을 가지는 탈중앙 생태계를 구축</strong>하기 위해서 <strong>서비스 간 데이터 연동이 핵심</strong>.</p><p>→ W3C는 데이터 연동을 위하여 다양한 <strong>데이터를 종류별로 분류, 표준화 작업</strong>을 진행중에 있다.</p><br/><h3 id="W3C와-DID"><a href="#W3C와-DID" class="headerlink" title="W3C와 DID"></a>W3C와 DID</h3><p>DID 구현에서 문제점은 <strong>중앙화되지 않은 저장소에 개인의 신원을 증명할 수 있는 데이터를 보관</strong>하고, 동시에 <strong>데이터의 무결성과 보안성을 확보</strong>가 어려움.</p><p>→ But, 블록체인 기술의 대중화로 DID 구현시, 탈중앙화된 방식을 사용하여 사용자 신원 데이터를 저장 및 증명 방법을 모색하게 됨.</p><p>→ 2016년 W3C 블록체인 워크샵에서 블록체인 기반 신원 인증을 표준화하자는 제안이 발의되고, 2019년 DID 워킹그룹이 공식 결성됨. DID 기술의 표준화가 DID 워킹그룹에 의해 진행됨.</p><br/><hr><h2 id="W3C-표준화-→-DIDs-탈중앙화-식별자"><a href="#W3C-표준화-→-DIDs-탈중앙화-식별자" class="headerlink" title="W3C 표준화 → DIDs(탈중앙화 식별자)"></a>W3C 표준화 → DIDs(탈중앙화 식별자)</h2><aside>➡️ DIDs(탈중앙화 식별자)라는 명칭을 통해 DID(Decentralization Identity)를 실현할 수 있는 기술 표준화를 설명함.</aside><br/><h3 id="탈중앙화-식별자-DIDs-Decentralized-identifiers"><a href="#탈중앙화-식별자-DIDs-Decentralized-identifiers" class="headerlink" title="탈중앙화 식별자(DIDs; Decentralized identifiers) ?"></a>탈중앙화 식별자(DIDs; Decentralized identifiers) ?</h3><p>DIDs는 <strong>검증가능하고 탈중앙화된 디지털 신원을 위한 새로운 형식의 식별자</strong>다. 예를 들면 ID, Password 같은. 누구나 DID 메소드(DID Method)로 자신의 주소 생성 가능.</p><p>→ DIDs는 마스터키를 활용하여 만들 수 있음.</p><br/><hr><h2 id="DIDs-관련-개념-amp-용어"><a href="#DIDs-관련-개념-amp-용어" class="headerlink" title="DIDs 관련 개념 &amp; 용어"></a>DIDs 관련 개념 &amp; 용어</h2><h3 id="Identity-식별자"><a href="#Identity-식별자" class="headerlink" title="Identity(식별자)"></a>Identity(식별자)</h3><p>: <strong>개인 혹은 단체(법인)등을 구별할 수 있는 고유 값.</strong></p><p>⇒ <strong>ex. email 계정;</strong> A의 이메일 계정 ‘<a href="mailto:&#97;&#x61;&#97;&#x40;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#97;&#x61;&#97;&#x40;&#x65;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a>’이 존재하면, 인터넷에서 해당 이메일 주소를 통해 A라는 사람을 특정 가능. 인터넷 상의 해당 이메일 주소는 오직 하나이며, 해당 이메일 주소 소유주 또한 단 한명. 여기서 해당 이메일은 A를 식별할 수 있게 하는 <strong>고유 식별자</strong>가 된다.</p><br/><h3 id="DID-Document-DID-문서"><a href="#DID-Document-DID-문서" class="headerlink" title="DID Document(DID 문서)"></a>DID Document(DID 문서)</h3><p>: <strong>특정 DID를 어떻게 사용하는지에 대해 설명된 문서.</strong> 각 DID 문서는 <strong>암호학적 요소, 검증 메소드, 서비스 엔드포인트 등으로 표현</strong>될 수 있다. <strong>DID 식별자와 주체가 상호 작용</strong>을 하기 위한 <strong>서비스 엔드포인트들을 포함</strong>한다.</p><br/><h3 id="DID-Method-DID-메소드"><a href="#DID-Method-DID-메소드" class="headerlink" title="DID Method(DID 메소드)"></a>DID Method(DID 메소드)</h3><p>: 특정 <strong>분산 원장 혹은 네트워크</strong>에서 DID 관련 <strong>DID 문서들을 생성 &#x2F; 읽기 &#x2F; 갱신 &#x2F; 비활성화 하는 메커니즘.</strong></p><br/><h3 id="DID-형식"><a href="#DID-형식" class="headerlink" title="DID 형식"></a>DID 형식</h3><p><img src="/image/BC/did1.png"></p><p><img src="/image/BC/did2.png"></p><ul><li><strong>did</strong><ul><li><strong>문자열이 did이</strong>고, 해당 주소가 <strong>did 스키마에 따른 것</strong>임을 나타냄.</li><li><strong>항상 did</strong>로 시작.</li></ul></li><li><strong>example</strong><ul><li><strong>did 메소드의 이름</strong>, did는 메소드별로 다르게 처리됨.</li></ul></li><li>1<strong>23456789abcdefghi</strong><ul><li>DID 메소드 안에서 사용되는 고유 아이디.</li></ul></li><li><strong>did 아이디</strong>가 주는 핵심 정보 → <strong>DID 문서가 어디에 위치</strong>했는지!</li><li><strong>ID 관련 정보</strong>는 <strong>did 문서</strong>에 보관됨.</li></ul><br/><h3 id="DID-문서-내용"><a href="#DID-문서-내용" class="headerlink" title="DID 문서 내용"></a>DID 문서 내용</h3><p><img src="/image/BC/did3.png"></p><ul><li><strong>DID 문서 내용</strong>의 핵심 정보 : <strong>id의 제어권, 소유권을 증명</strong>할 수 있는 <strong>공개키 및 인증 정보</strong>.<ul><li><strong>id</strong><ul><li>해당 <strong>did 문서를 설명하는 아이디.</strong></li></ul></li><li><strong>공개키</strong><ul><li>해당 아이디와 관련된 <strong>공개키 리스트.</strong></li></ul></li><li><strong>인증정보</strong><ul><li>해당 아이디의 <strong>소유권 증명을 위한 정보.</strong></li></ul></li><li><strong>서비스</strong><ul><li>해당 아이디와 <strong>상호작용 가능한 서비스</strong>들 리스트.</li></ul></li></ul></li></ul><p><strong>⇒ 포인트 : 어떤 개인정보도 저장하지 않음.</strong></p><br/><h3 id="DID-Registry"><a href="#DID-Registry" class="headerlink" title="DID Registry"></a>DID Registry</h3><p><img src="/image/BC/did4.png"></p><p>각 DID 메소드가 다르고, DID 사용 블록체인 플랫폼이 다른 상황에서 DID Document를 가져오게되면 복잡한 일이 발생. 이 문제의 해결 방법이 W3C 공식문서 DID Registry 파트에 있음.</p><br/><h3 id="DIF-Decentralized-Identity-Foundation-글로벌-조직"><a href="#DIF-Decentralized-Identity-Foundation-글로벌-조직" class="headerlink" title="DIF(Decentralized Identity Foundation) 글로벌 조직"></a>DIF(Decentralized Identity Foundation) 글로벌 조직</h3><p>: DIF는 <strong>전세계 사용자로 하여금 DID 사용이 쉽도록 지원을 위해 만들어진 조직.</strong> </p><ul><li>가입 회사 : Sovirn, uport, Civic, MS, IBM, Master Card  등.</li><li>DID <strong>소유자가 Agent</strong>일 때, DID로 <strong>Universal Resolver에서 DID Document</strong>를 뽑아낼 수 있음.</li><li>DIF는 <strong>DID 표준을 만들어 DID를 활용 소프트웨어</strong>를 만드는 주요 역할 수행.<ul><li><strong>DIF 유니버셜 리졸버(DIF Universal Resolver);</strong> DID 드라이버 컬렉션을 사용하여 <strong>구현 및 분산 된 시스템에서 DID를 조회 및 사용하는 표준</strong> 방법 제공. → DID와 연결된 <strong>DPKI 메타데이터를 캡슐화</strong> 하는 <strong>DID Document Object(DDO)를 반환하는 서버</strong>.</li></ul></li></ul><br/><h3 id="DID-Authentication-인증"><a href="#DID-Authentication-인증" class="headerlink" title="DID Authentication(인증)"></a>DID Authentication(인증)</h3><p>[ DID 인증 절차 ]</p><p>→ 회사(company)에서 DID 소유권자에게 DID의 유무 확인을 위해 소유권자에게 challenge를 신청한다.</p><p>→ 소유자인 당사자는 회사에게 응답으로 인증정보 포함 DID를 전달한다.</p><p>→ 회사는 응답받은 DID로 Universal Resolver에서 DID document를 가져온다.</p><p>→ DID document 안에 담긴 인증정보로 소유자에게 받았던 response를 검사하고 확인한다.</p><p>→ response 검사를 통하여 응답한 소유자가 DID를 소유하고 있는지 확인한다.</p><br/><p><img src="/image/BC/did5.png"></p><p>⇒ 신원을 검증하고 싶을 때, Universal Resolver에 있는 DID document에서 인증 정보를 가져와 DID 소유자와 소유권 확인 가능.</p><p>⇒ 소유자가 제시한 DID와 Universal Resolver의 DID document에 기록된 정보를 대치하여 확인. 이 과정으로 소유자가 제시한 정보의 진위여부를 확인하는 절차를 거친다.</p><br/><hr><br/>]]></content>
+      
+      
+      <categories>
+          
+          <category> BLOCKCHAIN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> BlockChain </tag>
+            
+            <tag> DID </tag>
+            
+            <tag> Decentralized Identity </tag>
+            
+            <tag> 탈중앙 신원증명 </tag>
+            
+            <tag> dApp </tag>
             
         </tags>
       
