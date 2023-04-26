@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>SSI (Self-Sovereign Identity) | YU-UJ</title><meta name="keywords" content="BlockChain,DID,dApp,SSI,Self-Sovereign Identity"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="SSI(Self-Sovereign Identity) ?블록체인을 기반으로 자신을 증명할 수 있는 정보를 스스로 관리 및 보관하고, 신원증명이 필요한 서비스 이용시에 인증정보를 제3자에게 맡기는 것이 아닌 사용자 본인이 직접 관리하도록 데이터 주권을 사용자에게 돌려주는 기술 개념.   DID &amp; SSI DID는 SSI의 개념을 탈중앙화된 방식으로 구현">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSI (Self-Sovereign Identity)">
+<meta property="og:url" content="http://yu-uj.github.io/2022/07/26/ssi/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="SSI(Self-Sovereign Identity) ?블록체인을 기반으로 자신을 증명할 수 있는 정보를 스스로 관리 및 보관하고, 신원증명이 필요한 서비스 이용시에 인증정보를 제3자에게 맡기는 것이 아닌 사용자 본인이 직접 관리하도록 데이터 주권을 사용자에게 돌려주는 기술 개념.   DID &amp; SSI DID는 SSI의 개념을 탈중앙화된 방식으로 구현">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-07-26T08:59:33.000Z">
+<meta property="article:modified_time" content="2023-04-26T09:06:44.338Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="BlockChain">
+<meta property="article:tag" content="DID">
+<meta property="article:tag" content="dApp">
+<meta property="article:tag" content="SSI">
+<meta property="article:tag" content="Self-Sovereign Identity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/07/26/ssi/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SSI (Self-Sovereign Identity)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-26 18:06:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SSI (Self-Sovereign Identity)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-07-26T08:59:33.000Z" title="Created 2022-07-26 17:59:33">2022-07-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/BLOCKCHAIN/">BLOCKCHAIN</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="SSI (Self-Sovereign Identity)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="SSI-Self-Sovereign-Identity"><a href="#SSI-Self-Sovereign-Identity" class="headerlink" title="SSI(Self-Sovereign Identity) ?"></a>SSI(Self-Sovereign Identity) ?</h1><p><strong>블록체인을 기반</strong>으로 <strong>자신을 증명할 수 있는 정보를 스스로 관리 및 보관</strong>하고, 신원증명이 필요한 서비스 이용시에 인증정보를 제3자에게 맡기는 것이 아닌 사용자 본인이 직접 관리하도록 <strong>데이터 주권을 사용자에게 돌려주는 기술 개념</strong>.</p>
+<br>
+
+<h2 id="DID-amp-SSI"><a href="#DID-amp-SSI" class="headerlink" title="DID &amp; SSI"></a>DID &amp; SSI</h2><blockquote>
+<p><strong>DID</strong>는 <strong>SSI의 개념을 탈중앙화된 방식으로 구현</strong>한, 자신의 개인 정보를 선택적으로 제출할 수 있게 만든 <strong>탈중앙화된 자기주권형 신원증명기술</strong>이다.</p>
+</blockquote>
+<p>DID는 기존 중앙화된 인증방식에서 탈중앙화 방식의 신원 증명으로 <strong>자기 자신이 신원증명에 대한 권한을 갖도록 하겠다는 SSI 개념을 현실화</strong> 한 것이다. </p>
+<p>⇒ <strong>“탈중앙화 기반 자기주권형 신원증명기술”</strong></p>
+<ul>
+<li><p><strong>DID는 SSI를 블록체인을 통해서 현실화한 것?</strong></p>
+<p>  반만 맞고, 반은 오답.</p>
+<ul>
+<li>SSI는 사용자가 스스로 자신의 신원정보를 관리, 공개 범위를 결정해서 스스로 프라이버시를 보호하는 개념.</li>
+<li>DID는 SSI의 개념을 탈중앙화 방식으로 구현하기 위한 기술로, 데이터를 탈중앙화된 방식으로 저장하는 여러 가지 방법 중에서 블록체인이 있는 것.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h2 id="SSI의-개념"><a href="#SSI의-개념" class="headerlink" title="SSI의 개념"></a>SSI의 개념</h2><p><strong>스스로가 독립적인 권한을 지닌 신원.</strong> 즉, <strong>“스스로에게 부여한 신원”</strong>. 신원의 소유권을 가진 주체가 <strong>신원에 대한 권리를 가지고 공개 대상과 범위를 선택할 수 있는 개념</strong>이다. </p>
+<h3 id="SSI가-필요한-이유"><a href="#SSI가-필요한-이유" class="headerlink" title="SSI가 필요한 이유"></a>SSI가 필요한 이유</h3><ul>
+<li><p>인터파크 고객정보 천만건 유출 공격 사례</p>
+<p>  2015년 말 발생한 ‘인터파크 개인정보 유출사고’는 인터파크 가입자 1,030만 명의 개인정보가 유출된 대형 보안사고. 개인정보 유출 피해자 2400여명은 민사 소송을 진행, 회원 1인당 10만원의 보상을 지급하는 판결로 끝남.</p>
+</li>
+</ul>
+<p>⇒ 이런 인터넷 개인정보 유출과 신원 도용 사고가 지속적으로 발생, 개인 신원정보를 안전하게 관리하면서 편의성은 높이는 새로운 방식의 신원관리의 필요성이 논의됨.</p>
+<br>
+
+<hr>
+<h2 id="신원관리-모델-종류"><a href="#신원관리-모델-종류" class="headerlink" title="신원관리 모델 종류"></a>신원관리 모델 종류</h2><p><img src="/image/BC/ssi1.png"></p>
+<h3 id="1세대-개별-신원-모델-Siloed-Identity"><a href="#1세대-개별-신원-모델-Siloed-Identity" class="headerlink" title="1세대 - 개별 신원 모델(Siloed Identity)"></a>1세대 - 개별 신원 모델(Siloed Identity)</h3><p>개별 신원 모델은 <strong>개별 서비스마다 이용자의 아이디와 패스워드를 저장하고 신원확인 서비스를 제공하는 형태.</strong></p>
+<ul>
+<li>신원관리 주체 : 개별 서비스 제공자.</li>
+<li>이용자는 각 서비스마다 회원가입을 진행, 각각 ID와 Password 관리가 필요.<ul>
+<li>서비스별 보안 수준에 따른 신원의 대량 유출 가능성 발생.</li>
+<li>서비스별 통일 불가능한 ID 및 Password 정책으로 인해 이용자의 관리가 어려움.</li>
+<li>각각 서비스 마다 ID, Password 형태가 달라서 이용자 편의성 떨어짐.</li>
+</ul>
+</li>
+</ul>
+<aside>
+➡️ **개별 신원 모델 특징**
+
+<ul>
+<li>개인이 개별 사이트 ID와 Password 관리 필요</li>
+<li>개별 서비스 제공자에게 정보보호의무 가중, 천문학적 관리 비용 발생.</li>
+<li>서비스별 보안 수준에 따른 개인정보 유출 우려</li></ul></aside>
+
+<br>
+
+<h3 id="2세대-연합형-신원-모델-Federated-Identity"><a href="#2세대-연합형-신원-모델-Federated-Identity" class="headerlink" title="2세대 - 연합형 신원 모델(Federated Identity)"></a>2세대 - 연합형 신원 모델(Federated Identity)</h3><p>2세대 연합형 신원모델은 구글과 카카오 같은 연합신원을 제공하는 기업이 신원확인 서비스를 제공하는 모델.</p>
+<ul>
+<li>신원관리 주체 : 중앙화된 연결 서비스 제공자(ex. 구글, 카카오, 메타).</li>
+<li>이용자는 스스로 선택한 신원관리 서비스 제공자를 통해 ID, Password 관리.<ul>
+<li>신원관리 주체인 증앙화된 연결 서비스는 로그인(OpenID, Oauth) 제공.</li>
+<li>개인 정보를 이용하고자하는 다른 개별 서비스에 서비스를 제공한다.</li>
+</ul>
+</li>
+</ul>
+<aside>
+➡️ **연합형 신원 모델 특징**
+
+<ul>
+<li>사용자의 편의성 제고</li>
+<li>글로벌 기업의 개인정보 독점적 확보</li>
+<li>사용자 개인정보에 대한 권리 주장이 어려움</li>
+<li>개인정보가 독점, 지속적인 유출 위험성 존재</li></ul></aside>
+
+<br>
+
+<h3 id="3세대-자기-주권-신원-모델-Self-Sovereign-Identity"><a href="#3세대-자기-주권-신원-모델-Self-Sovereign-Identity" class="headerlink" title="3세대 - 자기 주권 신원 모델(Self-Sovereign Identity)"></a>3세대 - 자기 주권 신원 모델(Self-Sovereign Identity)</h3><p>자기 주권 신원은 개인이 디지털 상의 신원주권을 가지게 될 때, 개인정보를 자신 스스로 소유하는 개념.</p>
+<p>개인은 개인정보 발급 내역만 블록체인 같은 분산원장에 기록하고, 특정 상황에서 개인정보가 필요하면 개인정보 발급자(Issuer)에게 개인의 신원을 증명할 신원정보를 받아 검증자(verifier)에게 신원정보를 공유할 수 있는 모델.</p>
+<ul>
+<li>신원관리 주체 : 사용자 개인.</li>
+<li>개인이 필요로 할 때 자신의 신원정보를 생성하여 제공 가능.<ul>
+<li>제3의 신원관리 주체 없이 안전하고, 편리하게 개인 신원정보 사용 가능.</li>
+<li>But, 본인이 데이터에 대한 주권을 가지게 된다는 것은 데이터에 대한 챙김과 의무가 강화됨.<ul>
+<li>예를 들어 비밀번호 분실시에 복구 불가능. 플랫폼 서버에 저장된 개인정보를 통해 필요하면 신원을 인증하여 비밀번호 재발급 받는 것이 불가능. SSI에서는 자신의 신원 정보에 대한 최고 접근자가 개인(본인)이라 복구 방법이 없음.</li>
+<li>예시; A의 대학졸업증명서 발급 시나리오.<ol>
+<li>대학 졸업 증명서는 분산원장에 저장됨. 대학(신원정보발행자, Issuer)에 자신의 신원증명정보(DID)를 주고 대학졸업증명서(VC)를 받는다.</li>
+<li>대학(Issuer)는 당사자(A)에게 받은 신원증명정보와 분산원장에 저장된 대학졸업증명서의 소유자 정보가 일치하는지 확인.</li>
+<li>일치하면 당사자(A)에게 대학졸업증명서 발급.</li>
+<li>A는 해당 서류 제출을 요구하는 회사(Verifier)에 졸업증명서(VP)를 제공하면서, 졸업증명서의 소유자임을 증명하는 정보도 같이 제공.</li>
+<li>회사(Verifier)는 A가 제공한 졸업증명서의 소유자의 진위 여부를 분산원장에 저장된 정보를 통해 검증. 이런 과정을 통해 A는 졸업증명서를 제출하고, 진위여부를 판별 받음.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<aside>
+➡️ **자기 주권 신원 모델 특징**
+
+<ul>
+<li>신원이 분산 관리되기 때문에, 이전 세대의 신원관리모델에 비해 가용성 및 무결성이 높음</li>
+<li>통합된 분산원장 관리가 가능하면 확장성이 더 높아짐</li>
+<li>신원확인 정보를 블록체인(분산원장)에 공유하여 신원확인 필요한 서비스를 활용할 때 사용</li>
+<li>비밀번호 분실시 재발급 및 복구가 힘듦</li></ul></aside>
+
+<p><img src="/image/BC/ssi2.png"></p>
+<br>
+
+<h3 id="각-세대별-인증-방식-비교"><a href="#각-세대별-인증-방식-비교" class="headerlink" title="각 세대별 인증 방식 비교"></a>각 세대별 인증 방식 비교</h3><table>
+<thead>
+<tr>
+<th>세대</th>
+<th>1세대 인증</th>
+<th>2세대 인증</th>
+<th>3세대 인증</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>방식</td>
+<td>중앙화</td>
+<td>하이브리드</td>
+<td>탈중앙화</td>
+</tr>
+<tr>
+<td>내용</td>
+<td>서비스 제공자가 ID, Password 기반으로 저장</td>
+<td>제3자가 OAuth 기반으로 제공</td>
+<td>블록체인 기반으로 사용자가 소유</td>
+</tr>
+<tr>
+<td>인증서 보관장소</td>
+<td>서비스 서버</td>
+<td>제3자 서버</td>
+<td>사용자 지정</td>
+</tr>
+<tr>
+<td>예시</td>
+<td>기존 일반 웹사이트</td>
+<td>메타, 카카오톡, 구글 로그인</td>
+<td>개발중</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>단순함</td>
+<td>일괄 관리 가능</td>
+<td>자기 주권, 해킹 등의 대량 정보 유출건 없음</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>해킹 등의 정보 유출 위협</td>
+<td>해킹 등의 정보 유출 위협, 특정 플랫폼에 종속</td>
+<td>초기 설정이 어려움</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="SSI-구성-요소"><a href="#SSI-구성-요소" class="headerlink" title="SSI 구성 요소"></a>SSI 구성 요소</h2><h3 id="DIDs-Decentralized-Identifier-탈중앙화-식별자"><a href="#DIDs-Decentralized-Identifier-탈중앙화-식별자" class="headerlink" title="DIDs(Decentralized Identifier; 탈중앙화 식별자)"></a>DIDs(Decentralized Identifier; 탈중앙화 식별자)</h3><p>DIDs는 검증가능하고 탈중앙화된 디지털 신원을 위한 신식 식별자. 누구나 DID 메소드를 통해 자신의 주소 생성이 가능하고, DID는 주소이면서 마스터키를 활용하여 만들 수 있다. 예를 들면 ID 및 Password로 생각.</p>
+<br>
+
+<h3 id="DID-Auth-DID-Authentication"><a href="#DID-Auth-DID-Authentication" class="headerlink" title="DID Auth(DID Authentication)"></a>DID Auth(DID Authentication)</h3><p>DID 소유자가 개인키를 지닌 것을 간단히 인증할 수 있는 방법을 다룬다. DID를 이용한 인증법에 대한 표준화는 DIF(Decentralized Identify Foundation)에서 진행.</p>
+<br>
+
+<h3 id="DKMS-Decentralized-Key-Management-System-탈중앙-키관리-시스템"><a href="#DKMS-Decentralized-Key-Management-System-탈중앙-키관리-시스템" class="headerlink" title="DKMS(Decentralized Key Management System; 탈중앙 키관리 시스템)"></a>DKMS(Decentralized Key Management System; 탈중앙 키관리 시스템)</h3><p>신원 증명에 사용하는 개인키를 어떤 방식으로 관리할 것인지에 대해 다룸.</p>
+<br>
+
+<h3 id="Verifiable-Credentials-검증가능한-크레덴셜"><a href="#Verifiable-Credentials-검증가능한-크레덴셜" class="headerlink" title="Verifiable Credentials(검증가능한 크레덴셜)"></a>Verifiable Credentials(검증가능한 크레덴셜)</h3><p>아이디의 소유자가 어떤 것을 할 수 있는 자격을 갖췄다는 것을 검증하는 방법을 다룸.</p>
+<br>
+
+<hr>
+<h2 id="SSI-구현을-위한-요소"><a href="#SSI-구현을-위한-요소" class="headerlink" title="SSI 구현을 위한 요소"></a>SSI 구현을 위한 요소</h2><p><img src="/image/BC/ssi3.png"></p>
+<h3 id="1-Issuer-발행자-발행자"><a href="#1-Issuer-발행자-발행자" class="headerlink" title="1. Issuer(발행자); 발행자"></a>1. Issuer(발행자); 발행자</h3><p>Issuer(발행자)는 신원정보를 발급하는 주체. Verifiable Credential(검증가능한 크레덴셜; VC)을 발행하는 주체로, 정보주체의 요구에 의해서 신원정보와 DID를 발급하는 기관. 발행자는 발급한 정보에 대해 신뢰할 수 있는 신원정보를 전달한다.</p>
+<br>
+
+<h3 id="2-Holder-소유자-자격증명-소유자"><a href="#2-Holder-소유자-자격증명-소유자" class="headerlink" title="2. Holder(소유자); 자격증명 소유자"></a>2. Holder(소유자); 자격증명 소유자</h3><p>Holer(소유자)는 신원정보를 소유한 주체. 정보주체로 DID를 활용하여 본인의 신원을 증명하고자 하는 사용자. 시스템에서는 DID를 발급 및 제출.</p>
+<br>
+
+<h3 id="3-Verifier-검증자-자격증명-검증자"><a href="#3-Verifier-검증자-자격증명-검증자" class="headerlink" title="3. Verifier(검증자); 자격증명 검증자"></a>3. Verifier(검증자); 자격증명 검증자</h3><p>Verifier(검증자)는 신원정보를 검증하는 주체. 정보 주체인 Holder로부터 Verifiable Presentation(검증가능한 프레젠테이션; VP)을 받아 신원정보를 검증하는 주체.</p>
+<p>DID로 신원 확인 후, 검증자는 이 신원정보가 발급기관인 Issuer가 발급한 유효 신원정보인지 검증데이터 저장소를 통해 검증함.</p>
+<br>
+
+<h3 id="4-Verifiable-Data-Registry-검증데이터-저장소-블록체인-등의-분산저장소"><a href="#4-Verifiable-Data-Registry-검증데이터-저장소-블록체인-등의-분산저장소" class="headerlink" title="4. Verifiable Data Registry(검증데이터 저장소); 블록체인 등의 분산저장소"></a>4. Verifiable Data Registry(검증데이터 저장소); 블록체인 등의 분산저장소</h3><p>정보주체의 식별자와 Issuer(발급기관)의 인증서, 신원증명 해지내역, 신원증명 스키마 등이 등록된 분산원장 기반의 데이터 무결성이 확보된 저장소. Verifiable Data Registry(검증데이터 저장소)는 반드시 블록체인일 필요는 없다. Holder, Issuer, Verifier가 합의한 분산원장이면 사용 가능.</p>
+<br>
+
+<hr>
+<br>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/BlockChain/">BlockChain</a><a class="post-meta__tags" href="/tags/DID/">DID</a><a class="post-meta__tags" href="/tags/dApp/">dApp</a><a class="post-meta__tags" href="/tags/SSI/">SSI</a><a class="post-meta__tags" href="/tags/Self-Sovereign-Identity/">Self-Sovereign Identity</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/16/project1/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Project1 UnderTheSea</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/25/did/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">DID (Decentralized Identity)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/07/25/did/" title="DID (Decentralized Identity)"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-25</div><div class="title">DID (Decentralized Identity)</div></div></a></div><div><a href="/2022/08/29/project2/" title="Project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">Project2 HALP ME!!</div></div></a></div><div><a href="/2022/08/16/project1/" title="Project1 UnderTheSea"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">Project1 UnderTheSea</div></div></a></div><div><a href="/2022/10/03/project3/" title="Project3 JDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-03</div><div class="title">Project3 JDEX</div></div></a></div><div><a href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">Project4 Bithumb Dagao Neo</div></div></a></div><div><a href="/2023/04/14/project5/" title="Project5 YDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-14</div><div class="title">Project5 YDEX</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SSI-Self-Sovereign-Identity"><span class="toc-number">1.</span> <span class="toc-text">SSI(Self-Sovereign Identity) ?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DID-amp-SSI"><span class="toc-number">1.1.</span> <span class="toc-text">DID &amp; SSI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSI%EC%9D%98-%EA%B0%9C%EB%85%90"><span class="toc-number">1.2.</span> <span class="toc-text">SSI의 개념</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSI%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0"><span class="toc-number">1.2.1.</span> <span class="toc-text">SSI가 필요한 이유</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%8B%A0%EC%9B%90%EA%B4%80%EB%A6%AC-%EB%AA%A8%EB%8D%B8-%EC%A2%85%EB%A5%98"><span class="toc-number">1.3.</span> <span class="toc-text">신원관리 모델 종류</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EC%84%B8%EB%8C%80-%EA%B0%9C%EB%B3%84-%EC%8B%A0%EC%9B%90-%EB%AA%A8%EB%8D%B8-Siloed-Identity"><span class="toc-number">1.3.1.</span> <span class="toc-text">1세대 - 개별 신원 모델(Siloed Identity)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EC%84%B8%EB%8C%80-%EC%97%B0%ED%95%A9%ED%98%95-%EC%8B%A0%EC%9B%90-%EB%AA%A8%EB%8D%B8-Federated-Identity"><span class="toc-number">1.3.2.</span> <span class="toc-text">2세대 - 연합형 신원 모델(Federated Identity)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EC%84%B8%EB%8C%80-%EC%9E%90%EA%B8%B0-%EC%A3%BC%EA%B6%8C-%EC%8B%A0%EC%9B%90-%EB%AA%A8%EB%8D%B8-Self-Sovereign-Identity"><span class="toc-number">1.3.3.</span> <span class="toc-text">3세대 - 자기 주권 신원 모델(Self-Sovereign Identity)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B0%81-%EC%84%B8%EB%8C%80%EB%B3%84-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D-%EB%B9%84%EA%B5%90"><span class="toc-number">1.3.4.</span> <span class="toc-text">각 세대별 인증 방식 비교</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSI-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="toc-number">1.4.</span> <span class="toc-text">SSI 구성 요소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DIDs-Decentralized-Identifier-%ED%83%88%EC%A4%91%EC%95%99%ED%99%94-%EC%8B%9D%EB%B3%84%EC%9E%90"><span class="toc-number">1.4.1.</span> <span class="toc-text">DIDs(Decentralized Identifier; 탈중앙화 식별자)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DID-Auth-DID-Authentication"><span class="toc-number">1.4.2.</span> <span class="toc-text">DID Auth(DID Authentication)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DKMS-Decentralized-Key-Management-System-%ED%83%88%EC%A4%91%EC%95%99-%ED%82%A4%EA%B4%80%EB%A6%AC-%EC%8B%9C%EC%8A%A4%ED%85%9C"><span class="toc-number">1.4.3.</span> <span class="toc-text">DKMS(Decentralized Key Management System; 탈중앙 키관리 시스템)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Verifiable-Credentials-%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C"><span class="toc-number">1.4.4.</span> <span class="toc-text">Verifiable Credentials(검증가능한 크레덴셜)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSI-%EA%B5%AC%ED%98%84%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%9A%94%EC%86%8C"><span class="toc-number">1.5.</span> <span class="toc-text">SSI 구현을 위한 요소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Issuer-%EB%B0%9C%ED%96%89%EC%9E%90-%EB%B0%9C%ED%96%89%EC%9E%90"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. Issuer(발행자); 발행자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Holder-%EC%86%8C%EC%9C%A0%EC%9E%90-%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%AA%85-%EC%86%8C%EC%9C%A0%EC%9E%90"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. Holder(소유자); 자격증명 소유자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Verifier-%EA%B2%80%EC%A6%9D%EC%9E%90-%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%AA%85-%EA%B2%80%EC%A6%9D%EC%9E%90"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. Verifier(검증자); 자격증명 검증자</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Verifiable-Data-Registry-%EA%B2%80%EC%A6%9D%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EB%93%B1%EC%9D%98-%EB%B6%84%EC%82%B0%EC%A0%80%EC%9E%A5%EC%86%8C"><span class="toc-number">1.5.4.</span> <span class="toc-text">4. Verifiable Data Registry(검증데이터 저장소); 블록체인 등의 분산저장소</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/24/dex-defi/" title="DEX와 DeFi"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="DEX와 DeFi"></a><div class="content"><a class="title" href="/2023/04/24/dex-defi/" title="DEX와 DeFi">DEX와 DeFi</a><time datetime="2023-04-24T14:08:20.000Z" title="Created 2023-04-24 23:08:20">2023-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Programmers - 중앙값 구하기"></a><div class="content"><a class="title" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기">Programmers - 중앙값 구하기</a><time datetime="2023-04-21T02:12:35.000Z" title="Created 2023-04-21 11:12:35">2023-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/14/project5/" title="Project5 YDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project5 YDEX"></a><div class="content"><a class="title" href="/2023/04/14/project5/" title="Project5 YDEX">Project5 YDEX</a><time datetime="2023-04-14T07:01:55.000Z" title="Created 2023-04-14 16:01:55">2023-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project4 Bithumb Dagao Neo"></a><div class="content"><a class="title" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo">Project4 Bithumb Dagao Neo</a><time datetime="2023-04-13T13:47:43.000Z" title="Created 2023-04-13 22:47:43">2023-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="Project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="Project3 JDEX">Project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/07/26/ssi/'
+    this.page.identifier = '/2022/07/26/ssi/'
+    this.page.title = 'SSI (Self-Sovereign Identity)'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
