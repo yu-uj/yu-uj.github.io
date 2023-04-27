@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>분산원장기술 / 트랜잭션 | YU-UJ</title><meta name="keywords" content="BlockChain,분산원장,Distributed Ledger Technology,중앙집중원장,트랜잭션"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="분산원장기술 &#x2F; 트랜잭션분산원장기술(DLT; Distributed Ledger Technology)분산원장(Distributed Ledger) &#x3D; 분산원장기술 &#x3D; 공유원장 ⇒ 블록체인 기술의 핵심 → 거래 정보를 기록한 원장을 특정 기관의 중앙화된 서버가 아닌 분산화된 네트워크에서 참여자들이 공동으로 기록 및 관리하는 기술 → 분">
+<meta property="og:type" content="article">
+<meta property="og:title" content="분산원장기술 &#x2F; 트랜잭션">
+<meta property="og:url" content="http://yu-uj.github.io/2022/06/14/dlt/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="분산원장기술 &#x2F; 트랜잭션분산원장기술(DLT; Distributed Ledger Technology)분산원장(Distributed Ledger) &#x3D; 분산원장기술 &#x3D; 공유원장 ⇒ 블록체인 기술의 핵심 → 거래 정보를 기록한 원장을 특정 기관의 중앙화된 서버가 아닌 분산화된 네트워크에서 참여자들이 공동으로 기록 및 관리하는 기술 → 분">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-06-14T13:02:25.000Z">
+<meta property="article:modified_time" content="2023-04-27T13:08:17.137Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="BlockChain">
+<meta property="article:tag" content="분산원장">
+<meta property="article:tag" content="Distributed Ledger Technology">
+<meta property="article:tag" content="중앙집중원장">
+<meta property="article:tag" content="트랜잭션">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/06/14/dlt/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '분산원장기술 / 트랜잭션',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-27 22:08:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">57</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">분산원장기술 / 트랜잭션</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-06-14T13:02:25.000Z" title="Created 2022-06-14 22:02:25">2022-06-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/BLOCKCHAIN/">BLOCKCHAIN</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="분산원장기술 / 트랜잭션"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="분산원장기술-x2F-트랜잭션"><a href="#분산원장기술-x2F-트랜잭션" class="headerlink" title="분산원장기술 &#x2F; 트랜잭션"></a>분산원장기술 &#x2F; 트랜잭션</h1><h2 id="분산원장기술-DLT-Distributed-Ledger-Technology"><a href="#분산원장기술-DLT-Distributed-Ledger-Technology" class="headerlink" title="분산원장기술(DLT; Distributed Ledger Technology)"></a>분산원장기술(DLT; Distributed Ledger Technology)</h2><p><strong>분산원장(Distributed Ledger) &#x3D; 분산원장기술 &#x3D; 공유원장</strong></p>
+<p><strong>⇒ 블록체인 기술의 핵심</strong></p>
+<p>→ <strong>거래 정보를 기록한 원장</strong>을 특정 기관의 중앙화된 서버가 아닌 <strong>분산화된 네트워크</strong>에서 <strong>참여자들이 공동으로 기록 및 관리</strong>하는 기술</p>
+<p>→ 분산[Distributed : 광범위하게 널리 분포 의미] + 원장[Ledger : 거래내역이 기록된 장부 의미] &#x3D; 분산원장</p>
+<br>
+
+<h2 id="중앙집중원장-Centralized-Ledger"><a href="#중앙집중원장-Centralized-Ledger" class="headerlink" title="중앙집중원장(Centralized Ledger)"></a>중앙집중원장(Centralized Ledger)</h2><p>기존의 여러 서비스가 지닌 형태, 여러 대기업이 제공하는 서비스와 은행시스템은 그들이 지닌 신뢰를 바탕으로 이용. 기관이나 기업에게 신뢰비용으로 수수료 등을 지불하고, 그들은 서비스를 제공하며 데이터를 보관(보안)하고 활용함. But, 기존의 중앙집중형 데이터베이스 관리시스템의 취약점이 존재.</p>
+<br>
+
+<h3 id="중앙집중원장이-지닌-취약점"><a href="#중앙집중원장이-지닌-취약점" class="headerlink" title="중앙집중원장이 지닌 취약점"></a>중앙집중원장이 지닌 취약점</h3><ul>
+<li><strong>비용</strong><ul>
+<li>제3자인 중앙집중형 관리시스템은 거래자들에게 과도한 관리, 중개수수료를 청구. 중앙집중형 시스템은 데이터베이스 유지 및 관리에 많은 보안유지비용을 지출하고, 금융권은 보인인프라에 많은 비용을 투자함. 이러한 비용들은 서비스 이용자들에게 부담됨.</li>
+</ul>
+</li>
+<li><strong>시간</strong><ul>
+<li>중앙집중형 관리시스템은 상호거래의 프로세스 전반에 걸쳐 많은 중간다리가 포함 → 시간, 비용 효율성이 떨어짐.</li>
+<li><strong>미들맨</strong>(Middleman; 중간다리, 중간 이해관계자)들이 많이 존재할 수록 프로세스 전반에 걸쳐 시간과 비용은 증가하고 효율이 떨어짐.</li>
+</ul>
+</li>
+<li><strong>보안</strong><ul>
+<li>중앙집중형 데이터베이스를 이용하는 시스템은 해커들의 <strong>공격대상이 중앙데이터베이스</strong> 하나로 쏠림. 보안유지에 공을 들여도 해커들의 목표 대상이 하나이며, 공격에 성공시 모든 데이터 보안이 뚫림.</li>
+<li><strong>단일 실패점(Single Point of Failure)</strong> : 중앙화의 문제</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="분산원장기술-장점"><a href="#분산원장기술-장점" class="headerlink" title="분산원장기술 장점"></a>분산원장기술 장점</h2><p>분산원장기술은 중앙 집중형 방식과 비교하여</p>
+<ul>
+<li><strong>인증과 증명의 효율성</strong></li>
+<li><strong>시스템 안정성</strong></li>
+<li><strong>보안성</strong></li>
+<li><strong>투명성</strong></li>
+</ul>
+<p>의 장점이 존재. 기존 시스템들은 인증과 데이터 거래 증명을 위한 여러 중간 매개체와 인증기관을 거쳐야했으나, 분산원장은 사용자가 거래 내역을 직접 공유할 수 있는 시스템의 차별성을 지님. </p>
+<p>→ <strong>중앙화된 시스템 관리 비용이 줄고, 거래 정보가 분산 저장되어 해킹과 위조의 위험성이 줄어듦.</strong></p>
+<br>
+
+<h3 id="개인-지갑-거래"><a href="#개인-지갑-거래" class="headerlink" title="개인 지갑 거래"></a>개인 지갑 거래</h3><p>위의 분산원장기술 장점들로 개인과 개인이 직접 거래 가능. 중앙기관으로부터 벗어난 거래가 가능해지면 해외송금에 걸리는 시간과 비용이 감소하기 때문에 비용과 시간의 문제가 해결되며, 분산원장기술을 통해 보안 문제 또한 해결 가능. </p>
+<p><strong>⇒ 분산원장기술을 이용하면 물리적 거리와 시간 상관없이 거래 상대에게 송금 가능.</strong></p>
+<br>
+
+<hr>
+<ul>
+<li><strong>블록체인(BlockChain)</strong> &#x3D;  <strong>블록(Block) + 체인(Chain)</strong><ul>
+<li>블록들이 체인으로 연결된 구조</li>
+</ul>
+</li>
+<li><strong>블록(Block)</strong> &#x3D; <strong>헤더(Header) + 바디(Body)</strong><ul>
+<li><strong>헤더(Header)</strong><ul>
+<li><strong>메타데이터</strong> : 블록이라는 데이터 설명, 블록의 최상단에 따로 둠<ul>
+<li>체인 중 몇번 째 블록인지</li>
+<li>블록의 트랜잭션 개수</li>
+<li>블록 생성자</li>
+<li>블록의 크기, 총 전송량</li>
+<li>**논스(Nonce)**값</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>바디(Body)</strong><ul>
+<li><strong>트랜잭션 리스트</strong></li>
+<li>트랜잭션 &#x3D; 데이터</li>
+<li>블록 &#x3D; 트랜잭션의 집합 &#x3D; 데이터</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h2 id="트랜잭션-Transaction"><a href="#트랜잭션-Transaction" class="headerlink" title="트랜잭션(Transaction) ?"></a>트랜잭션(Transaction) ?</h2><p><strong>데이터베이스의 상태를 변환시키는 하나의 논리적 기능 수행을 위한 작업의 단위</strong>.</p>
+<p>은행 앱에서의 이체 데이터처럼 비트코인의 거래에서도 <strong>보내는 주소, 받는 사람 주소, 금액, 수수료 등의 정보</strong>가 작성되어야 하며 이를 <strong>트랜잭션 데이터</strong>라 함.</p>
+<p>블록체인의 트랜잭션 또한 <strong>상호작용 및 작업 수행의 논리적 단위</strong>를 말함. <strong>블록체인 상의 모든 활동</strong>은 트랜잭션을 통해 이뤄지며, 추상적인 관점에서 <strong>블록체인의 상태(State) 변화</strong>시키는 <strong>일련의 작업</strong>을 내포하고 있음.</p>
+<ul>
+<li>ex. 블록체인 상태 변화 : A가 B에게 $10 송금시, 각자 보유 금액에서 A는 -$10,  B는 +$10의 상태 변화가 생김</li>
+</ul>
+<p><img src="/image/BC/dlt1.png"></p>
+<p>트랜잭션은 여러 개의 작업을 하나로 묶은 실행 유닛이며, 각 트랜잭션은 하나의 특정 작업으로 시작해서 묶인 작업들을 모두 완료해야 정상적으로 종료함. 만일 하나의 트랜잭션에 속해있는 여러 작업중 하나라도 실패하면, 모든 작업이 실패한 것으로 판단하여 트랜잭션도 실패. 모든 작업이 성공해야 트랜잭션도 성공. 트랜잭션 결과로 성공 혹은 실패만 존재하므로 미완료 없이 모든 작업 성공.  </p>
+<br>
+
+<hr>
+<h1 id="비트코인과-이더리움-트랜잭션-구조"><a href="#비트코인과-이더리움-트랜잭션-구조" class="headerlink" title="비트코인과 이더리움 트랜잭션 구조"></a>비트코인과 이더리움 트랜잭션 구조</h1><h3 id="비트코인-트랜잭션-구조"><a href="#비트코인-트랜잭션-구조" class="headerlink" title="비트코인 트랜잭션 구조"></a>비트코인 트랜잭션 구조</h3><table>
+<thead>
+<tr>
+<th>필드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>버전 번호</td>
+<td>채굴자와 노드가 트랜잭션 처리에 사용할 규칙 지정</td>
+</tr>
+<tr>
+<td>입력 카운터</td>
+<td>트랜잭션에 포함된 입력 개수</td>
+</tr>
+<tr>
+<td>입력 리스트</td>
+<td>블록의 첫 트랜잭션은 코인베이스 트랜잭션, 하나 이상의 트랜잭션 입력이 포함</td>
+</tr>
+<tr>
+<td>출력 카운터</td>
+<td>출력의 개수(양의 정수)</td>
+</tr>
+<tr>
+<td>출력 리스트</td>
+<td>트랜잭션에 포함된 출력</td>
+</tr>
+<tr>
+<td>로크(Lock) 시간</td>
+<td>트랜잭션이 유효해지는 가장 빠른 시간 정의</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="이더리움-트랜잭션-구조"><a href="#이더리움-트랜잭션-구조" class="headerlink" title="이더리움 트랜잭션 구조"></a>이더리움 트랜잭션 구조</h3><table>
+<thead>
+<tr>
+<th>필드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>논스(Nonce)</td>
+<td>발신 EOA에 의해 발행되어 메시지 재사용 방지에 사용하는 일련번호</td>
+</tr>
+<tr>
+<td>가스 가격(Gas Price)</td>
+<td>발신자가 지급하는 가스의 가격</td>
+</tr>
+<tr>
+<td>가스 한도(Gas Limit)</td>
+<td>이 트랜잭션을 위해 구입할 가스 최대량</td>
+</tr>
+<tr>
+<td>수신자(Recipient)</td>
+<td>목적지 이더리움 주소</td>
+</tr>
+<tr>
+<td>값(Value)</td>
+<td>보낼 이더의 양</td>
+</tr>
+<tr>
+<td>데이터(Data)</td>
+<td>가변 길이 바이너리 데이터 페이로드</td>
+</tr>
+<tr>
+<td>v, r, s</td>
+<td>EOA의 ECDSA 디지털 서명의 세가지 구성 요소</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><strong>이더리움 트랜잭션 논스(Nonce)</strong> 특징</p>
+<ul>
+<li>거래 전송(Transaction)시 논스 1씩 증가</li>
+<li>논스는 계정에서 유일, 동일한 논스가 존재하지 x</li>
+</ul>
+<br>
+
+<h1 id="용어-정리"><a href="#용어-정리" class="headerlink" title="용어 정리"></a>용어 정리</h1><h3 id="논스-Nonce"><a href="#논스-Nonce" class="headerlink" title="논스(Nonce) ?"></a>논스(Nonce) ?</h3><p><strong>발신 주소의 속성</strong>, 발신 주소의 컨텍스트 안에서만 의미를 가짐. 명시적으로 블록체인 계정 상태에 저장되지 않고, <strong>해당 주소에서 발생한 트랜잭션 건수를 동적으로 계산</strong>되는 값. 논스는 중복되지 않고 순차적이라 같은 논스에 여러 트랜잭션 전송이 발생하면 논스 중 제일 높은 가스비(Gas Price)를 지불한 트랜잭션이 처리됨. 이런 방법으로 이더리움에서의 이중 지불 문제를 방지.</p>
+<p>→ 논스가 0인 트랜잭션 전송, 논스가 2인 트랜잭션 전송시 두번째 트랜잭션은 블록에 포함되지 않음. 이더리움 네트워크는 누락 논스를 기다리며 두번째 논스를 <strong>멤풀</strong>에 저장함. 논스가 1인 누락된 트랜잭션을 전송하면, 두 트랜잭션이 처리 되고 블록에 포함.</p>
+<br>
+
+<h3 id="멤풀-Mempool"><a href="#멤풀-Mempool" class="headerlink" title="멤풀(Mempool) ?"></a>멤풀(Mempool) ?</h3><p>아직 블록에 들어가지 않은 상태의 트랜잭션들이 어떤 공간에 있는 것.</p>
+<br>
+
+<h3 id="이중지불-Double-Spending"><a href="#이중지불-Double-Spending" class="headerlink" title="이중지불(Double Spending) ?"></a>이중지불(Double Spending) ?</h3><p>원본 파일에 저장된 가치를 지불한 뒤, 해당 파일을 다른 사람에게 또 지불하는 것.</p>
+<p>→ <strong>비트코인과 이더리움 논스의 유무 차이</strong>는 <strong>이중지불 방지</strong>를 위함.</p>
+<p>모든 <strong>트랜잭션은 일회성</strong>이라 하나의 트랜잭션의 경우 <strong>하나의 상태만 변화</strong>시킴. 이런 문제를 해결하기 위해 </p>
+<p><strong>비트코인</strong>의 경우 <strong>UTXO</strong>(Unspent Transaction Outputs; 미사용 트랜잭션 출력값)를 통해 해결하고, </p>
+<p><strong>이더리움</strong>은 <strong>어카운트</strong>(Account)<strong>기반 시스템</strong>으로 논스 값을 각 <strong>트랜잭션이 오직 한번만 처리</strong>되게 하는 카운터로 사용. </p>
+<p>⇒ UTXO와 어카운트 기반의 <strong>프로토콜 차이</strong> 때문에 이더리움 트랜잭션의 논스가 존재하며, 이는 트랜잭션 <strong>발신자가 트랜잭션에 필요한 메시지 재사용을 방지</strong>함.</p>
+<br>
+
+<hr>
+<h2 id="A-C-I-D"><a href="#A-C-I-D" class="headerlink" title="A.C.I.D"></a>A.C.I.D</h2><p><strong>[Atomicity &#x2F; Consistency &#x2F; Isolation &#x2F; Durability]</strong></p>
+<p>데이터베이스 트랜잭션이 지닌 특성. ACID는 데이터베이스 내에서 일어나는 <strong>트랜잭션의 안정성을 보</strong>장하기 위한 성질.</p>
+<br>
+
+<h3 id="gt-Atomicity-원자성"><a href="#gt-Atomicity-원자성" class="headerlink" title="&gt; Atomicity(원자성)"></a>&gt; <strong>Atomicity(원자성)</strong></h3><p>하나의 <strong>트랜잭션에 속한 모든 작업이 전부 성공 혹은 전부 실패해서 결과를 예측</strong>할 수 있어야 함. 작업들이 부분적으로 실행되면, 업데이트가 일어나도 누가 했는지, 날짜 등이 누락되는 데이터 오염이 발생할 수 있음. 원자성이 지켜진다면 하나의 단위로 묶인 모든 작업이 성공으로 완료하거나 실패하게 만들어 기존 데이터를 보호.</p>
+<br>
+
+<h3 id="gt-Consistency-일관성"><a href="#gt-Consistency-일관성" class="headerlink" title="&gt; Consistency(일관성)"></a>&gt; <strong>Consistency(일관성)</strong></h3><p><strong>데이터베이스의 상태가 일관</strong>되어야 함. 하나의 트랜잭션 이전과 이후에 데이터베이스의 상태는 이전과 같이 유효해야 함. 트랜잭션이 일어난 후에도 데이터베이스의 제약이나 규칙을 만족해야 함. 데이터베이스의 유효한 상태는 다를 수 있으나 데이터의 상태에 대한 일관성은 변함이 없어야 함. </p>
+<br>
+
+<h3 id="gt-Isolation-격리성-고립성"><a href="#gt-Isolation-격리성-고립성" class="headerlink" title="&gt; Isolation(격리성, 고립성)"></a>&gt; <strong>Isolation(격리성, 고립성)</strong></h3><p><strong>모든 트랜잭션은 다른 트랜잭션으로부터 독립</strong>되어야 함. 동시에 여러 트랜잭션들이 수행될 때, 각 트랜잭션은 고립(격리)되어 있어 연속으로 실행된 것과 동일한 결과를 나타냄. 격리성을 지키는 트랜잭션은 철저히 독립적이라 다른 트랜잭션의 작업 내용을 알 수 없음. 또한 트랜잭션이 동시 실행될 때와 연속으로 실행될 때의 데이터베이스 상태가 동일해야 함.</p>
+<br>
+
+<h3 id="gt-Durability-지속성"><a href="#gt-Durability-지속성" class="headerlink" title="&gt; Durability(지속성)"></a>&gt; <strong>Durability(지속성)</strong></h3><p>하나의 트랜잭션이 성공적으로 수행되면, <strong>트랜잭션에 대한 로그</strong>가 남아야 함. 런타임 or 시스템 오류가 발생해도 <strong>해당 기록은 영구적으로 존재</strong>해야함. </p>
+<br>
+
+<hr>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/BlockChain/">BlockChain</a><a class="post-meta__tags" href="/tags/%EB%B6%84%EC%82%B0%EC%9B%90%EC%9E%A5/">분산원장</a><a class="post-meta__tags" href="/tags/Distributed-Ledger-Technology/">Distributed Ledger Technology</a><a class="post-meta__tags" href="/tags/%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%9B%90%EC%9E%A5/">중앙집중원장</a><a class="post-meta__tags" href="/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/">트랜잭션</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/25/did/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">DID (Decentralized Identity)</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/10/docker/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Docker 사용</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/08/29/project2/" title="Project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">Project2 HALP ME!!</div></div></a></div><div><a href="/2022/08/16/project1/" title="Project1 UnderTheSea"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">Project1 UnderTheSea</div></div></a></div><div><a href="/2022/10/03/project3/" title="Project3 JDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-03</div><div class="title">Project3 JDEX</div></div></a></div><div><a href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">Project4 Bithumb Dagao Neo</div></div></a></div><div><a href="/2023/04/14/project5/" title="Project5 YDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-14</div><div class="title">Project5 YDEX</div></div></a></div><div><a href="/2023/04/24/dex-defi/" title="DEX와 DeFi"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-24</div><div class="title">DEX와 DeFi</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">57</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%EB%B6%84%EC%82%B0%EC%9B%90%EC%9E%A5%EA%B8%B0%EC%88%A0-x2F-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98"><span class="toc-number">1.</span> <span class="toc-text">분산원장기술 &#x2F; 트랜잭션</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%B6%84%EC%82%B0%EC%9B%90%EC%9E%A5%EA%B8%B0%EC%88%A0-DLT-Distributed-Ledger-Technology"><span class="toc-number">1.1.</span> <span class="toc-text">분산원장기술(DLT; Distributed Ledger Technology)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%9B%90%EC%9E%A5-Centralized-Ledger"><span class="toc-number">1.2.</span> <span class="toc-text">중앙집중원장(Centralized Ledger)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%A4%91%EC%95%99%EC%A7%91%EC%A4%91%EC%9B%90%EC%9E%A5%EC%9D%B4-%EC%A7%80%EB%8B%8C-%EC%B7%A8%EC%95%BD%EC%A0%90"><span class="toc-number">1.2.1.</span> <span class="toc-text">중앙집중원장이 지닌 취약점</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%B6%84%EC%82%B0%EC%9B%90%EC%9E%A5%EA%B8%B0%EC%88%A0-%EC%9E%A5%EC%A0%90"><span class="toc-number">1.3.</span> <span class="toc-text">분산원장기술 장점</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B0%9C%EC%9D%B8-%EC%A7%80%EA%B0%91-%EA%B1%B0%EB%9E%98"><span class="toc-number">1.3.1.</span> <span class="toc-text">개인 지갑 거래</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-Transaction"><span class="toc-number">1.4.</span> <span class="toc-text">트랜잭션(Transaction) ?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8%EA%B3%BC-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B5%AC%EC%A1%B0"><span class="toc-number">2.</span> <span class="toc-text">비트코인과 이더리움 트랜잭션 구조</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B5%AC%EC%A1%B0"><span class="toc-number">2.0.1.</span> <span class="toc-text">비트코인 트랜잭션 구조</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B5%AC%EC%A1%B0"><span class="toc-number">2.0.2.</span> <span class="toc-text">이더리움 트랜잭션 구조</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC"><span class="toc-number">3.</span> <span class="toc-text">용어 정리</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%85%BC%EC%8A%A4-Nonce"><span class="toc-number">3.0.1.</span> <span class="toc-text">논스(Nonce) ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EB%A9%A4%ED%92%80-Mempool"><span class="toc-number">3.0.2.</span> <span class="toc-text">멤풀(Mempool) ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9D%B4%EC%A4%91%EC%A7%80%EB%B6%88-Double-Spending"><span class="toc-number">3.0.3.</span> <span class="toc-text">이중지불(Double Spending) ?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-C-I-D"><span class="toc-number">3.1.</span> <span class="toc-text">A.C.I.D</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-Atomicity-%EC%9B%90%EC%9E%90%EC%84%B1"><span class="toc-number">3.1.1.</span> <span class="toc-text">&gt; Atomicity(원자성)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-Consistency-%EC%9D%BC%EA%B4%80%EC%84%B1"><span class="toc-number">3.1.2.</span> <span class="toc-text">&gt; Consistency(일관성)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-Isolation-%EA%B2%A9%EB%A6%AC%EC%84%B1-%EA%B3%A0%EB%A6%BD%EC%84%B1"><span class="toc-number">3.1.3.</span> <span class="toc-text">&gt; Isolation(격리성, 고립성)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-Durability-%EC%A7%80%EC%86%8D%EC%84%B1"><span class="toc-number">3.1.4.</span> <span class="toc-text">&gt; Durability(지속성)</span></a></li></ol></li></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/24/dex-defi/" title="DEX와 DeFi"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="DEX와 DeFi"></a><div class="content"><a class="title" href="/2023/04/24/dex-defi/" title="DEX와 DeFi">DEX와 DeFi</a><time datetime="2023-04-24T14:08:20.000Z" title="Created 2023-04-24 23:08:20">2023-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Programmers - 중앙값 구하기"></a><div class="content"><a class="title" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기">Programmers - 중앙값 구하기</a><time datetime="2023-04-21T02:12:35.000Z" title="Created 2023-04-21 11:12:35">2023-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/14/project5/" title="Project5 YDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project5 YDEX"></a><div class="content"><a class="title" href="/2023/04/14/project5/" title="Project5 YDEX">Project5 YDEX</a><time datetime="2023-04-14T07:01:55.000Z" title="Created 2023-04-14 16:01:55">2023-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project4 Bithumb Dagao Neo"></a><div class="content"><a class="title" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo">Project4 Bithumb Dagao Neo</a><time datetime="2023-04-13T13:47:43.000Z" title="Created 2023-04-13 22:47:43">2023-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="Project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="Project3 JDEX">Project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/06/14/dlt/'
+    this.page.identifier = '/2022/06/14/dlt/'
+    this.page.title = '분산원장기술 / 트랜잭션'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
