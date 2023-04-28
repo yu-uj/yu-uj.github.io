@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/tags/%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C/</loc>
+        <lastmod>2023-04-28T14:30:11.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/Verifiable-Credential/</loc>
+        <lastmod>2023-04-28T14:30:11.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/VC/</loc>
+        <lastmod>2023-04-28T14:30:11.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/BlockChain/</loc>
+        <lastmod>2023-04-28T14:30:11.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</loc>
         <lastmod>2023-04-27T13:10:28.549Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +53,6 @@
 
     <url>
         <loc>http://yu-uj.github.io/tags/%EB%B6%84%EC%82%B0%EC%9B%90%EC%9E%A5/</loc>
-        <lastmod>2023-04-27T13:10:28.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/BlockChain/</loc>
         <lastmod>2023-04-27T13:10:28.549Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>VC (Verifiable Credential) | YU-UJ</title><meta name="keywords" content="BlockChain,VC,Verifiable Credential,검증가능한 크레덴셜"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="Verifiable Credential(VC; 검증가능한 크레덴셜)Credential(크레덴셜)Credential은 신원 확인에 필요한 정보로 일상생활에서의 주민등록, 운전면허, 여권 등으로 신원 주장이 가능하다. 이런 것들이 물리적 Credential.  물리적 Credential에 담긴 정보 신분증의 주체를 식별할 수 있는 정보 이름, 사진, 주민등록번">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VC (Verifiable Credential)">
+<meta property="og:url" content="http://yu-uj.github.io/2022/07/26/vc/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="Verifiable Credential(VC; 검증가능한 크레덴셜)Credential(크레덴셜)Credential은 신원 확인에 필요한 정보로 일상생활에서의 주민등록, 운전면허, 여권 등으로 신원 주장이 가능하다. 이런 것들이 물리적 Credential.  물리적 Credential에 담긴 정보 신분증의 주체를 식별할 수 있는 정보 이름, 사진, 주민등록번">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-07-26T14:23:15.000Z">
+<meta property="article:modified_time" content="2023-04-28T14:30:11.653Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="BlockChain">
+<meta property="article:tag" content="VC">
+<meta property="article:tag" content="Verifiable Credential">
+<meta property="article:tag" content="검증가능한 크레덴셜">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/07/26/vc/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'VC (Verifiable Credential)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-04-28 23:30:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">VC (Verifiable Credential)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-07-26T14:23:15.000Z" title="Created 2022-07-26 23:23:15">2022-07-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/BLOCKCHAIN/">BLOCKCHAIN</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="VC (Verifiable Credential)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Verifiable-Credential-VC-검증가능한-크레덴셜"><a href="#Verifiable-Credential-VC-검증가능한-크레덴셜" class="headerlink" title="Verifiable Credential(VC; 검증가능한 크레덴셜)"></a>Verifiable Credential(VC; 검증가능한 크레덴셜)</h1><h2 id="Credential-크레덴셜"><a href="#Credential-크레덴셜" class="headerlink" title="Credential(크레덴셜)"></a>Credential(크레덴셜)</h2><p>Credential은 신원 확인에 필요한 정보로 일상생활에서의 주민등록, 운전면허, 여권 등으로 신원 주장이 가능하다. 이런 것들이 물리적 Credential.</p>
+<ul>
+<li>물리적 Credential에 담긴 정보<ul>
+<li>신분증의 주체를 식별할 수 있는 정보<ul>
+<li>이름, 사진, 주민등록번호 등</li>
+</ul>
+</li>
+<li>신분증의 발급기관 정보<ul>
+<li>행정안전부, 경찰청, 외교부 등</li>
+</ul>
+</li>
+<li>발급기관이 보증하는 정보<ul>
+<li>생년월일, 면허, 국적 등</li>
+</ul>
+</li>
+<li>신분증의 용도<ul>
+<li>주민등록증, 운전면허증, 여권 등</li>
+</ul>
+</li>
+<li>신분증의 제약조건 정보<ul>
+<li>유효기관 등</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>물리적 Credential, 즉 물리적 신분증을 통해 일상생활에서의 사용 용도에 따라 필요한 정보를 증명한다.</p>
+<p>→ But, 디지털 세계에서 물리적 신분증을 사용할 수 없어 자신의 신원과 자격을 증명하고, Credential의 유효성을 보장하는 것이 힘듦. 이런 문제 해결을 위한 표준으로 W3C의 Verifiable Credentails Data Model 등장.</p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://ssimeetupkorea.github.io/vc-data-model/">검증가능한 크리덴셜 데이터 모델 (Verifiable Credentials Data Model) 1.0</a></p>
+<p>→ 자기주권신원(SSI; Self-Sovereign Identity) 체계에서 디지털 세계에서 개인 신원을 증명할 수 있는 체계를 검증가능한 크리덴셜(Verifiable Credential; VC).</p>
+<p>→ 검증가능한 크리덴셜의 목적은 디지털 세계에서의 크리덴셜을 통해 물리적 세계의 신분증과 동일한 정보를 제공하는 것.</p>
+<hr>
+<h2 id="검증가능한-크레덴셜-Verifiable-Credential-구성요소"><a href="#검증가능한-크레덴셜-Verifiable-Credential-구성요소" class="headerlink" title="검증가능한 크레덴셜(Verifiable Credential) 구성요소"></a>검증가능한 크레덴셜(Verifiable Credential) 구성요소</h2><h3 id="클레임-Claim"><a href="#클레임-Claim" class="headerlink" title="클레임(Claim)"></a>클레임(Claim)</h3><p><img src="/image/BC/vc1.png"></p>
+<p>디지털 세계에서 신원정보는 데이터로 표현 가능. 각 단위 데이터를 Claim(클레임)으로 명명, 주체-속성:값의 구조를 가진다.</p>
+<ul>
+<li>ex. ‘A라는 주체(Subject)의 이름이라는 속성(Property)은 홍땡땡이라는 값(value)를 가진다.’ 라는 문장이 하나의 Claim.</li>
+</ul>
+<p><img src="/image/BC/vc2.png"></p>
+<p>Claim은 다른 Claim과 결합하여 연결정보(Graph of Information)를 생성할 수 있다. 도식을  해석하면, ‘Pat는 Example 대학의 졸업생이다.’ 라는 정보 확인 가능.  ‘Sam의 직업은 교수이다.’ 라는 Claim에 ‘Pat는 Sam을 알고 있다.’ 는 정보를 추가하면 ‘Example 대학교 졸업생인 Pat는 교수인 Sam을 알고 있다.’ 라는 연결 정보를 도출 가능.</p>
+<br>
+
+<h2 id="W3C-문서의-Credential"><a href="#W3C-문서의-Credential" class="headerlink" title="W3C 문서의 Credential"></a>W3C 문서의 Credential</h2><p>DID 체계에서 Credential을 주체에 대한 하나 혹은 그 이상의 Claim으로 구성된 데이터의 집합이라 정의.</p>
+<ul>
+<li>ex. 주민등록증 신원정보를 확인<ul>
+<li>이름</li>
+<li>주민등록번호(생년월일, 성별, 출생등록지)</li>
+<li>주소</li>
+<li>발급일자</li>
+<li>발급주체</li>
+</ul>
+</li>
+<li>이런 신원정보가 각각 클레임(Claim)이다.</li>
+<li>이런 클레임들의 집합이 크리덴셜(Credential).<ul>
+<li>이 크리덴셜이 주민등록증이 되어 신원 검증이 가능해짐.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h2 id="Verifiable-Credential-검증가능한-크레덴셜-VC"><a href="#Verifiable-Credential-검증가능한-크레덴셜-VC" class="headerlink" title="Verifiable Credential(검증가능한 크레덴셜; VC)"></a>Verifiable Credential(검증가능한 크레덴셜; VC)</h2><p><img src="/image/BC/vc3.png"></p>
+<p>탈중앙신원체계에서 Credential은 “<strong>검증가능한(Verifiable) Credential”</strong>.</p>
+<ul>
+<li><strong>검증가능한 크리덴셜의 구조</strong><ul>
+<li><strong>Credential Metadata</strong><ul>
+<li>Credential을 <strong>해석</strong>할 수 있도록 <strong>설명하는 메타데이터</strong></li>
+</ul>
+</li>
+<li><strong>Claim(s)</strong><ul>
+<li>주체에 대한 <strong>Claim 집합</strong></li>
+</ul>
+</li>
+<li><strong>Proofs</strong><ul>
+<li>Credential을 <strong>검증가능</strong>하게 만드는 <strong>암호학적 요소가 포함된 증명</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>→ 분산원장 플랫폼 기반으로 기록.</p>
+<p>→ 분산원장 상에 기록된 각 주체의 전자 서명 확인.</p>
+<p>→ 개인이 제시하는 신원정보가 발급된 사실과 다르지 않다는 것을 검증.</p>
+<p>⇒ Verifiable Credential(검증가능한 크리덴셜, VC)로 불림.</p>
+<br>
+
+<p><img src="/image/BC/vc4.png"></p>
+<ul>
+<li><p>Verifiable Credential 기본 구성 요소</p>
+<ul>
+<li>Claim이 그래프 형식으로 구성</li>
+<li>Verifiable Credential의 두 그래프 구성<ol>
+<li>Verifiable Credential Metadata(크리덴셜 메타데이터) &amp; Claim 포함 Verifiable Credential</li>
+<li>Digital Signature(전자서명) : Digital Proof(디지털 증명)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Verifiable Credential 그래프</p>
+<ul>
+<li>Claim : 정보 확인</li>
+<li>Digital Proof : 검증</li>
+<li>Issuer &amp; Holder의 Digital Signature(전자서명)을 포함</li>
+<li>발급내역 : Data Registry에 쓰임<ul>
+<li>취소된 Credential은 아닌지 확인</li>
+</ul>
+</li>
+<li>Schema(스키마) : 검증<ul>
+<li>제대로 된 포맷인지</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="VC가-적합한-발급자인지-검증하는-4가지-확인"><a href="#VC가-적합한-발급자인지-검증하는-4가지-확인" class="headerlink" title="VC가 적합한 발급자인지 검증하는 4가지 확인"></a>VC가 적합한 발급자인지 검증하는 4가지 확인</h3><ol>
+<li>Issuer가 발급한 DID인가 (진위여부)</li>
+<li>Holder의 DID인가 (진위여부)</li>
+<li>블록체인의 발급내역이 유효 or 무효</li>
+<li>Schema(스키마) 확인으로 형식이 맞는가</li>
+</ol>
+<br>
+
+<hr>
+<h2 id="Verifiable-Presentation-검증가능한-프레젠테이션-VP"><a href="#Verifiable-Presentation-검증가능한-프레젠테이션-VP" class="headerlink" title="Verifiable Presentation(검증가능한 프레젠테이션; VP)"></a>Verifiable Presentation(검증가능한 프레젠테이션; VP)</h2><p><strong>자기주권신원</strong>에서 <strong>최소한의 정보 공개(Minimum Disclosure)를 원칙</strong>으로 <strong>증명이 필요한 정보로만 구성</strong>된 새로운 형식이 <strong>Verifiable Presentation(검증가능한 프레젠테이션; VP).</strong></p>
+<ul>
+<li><strong>SSI</strong>(자기주권신원)의 핵심 <strong>“프라이버시 보호”.</strong><ul>
+<li>ex. VC로 만든 주민등록증 &#x3D; 민증의 모든 Claim들이 VC에 포함.</li>
+</ul>
+</li>
+<li>모든 정보를 제공하지 않아도 되는 상황 발생.<ul>
+<li>ex. 술 구매시 성인이 맞는지에 대한 정보만 제공(<strong>Selective disclosure)</strong>.</li>
+<li>신분증 제공시 나이, 이름, 주소 등 개인 정보가 노출됨.</li>
+<li>VP를 통한 선택적 정보 공개 → 성인인지 진위 여부만.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<p><img src="/image/BC/vc5.png"></p>
+<p><img src="/image/BC/vc6.png"></p>
+<br>
+
+<hr>
+<h2 id="VC-발행구조-amp-시나리오"><a href="#VC-발행구조-amp-시나리오" class="headerlink" title="VC 발행구조 &amp; 시나리오"></a>VC 발행구조 &amp; 시나리오</h2><h3 id="Ecosystem-of-Verifiable-Credential-검증가능한-크리덴셜-생태계"><a href="#Ecosystem-of-Verifiable-Credential-검증가능한-크리덴셜-생태계" class="headerlink" title="Ecosystem of Verifiable Credential(검증가능한 크리덴셜 생태계)"></a>Ecosystem of Verifiable Credential(검증가능한 크리덴셜 생태계)</h3><p><img src="/image/BC/vc7.png"></p>
+<ul>
+<li>한 개 이상의 <strong>VC 발급</strong> &amp; 스마트폰 앱의 <strong>디지털 지갑으로 VC를 저장</strong>한다.</li>
+<li>Verifier에게 증명을 위한 <strong>VC 정보 중 필요한 정보만 VP로 구성</strong>한다.</li>
+<li>검증자에게 <strong>VP로 검증</strong>한다.<ul>
+<li><strong>Data Registry</strong>로 블록체인 사용.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="자기-신원-인증-과정"><a href="#자기-신원-인증-과정" class="headerlink" title="자기 신원 인증 과정"></a>자기 신원 인증 과정</h3><ul>
+<li><strong>Issuer</strong><ul>
+<li>holder에 대한 검증가능한 크리덴셜(VC)을 발급 &amp; 전달.</li>
+<li>VC의 유효성 확인이 가능한 ID(identifiers)와 Schema(스키마) 발급내역을 블록체인에 기록.</li>
+</ul>
+</li>
+<li><strong>Holder</strong><ul>
+<li>Issuer에게 VC를 받고, 자신이 증명서를 받았다는 내용과 스키마 정보를 가져옴.</li>
+<li>Verifier가 필요로 하는 정보를 VP형태로 담아 보냄.</li>
+<li>Issuer에게 받을 때 VC 형태, Verifier에게 보낼 때 VP 형태.</li>
+</ul>
+</li>
+<li><strong>Verifier</strong><ul>
+<li>Holder에게 받은 VP 내용 확인.<ul>
+<li>블록체인에서 확인할 내용<ul>
+<li>발급 내역</li>
+<li>Schema(스키마)</li>
+</ul>
+</li>
+<li>VP 내용 확인<ul>
+<li>Issuer DID</li>
+<li>Holder DID</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>위의 내용을 검증해서 VP 내용의 진위여부 검증.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/BlockChain/">BlockChain</a><a class="post-meta__tags" href="/tags/VC/">VC</a><a class="post-meta__tags" href="/tags/Verifiable-Credential/">Verifiable Credential</a><a class="post-meta__tags" href="/tags/%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C/">검증가능한 크레덴셜</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/16/project1/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Project1 UnderTheSea</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/26/ssi/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">SSI (Self-Sovereign Identity)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/08/29/project2/" title="Project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">Project2 HALP ME!!</div></div></a></div><div><a href="/2022/08/16/project1/" title="Project1 UnderTheSea"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">Project1 UnderTheSea</div></div></a></div><div><a href="/2022/10/03/project3/" title="Project3 JDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-03</div><div class="title">Project3 JDEX</div></div></a></div><div><a href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">Project4 Bithumb Dagao Neo</div></div></a></div><div><a href="/2023/04/14/project5/" title="Project5 YDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-14</div><div class="title">Project5 YDEX</div></div></a></div><div><a href="/2023/04/24/dex-defi/" title="DEX와 DeFi"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-24</div><div class="title">DEX와 DeFi</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Verifiable-Credential-VC-%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C"><span class="toc-number">1.</span> <span class="toc-text">Verifiable Credential(VC; 검증가능한 크레덴셜)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Credential-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C"><span class="toc-number">1.1.</span> <span class="toc-text">Credential(크레덴셜)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C-Verifiable-Credential-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C"><span class="toc-number">1.2.</span> <span class="toc-text">검증가능한 크레덴셜(Verifiable Credential) 구성요소</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%81%B4%EB%A0%88%EC%9E%84-Claim"><span class="toc-number">1.2.1.</span> <span class="toc-text">클레임(Claim)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#W3C-%EB%AC%B8%EC%84%9C%EC%9D%98-Credential"><span class="toc-number">1.3.</span> <span class="toc-text">W3C 문서의 Credential</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verifiable-Credential-%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A0%88%EB%8D%B4%EC%85%9C-VC"><span class="toc-number">1.4.</span> <span class="toc-text">Verifiable Credential(검증가능한 크레덴셜; VC)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VC%EA%B0%80-%EC%A0%81%ED%95%A9%ED%95%9C-%EB%B0%9C%EA%B8%89%EC%9E%90%EC%9D%B8%EC%A7%80-%EA%B2%80%EC%A6%9D%ED%95%98%EB%8A%94-4%EA%B0%80%EC%A7%80-%ED%99%95%EC%9D%B8"><span class="toc-number">1.4.1.</span> <span class="toc-text">VC가 적합한 발급자인지 검증하는 4가지 확인</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verifiable-Presentation-%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%94%84%EB%A0%88%EC%A0%A0%ED%85%8C%EC%9D%B4%EC%85%98-VP"><span class="toc-number">1.5.</span> <span class="toc-text">Verifiable Presentation(검증가능한 프레젠테이션; VP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VC-%EB%B0%9C%ED%96%89%EA%B5%AC%EC%A1%B0-amp-%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4"><span class="toc-number">1.6.</span> <span class="toc-text">VC 발행구조 &amp; 시나리오</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ecosystem-of-Verifiable-Credential-%EA%B2%80%EC%A6%9D%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%81%AC%EB%A6%AC%EB%8D%B4%EC%85%9C-%EC%83%9D%ED%83%9C%EA%B3%84"><span class="toc-number">1.6.1.</span> <span class="toc-text">Ecosystem of Verifiable Credential(검증가능한 크리덴셜 생태계)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%9E%90%EA%B8%B0-%EC%8B%A0%EC%9B%90-%EC%9D%B8%EC%A6%9D-%EA%B3%BC%EC%A0%95"><span class="toc-number">1.6.2.</span> <span class="toc-text">자기 신원 인증 과정</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/24/dex-defi/" title="DEX와 DeFi"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="DEX와 DeFi"></a><div class="content"><a class="title" href="/2023/04/24/dex-defi/" title="DEX와 DeFi">DEX와 DeFi</a><time datetime="2023-04-24T14:08:20.000Z" title="Created 2023-04-24 23:08:20">2023-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Programmers - 중앙값 구하기"></a><div class="content"><a class="title" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기">Programmers - 중앙값 구하기</a><time datetime="2023-04-21T02:12:35.000Z" title="Created 2023-04-21 11:12:35">2023-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/14/project5/" title="Project5 YDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project5 YDEX"></a><div class="content"><a class="title" href="/2023/04/14/project5/" title="Project5 YDEX">Project5 YDEX</a><time datetime="2023-04-14T07:01:55.000Z" title="Created 2023-04-14 16:01:55">2023-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project4 Bithumb Dagao Neo"></a><div class="content"><a class="title" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo">Project4 Bithumb Dagao Neo</a><time datetime="2023-04-13T13:47:43.000Z" title="Created 2023-04-13 22:47:43">2023-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="Project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="Project3 JDEX">Project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/07/26/vc/'
+    this.page.identifier = '/2022/07/26/vc/'
+    this.page.title = 'VC (Verifiable Credential)'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
