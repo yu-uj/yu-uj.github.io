@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>http://yu-uj.github.io/tags/ERC20/</loc>
+        <lastmod>2023-05-03T14:30:18.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/SmartContract/</loc>
+        <lastmod>2023-05-03T14:30:18.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yu-uj.github.io/tags/BlockChain/</loc>
+        <lastmod>2023-05-03T14:30:18.636Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yu-uj.github.io/tags/NFT/</loc>
         <lastmod>2023-05-01T14:41:21.538Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -10,21 +31,7 @@
     </url>
 
     <url>
-        <loc>http://yu-uj.github.io/tags/SmartContract/</loc>
-        <lastmod>2023-05-01T14:41:21.538Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yu-uj.github.io/tags/ERC721/</loc>
-        <lastmod>2023-05-01T14:41:21.538Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yu-uj.github.io/tags/BlockChain/</loc>
         <lastmod>2023-05-01T14:41:21.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

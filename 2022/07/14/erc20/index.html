@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ERC20 | YU-UJ</title><meta name="keywords" content="BlockChain,SmartContract,ERC20"><meta name="author" content="yu-uj"><meta name="copyright" content="yu-uj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#2C4373"><meta name="description" content="ERC20ERC-20 ? ERC-20은 Ethereum Request for Comment 20의 약어로, 20은 리퀘스트 숫자이다. 이더리움 네크워크의 개선안을 제안하는 EIPs(Ethereum Improvement Proposals)에서 관리하는 공식 프로토콜이다. 이더리움 블록체인 네트워크에서 정한 표준 토큰 스펙이다. 필요한 이더리움과 호환성이 있는">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ERC20">
+<meta property="og:url" content="http://yu-uj.github.io/2022/07/14/erc20/index.html">
+<meta property="og:site_name" content="YU-UJ">
+<meta property="og:description" content="ERC20ERC-20 ? ERC-20은 Ethereum Request for Comment 20의 약어로, 20은 리퀘스트 숫자이다. 이더리움 네크워크의 개선안을 제안하는 EIPs(Ethereum Improvement Proposals)에서 관리하는 공식 프로토콜이다. 이더리움 블록체인 네트워크에서 정한 표준 토큰 스펙이다. 필요한 이더리움과 호환성이 있는">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yu-uj.github.io/img/darksea.jpg">
+<meta property="article:published_time" content="2022-07-14T14:27:26.000Z">
+<meta property="article:modified_time" content="2023-05-03T14:30:18.636Z">
+<meta property="article:author" content="yu-uj">
+<meta property="article:tag" content="BlockChain">
+<meta property="article:tag" content="SmartContract">
+<meta property="article:tag" content="ERC20">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yu-uj.github.io/img/darksea.jpg"><link rel="shortcut icon" href="/img/favighost.png"><link rel="canonical" href="http://yu-uj.github.io/2022/07/14/erc20/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-EKXH2KF4FY"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKXH2KF4FY');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ERC20',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-05-03 23:30:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#2C4373')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="YU-UJ" type="application/rss+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">64</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/darksea.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YU-UJ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ERC20</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-07-14T14:27:26.000Z" title="Created 2022-07-14 23:27:26">2022-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/BLOCKCHAIN/">BLOCKCHAIN</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="ERC20"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="ERC20"><a href="#ERC20" class="headerlink" title="ERC20"></a>ERC20</h1><h2 id="ERC-20"><a href="#ERC-20" class="headerlink" title="ERC-20 ?"></a>ERC-20 ?</h2><ul>
+<li>ERC-20은 Ethereum Request for Comment 20의 약어로, 20은 리퀘스트 숫자이다.</li>
+<li><strong>이더리움 네크워크의 개선안</strong>을 제안하는 <strong>EIPs</strong>(Ethereum Improvement Proposals)에서 관리하는 <strong>공식 프로토콜</strong>이다.</li>
+<li>이더리움 블록체인 네트워크에서 정한 <strong>표준 토큰 스펙</strong>이다.</li>
+<li>필요한 <strong>이더리움과 호환성</strong>이 있는 모든 <strong>요구 사항을 충족시키는 표준</strong>을 <strong>ERC-20</strong>로 간주한다.</li>
+<li>ERC-20 토큰은 <strong>이더리움과 교환 가능</strong>하고, <strong>이더리움 지갑으로 전송 가능</strong>하다.</li>
+</ul>
+<br>
+
+<h3 id="EIP-vs-ERC-차이"><a href="#EIP-vs-ERC-차이" class="headerlink" title="EIP vs ERC 차이"></a>EIP vs ERC 차이</h3><ul>
+<li><strong>EIP</strong>(Ethereum Improvement Proposals)는 이더리움 <strong>개선 제안</strong><ul>
+<li>ex. “이더리움 생태계를 이런식으로 <strong>개선</strong>해보면 어떨까요~?”</li>
+</ul>
+</li>
+<li><strong>ERC</strong>(Ethereum Request for Comments)는 이더리움 <strong>기능 표준</strong><ul>
+<li>ex. ”이 **기능(&#x3D;프로그래밍 코드)**은 앞으로 이더리움 <strong>기능의 표준</strong>이 될 것 입니다.”</li>
+</ul>
+</li>
+</ul>
+<aside>
+➡️ EIP가 ERC가 되는 절차에 대해서 공부하기
+
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.coindesk.com/learn/what-are-eip-and-erc-and-how-are-they-connected/">What Are EIP and ERC and How Are They Connected?</a></p>
+</aside>
+
+<br>
+
+<h3 id="ERC-20-1"><a href="#ERC-20-1" class="headerlink" title="ERC-20"></a>ERC-20</h3><ul>
+<li><strong>ERC-20 표준 사용 이유 : 토큰끼리의 호환</strong>을 위함.<ul>
+<li>안드로이드 운영체제를 사용하는 네이버 지도 → 카카오톡 바로 공유할 수 있는 것처럼 ERC-20 기반으로 생성된 토큰은 <strong>상호 호환</strong>이 가능함. ERC-20 기반 토큰들은 동일한 이더리움 지갑으로 전송 가능함.</li>
+</ul>
+</li>
+</ul>
+<p>ERC-20 토큰은 <strong>스마트 컨트랙트를 통해서 생성</strong>된다. ERC-20 토큰을 생성하면 해당 토큰을 다른 주소로 보낼 수 있고 여러 역할을 해준다.</p>
+<p>이더리움은 <strong>자체 블록체인을 기반</strong>으로 다양한 <strong>탈중앙화 된 애플리케이션들이 작동</strong>할 수 있도록 만들어진 하나의 <strong>플랫폼 네트워크</strong>다. <strong>dApp</strong>은 이더리움 플랫폼 상에서 <strong>컨트랙트를 이용</strong>해 쉽고 빠르게 <strong>토큰을 발행</strong>할 수 있다. 이더리움 블록체인에서는 **이더(ETH)**가 사용되며, 이더리움 블록체인 상의 dApp은 다른 다양한 분야에 적용될 수 있게 <strong>각각의 솔루션을 보유</strong>하고 있어서 그에 <strong>맞는 토큰을 발행</strong>한다. <strong>이 때 발행된 토큰은 독자적인 토큰인 듯 보이지만 실제로는 이더리움 생태계에서 호환 및 사용 가능</strong>하다.</p>
+<p>→ 안드로이드 및 iOS가 하나의 <strong>플랫폼</strong> 역할 &amp; 그 위 <strong>수많은 앱</strong>이 존재하는 것 처럼 생각</p>
+<ul>
+<li><strong>안드로이드 &#x2F; iOS &#x3D; 이더리움</strong></li>
+<li><strong>앱 &#x3D; 디앱(dApp)</strong></li>
+</ul>
+<p>디앱 내의 토큰 교환 및 또 다른 이더리움 플랫폼을 기반으로 한 디앱의 토큰과 교환이 가능한데 이를 위해 ERC-20 토큰 표준이 만들어졌다. 다양한 디앱에 흩어져있는 <strong>ERC-20 표준 호환 토큰</strong>들은 나중에 <strong>통합</strong>되어 한 번에 <strong>이더로 모두 바꿔 현금화</strong> 할 수 있다. </p>
+<p>ERC-20 토큰은 <strong>스마트 컨트랙트의 속성</strong>을 지원, 스마트 컨트랙트의 강점으로 온<strong>라인 환경에서 암호화폐 교환 시에 일정 행동이 불가역적으로 전개되는 기능</strong>을 활용하며, <strong>중앙관리가 배제된 서비스를 구현</strong>할 수 있다.</p>
+<p>따라서, <strong>디앱</strong>은 <strong>이더리움 블록체인 플랫폼을 활용</strong>하여 자신의 비즈니스를 구현하고, <strong>자금모집과 거래체계, 플랫폼 사용료</strong>를 <strong>이더리움으로 지불</strong>하는 체계를 가지고 토큰을 발행할 필요가 있으며, 실제로 이더리움 기반 토큰 발행이 많다.</p>
+<p>결국, <strong>ERC-20 토큰이 되기 위한 기준</strong>은 <strong>스마트 컨트랙트 기능이 포함</strong> 되었나의 유무로 볼 수 있다. 또한 ERC-20은 <strong>디앱이 발행하는 토큰</strong>이 이더리움의 통화인 <strong>이더리움과 호환성을 충적하기 위해 규정하는 프로그래밍 기준이다</strong>. ERC-20 기준을 맞춰 디앱을 설계한 후 토큰 발행시, <strong>이더리움과 쉽게 교환 가능</strong>하고, <strong>표준 이더리움 지갑(My Ether Wallet, Meta Mask, Mist 등)에 자유롭게 전송 가능</strong>하다. 결론적으로 <strong>이더리움 블록체인을 활용하는 토큰의 경우 ERC-20 기준에 맞춰야 한다.</strong></p>
+<br>
+
+<hr>
+<h2 id="ERC-20-토큰-개발하기"><a href="#ERC-20-토큰-개발하기" class="headerlink" title="ERC-20 토큰 개발하기"></a>ERC-20 토큰 개발하기</h2><h3 id="개발-준비"><a href="#개발-준비" class="headerlink" title="개발 준비"></a>개발 준비</h3><p>ERC-20은 세계에서 가장 많이 사용되는 스마트 컨트랙트 토큰이다. 토큰을 ERC-20 형태로 발행시 이더리움 네트워크의 수많은 플랫폼과 서로 호환 가능한 최소한의 기준이다. 이 기준을 충족시키면, 다양한 이더리움 네트워크에서 호환 가능하여 메타마스크, 이더스캔, 마이이더월렛 등에서 더 쉽게 사용할 수 있다.</p>
+<p>ERC-20을 기반으로 토큰을 만들면, 토큰을 이동하거나 탈중앙화 거래소를 이용하여 거래에 사용하는 등의 토큰을 통해 할 수 있는 것들이 늘어난다.</p>
+<hr>
+<h2 id="ERC-20-전체-코드"><a href="#ERC-20-전체-코드" class="headerlink" title="ERC-20 전체 코드"></a>ERC-20 전체 코드</h2><p>Remix와 Metamask를 활용해서 이더리움 ERC-20 기반 토큰을 만들고, 만든 토큰을 이동하는 실습 진행.</p>
+<br>
+
+<h3 id="ERC-20-토큰"><a href="#ERC-20-토큰" class="headerlink" title="ERC-20 토큰"></a>ERC-20 토큰</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: GPL-3.0</span><br><span class="line">pragma solidity 0.8.14;</span><br><span class="line"></span><br><span class="line">interface ERC20Interface &#123;</span><br><span class="line">    function totalSupply() external view returns (uint256);</span><br><span class="line">    function balanceOf(address account) external view returns (uint256);</span><br><span class="line">    function transfer(address recipient, uint256 amount) external returns (bool);</span><br><span class="line">    function approve(address spender, uint256 amount) external returns (bool);</span><br><span class="line">    function allowance(address owner, address spender) external view returns (uint256);</span><br><span class="line">    function transferFrom(address spender, address recipient, uint256 amount) external returns (bool);</span><br><span class="line"></span><br><span class="line">    event Transfer(address indexed from, address indexed to, uint256 amount);</span><br><span class="line">    event Transfer(address indexed spender, address indexed from, address indexed to, uint256 amount);</span><br><span class="line">    event Approval(address indexed owner, address indexed spender, uint256 oldAmount, uint256 amount);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">contract SimpleToken is ERC20Interface &#123;</span><br><span class="line">    mapping (address =&gt; uint256) private _balances;</span><br><span class="line">    mapping (address =&gt; mapping (address =&gt; uint256)) public _allowances;</span><br><span class="line"></span><br><span class="line">    uint256 public _totalSupply;</span><br><span class="line">    string public _name;</span><br><span class="line">    string public _symbol;</span><br><span class="line">    uint8 public _decimals;</span><br><span class="line">    uint private E18 = 1000000000000000000;</span><br><span class="line"></span><br><span class="line">    constructor(string memory getName, string memory getSymbol) &#123;</span><br><span class="line">        _name = getName;</span><br><span class="line">        _symbol = getSymbol;</span><br><span class="line">        _decimals = 18;</span><br><span class="line">        _totalSupply = 100000000 * E18;</span><br><span class="line">        _balances[msg.sender] = _totalSupply; // 추가</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function name() public view returns (string memory) &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function symbol() public view returns (string memory) &#123;</span><br><span class="line">        return _symbol;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function decimals() public view returns (uint8) &#123;</span><br><span class="line">        return _decimals;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function totalSupply() external view virtual override returns (uint256) &#123;</span><br><span class="line">        return _totalSupply;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function balanceOf(address account) external view virtual override returns (uint256) &#123;</span><br><span class="line">        return _balances[account];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function transfer(address recipient, uint amount) public virtual override returns (bool) &#123;</span><br><span class="line">        _transfer(msg.sender, recipient, amount);</span><br><span class="line">        emit Transfer(msg.sender, recipient, amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function allowance(address owner, address spender) external view override returns (uint256) &#123;</span><br><span class="line">        return _allowances[owner][spender];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function approve(address spender, uint amount) external virtual override returns (bool) &#123;</span><br><span class="line">        uint256 currentAllowance = _allowances[msg.sender][spender];  </span><br><span class="line">        require(_balances[msg.sender] &gt;= amount,&quot;ERC20: The amount to be transferred exceeds the amount of tokens held by the owner.&quot;);</span><br><span class="line">        _approve(msg.sender, spender, currentAllowance, amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function transferFrom(address sender, address recipient, uint256 amount) external virtual override returns (bool) &#123;</span><br><span class="line">        _transfer(sender, recipient, amount);</span><br><span class="line">        emit Transfer(msg.sender, sender, recipient, amount);</span><br><span class="line">        uint256 currentAllowance = _allowances[sender][msg.sender];</span><br><span class="line">        require(currentAllowance &gt;= amount, &quot;ERC20: transfer amount exceeds allowance&quot;);</span><br><span class="line">        _approve(sender, msg.sender, currentAllowance, currentAllowance - amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _transfer(address sender, address recipient, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(sender != address(0), &quot;ERC20: transfer from the zero address&quot;);</span><br><span class="line">        require(recipient != address(0), &quot;ERC20: transfer to the zero address&quot;);</span><br><span class="line">        uint256 senderBalance = _balances[sender];</span><br><span class="line">        require(senderBalance &gt;= amount, &quot;ERC20: transfer amount exceeds balance&quot;);</span><br><span class="line">        _balances[sender] = senderBalance - amount;</span><br><span class="line">        _balances[recipient] += amount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _approve(address owner, address spender, uint256 currentAmount, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(owner != address(0), &quot;ERC20: approve from the zero address&quot;);</span><br><span class="line">        require(spender != address(0), &quot;ERC20: approve to the zero address&quot;);</span><br><span class="line">        require(currentAmount == _allowances[owner][spender], &quot;ERC20: invalid currentAmount&quot;);</span><br><span class="line">        _allowances[owner][spender] = amount;  </span><br><span class="line">        emit Approval(owner, spender, currentAmount, amount);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⇒ 이 코드를 ERC-20 토큰이라고 한다. ERC-20 코드는 토큰을 만드는 사람에 따라 기본 코드에 추가로 함수를 추가할 수 있다. But, ERC-20의 기본적인 내용과 흐름을 이해한다면, 라이브러리를 사용해 변형된 ERC-20 토큰 코드도 쉽게 사용 가능하다.</p>
+<br>
+
+<hr>
+<h2 id="ERC-20-토큰-구조"><a href="#ERC-20-토큰-구조" class="headerlink" title="ERC-20 토큰 구조"></a>ERC-20 토큰 구조</h2><h3 id="ERC20-Interface"><a href="#ERC20-Interface" class="headerlink" title="ERC20 Interface"></a>ERC20 Interface</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">~ 생략 ~</span><br><span class="line"></span><br><span class="line">interface ERC20Interface &#123;</span><br><span class="line">    function totalSupply() external view returns (uint256);</span><br><span class="line">    function balanceOf(address account) external view returns (uint256);</span><br><span class="line">    function transfer(address recipient, uint256 amount) external returns (bool);</span><br><span class="line">    function approve(address spender, uint256 amount) external returns (bool);</span><br><span class="line">    function allowance(address owner, address spender) external view returns (uint256);</span><br><span class="line">    function transferFrom(address spender, address recipient, uint256 amount) external returns (bool);</span><br><span class="line"></span><br><span class="line">    event Transfer(address indexed from, address indexed to, uint256 amount);</span><br><span class="line">    event Transfer(address indexed spender, address indexed from, address indexed to, uint256 amount);</span><br><span class="line">    event Approval(address indexed owner, address indexed spender, uint256 oldAmount, uint256 amount);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">~ 생략 ~</span><br></pre></td></tr></table></figure>
+
+<p> ERC20Interface는 ERC-20 코드에서 가장 처음 확인할 수 있는 코드이다.</p>
+<p>⇒ <strong>솔리디티에서 Interface는 사용할 함수의 형태를 선언</strong>한다. <strong>실제 함수의 내용은 Contract에서 사용</strong>한다.</p>
+<p>ERC20Interface는 예제에서 쓰일 SimpleToken 컨트랙트에서 사용할 함수의 형태를 선언하고, ERC-20에서 사용하는 함수의 형태를 선언하는 것을 확인할 수 있다.</p>
+<p><strong>함수(Function)는 이더리움에서 제공하는 함수</strong>로, <strong>event는 이더리움에서 제공하는 로그</strong>이다. function과 event를 선언할 때는 입력값과 반환값은 선택할 수 있지만, <strong>function의 자료형과 이름, 순서를 주의</strong>해야 한다.</p>
+<p><strong>ERC20Interface</strong>의 <strong>Transfer 이벤트</strong>는 <strong>토큰이 이동할 때마다 로그를 남기고, Approval 이벤트는 approve 함수가 실행될 때 로그를 남긴다</strong>.</p>
+<br>
+
+<h3 id="솔리디티-함수-function-구성"><a href="#솔리디티-함수-function-구성" class="headerlink" title="솔리디티 함수(function) 구성"></a>솔리디티 함수(function) 구성</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function (&lt;parameter types&gt;) &#123;internal | external | public | private&#125; [pure | constant | view | payable] [(modifiers)] [returns (&lt;return types&gt;)]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>parameter types</strong><ul>
+<li>함수에서 받아올 매개변수를 타입과 같이 선언</li>
+</ul>
+</li>
+<li><strong>Visibility Keyword (internal, external, public, private)</strong><ul>
+<li>Java와 C++에서의 Public, Private, Protected 같은 <strong>접근제어자(access control) 역할</strong></li>
+<li>솔리디티 언어에서 스마트 컨트랙트 내의 **상태 변수(State variable)**와 함수에 적용할 수 있는 <strong>Visibility 4가지</strong><ul>
+<li><strong>internal</strong> : <strong>Smart contract의 interface로 비공개</strong>한다. 계약서(Contract)의 해당 내용을 <strong>비공개한다</strong>는 의미로, <strong>계약서 내</strong>에서만 사용하는 함수라는 것을 표시한다. <strong>상태변수(state variable)는 internal이 기본값</strong>이다. 아무것도 적용하지 않을시 자동적으로 internal이 적용된다. <strong>계약서 자신과 상속받은 계약서만 사용</strong>할 수 있다.</li>
+<li><strong>external</strong> : <strong>Smart contract의 interface로 공개</strong>한다. 계약서(Contract)의 해당 내용을 <strong>공개한다</strong>는 의미로, <strong>계약서의 외부</strong>에서 사용하는 함수라는 것을 표시한다. <strong>상태변수(state variable)는 external일수 없다</strong>. <strong>계약서 내부</strong>에서 사용할 경우 <strong>this를 사용해서 접근</strong>해야 한다.</li>
+<li><strong>public</strong> : <strong>공개함수</strong>라고 한다. 공개 기능은 계약 인터페이스의 일부이며 내부적으로 혹은 메시지를 통해 호출할 수 있다. 공개 상태 변수의 경우 자동 getter 함수가 생성된다.</li>
+<li><strong>private</strong> : <strong>비공개함수</strong>라고 한다. 비공개함수는 계약서 내부에서도 자신만 사용하는 함수라는 것을 표시한다. 상태변수와 함수 모두 파생된 계약이 아닌 정의된 계약에서만 볼 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>함수 동작 관련 키워드</strong><ul>
+<li><strong>pure</strong> : storage에서 변수를 읽어오거나 쓰지 않는 함수임을 명시.</li>
+<li><strong>constant, view</strong> : 상태를 변경하지 않는 함수임을 명시.</li>
+<li><strong>payable</strong> : 임금을 받을 수 있는 함수임을 명시.</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<h3 id="Contract-Simple-Token"><a href="#Contract-Simple-Token" class="headerlink" title="Contract (Simple Token)"></a>Contract (Simple Token)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">~ 생략 ~</span><br><span class="line"></span><br><span class="line">contract SimpleToken is ERC20Interface &#123;</span><br><span class="line">    mapping (address =&gt; uint256) private _balances;</span><br><span class="line">    mapping (address =&gt; mapping (address =&gt; uint256)) public _allowances;</span><br><span class="line"></span><br><span class="line">    uint256 public _totalSupply;</span><br><span class="line">    string public _name;</span><br><span class="line">    string public _symbol;</span><br><span class="line">    uint8 public _decimals;</span><br><span class="line">    uint private E18 = 1000000000000000000;</span><br><span class="line"></span><br><span class="line">    constructor(string memory getName, string memory getSymbol) &#123;</span><br><span class="line">        _name = getName;</span><br><span class="line">        _symbol = getSymbol;</span><br><span class="line">        _decimals = 18;</span><br><span class="line">        _totalSupply = 100000000 * E18;</span><br><span class="line">        _balances[msg.sender] = _totalSupply; // 추가</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function name() public view returns (string memory) &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function symbol() public view returns (string memory) &#123;</span><br><span class="line">        return _symbol;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function decimals() public view returns (uint8) &#123;</span><br><span class="line">        return _decimals;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function totalSupply() external view virtual override returns (uint256) &#123;</span><br><span class="line">        return _totalSupply;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function balanceOf(address account) external view virtual override returns (uint256) &#123;</span><br><span class="line">        return _balances[account];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function transfer(address recipient, uint amount) public virtual override returns (bool) &#123;</span><br><span class="line">        _transfer(msg.sender, recipient, amount);</span><br><span class="line">        emit Transfer(msg.sender, recipient, amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function allowance(address owner, address spender) external view override returns (uint256) &#123;</span><br><span class="line">        return _allowances[owner][spender];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function approve(address spender, uint amount) external virtual override returns (bool) &#123;</span><br><span class="line">        // uint256 currentAllownace = _allowances[spender][msg.sender];  // 삭제</span><br><span class="line">        uint256 currentAllowance = _allowances[msg.sender][spender];  // 추가</span><br><span class="line">        require(_balances[msg.sender] &gt;= amount,&quot;ERC20: The amount to be transferred exceeds the amount of tokens held by the owner.&quot;);</span><br><span class="line">        _approve(msg.sender, spender, currentAllowance, amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function transferFrom(address sender, address recipient, uint256 amount) external virtual override returns (bool) &#123;</span><br><span class="line">        _transfer(sender, recipient, amount);</span><br><span class="line">        emit Transfer(msg.sender, sender, recipient, amount);</span><br><span class="line">        uint256 currentAllowance = _allowances[sender][msg.sender];</span><br><span class="line">        require(currentAllowance &gt;= amount, &quot;ERC20: transfer amount exceeds allowance&quot;);</span><br><span class="line">        _approve(sender, msg.sender, currentAllowance, currentAllowance - amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _transfer(address sender, address recipient, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(sender != address(0), &quot;ERC20: transfer from the zero address&quot;);</span><br><span class="line">        require(recipient != address(0), &quot;ERC20: transfer to the zero address&quot;);</span><br><span class="line">        uint256 senderBalance = _balances[sender];</span><br><span class="line">        require(senderBalance &gt;= amount, &quot;ERC20: transfer amount exceeds balance&quot;);</span><br><span class="line">        _balances[sender] = senderBalance - amount;</span><br><span class="line">        _balances[recipient] += amount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _approve(address owner, address spender, uint256 currentAmount, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(owner != address(0), &quot;ERC20: approve from the zero address&quot;);</span><br><span class="line">        require(spender != address(0), &quot;ERC20: approve to the zero address&quot;);</span><br><span class="line">        require(currentAmount == _allowances[owner][spender], &quot;ERC20: invalid currentAmount&quot;);</span><br><span class="line">        _allowances[owner][spender] = amount;  // 삭제</span><br><span class="line">        emit Approval(owner, spender, currentAmount, amount);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ERC20Interface에서는 함수의 형태만 선언하고, 함수의 내용은 SimpleToken 컨트랙트에서 사용한다.</p>
+<aside>
+➡️ **simpleToken 컨트랙트 선언 방식**
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">contract SimpleToken is ERC20Interface &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+
+</aside>
+
+<p><code>contract SimpleToken</code> 뒤에 <code>is ERC20Interface</code>를 붙여서 <code>SimpleToken</code> 컨트랙트가 <code>ERC20Interface</code> 함수를 사용할 수 있다고 선언한다.<br>이렇게 사용하면 <code>SimpleToken</code> 안에서 <code>ERC20Interface</code>에 선언된 함수와 이벤트를 사용할 수 있다.</p>
+<p>또한 이중으로 매핑된 <code>_allowances</code>를 확인할 수 있다. <code>_allowances</code> 변수는 일종의 <strong>이중 객체</strong>이다.<br><strong>객체의 키</strong>는 **OWNER의 address(주소값)**이며, <strong>값</strong>은 <strong>토큰을 양도받은 SPENDER에 대한 객체</strong>입니다.</p>
+<ul>
+<li><strong>KEY</strong> : OWNER의 address</li>
+<li><strong>VALUE</strong> : ( KEY : SPENDER의 address , VALUE : 맡겨둔 TOKEN의 개수 )</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">contract SimpleToken is ERC20Interface &#123;</span><br><span class="line">	mapping (address =&gt; uint256) private _balances;</span><br><span class="line">	mapping (address =&gt; mapping (address =&gt; uint256)) public _allowances;</span><br><span class="line"></span><br><span class="line">	~ 생략 ~</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<hr>
+<h2 id="ERC-20-함수"><a href="#ERC-20-함수" class="headerlink" title="ERC-20 함수"></a>ERC-20 함수</h2><ul>
+<li><strong><code>totalSupply</code></strong> : 해당 스마트 컨트랙트 기반 <strong>ERC-20 토큰의 총 발행량</strong> 확인</li>
+<li>**<code>balanceOf**</code> : <strong>owner</strong>가 가지고 있는 <strong>토큰의 보유량</strong> 확인</li>
+<li><strong><code>transfer</code></strong> : <strong>토큰을 전송</strong></li>
+<li><strong><code>approve</code></strong> : spender에게 <strong>value 만큼의 토큰을 인출할 권리</strong> 부여함. 이 함수 사용시 반드시 <strong>Approval 이벤트 함수를 호출</strong>해야 함</li>
+<li><strong><code>allowance</code></strong> : owner가 spender에게 <strong>양도 설정한 토큰의 양</strong>을 확인</li>
+<li><strong><code>transferFrom</code></strong> : spender가 거래 가능하도록 <strong>양도 받은 토큰을 전송</strong></li>
+</ul>
+<p>→ totalSupply &#x2F; balanceOf &#x2F; transfer는 쉽게 이해 가능하지만, approve &#x2F; allowance &#x2F; transferFrom 은 이해가 어려울 수 있음.</p>
+<p><strong>ERC-20</strong>에서는 <strong>토큰의 owner가 직접 토큰을 다른 사람에게 전송</strong>할 수도 있으나, <strong>토큰을 양도할 만큼 등록</strong>해놓고, 필요시 <strong>제삼자를 통해 토큰을 양도</strong>할 수 있다.</p>
+<ul>
+<li><strong><code>transfer</code></strong> 함수 : <strong>직접 토큰을 다른 사람에게 전송</strong>할 때</li>
+<li><strong><code>approve, allowance, transferFrom</code></strong> 함수 : <strong>토큰을 등록하는 방식</strong> 사용시 사용</li>
+</ul>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12bf4bb2-7cd2-48b7-a086-30046493819d/Untitled.png" alt="Untitled"></p>
+<p><strong>→ <code>approve, allowance, transferFrom</code> 의 실행 흐름.</strong></p>
+<ul>
+<li>approve : 지갑의 주인이 토큰을 EXCHANGE에 자신이 가진 토큰의 수보다 적은 수량을 거래 가능 하도록 맡길 수 있다.</li>
+<li>allowanve : OWNER와 EXCHANGE 값을 입력하여 몇개가 등록 되어있는지 확인 가능.</li>
+<li>transferFrom : EXCHANGE가 BUYER가 구매 신청해둔 금액에 대해  OWNER가 맡겨둔 토큰을 판매한다.</li>
+</ul>
+<br>
+
+<h3 id="totalSupply-ERC20-함수"><a href="#totalSupply-ERC20-함수" class="headerlink" title="totalSupply - ERC20 함수"></a>totalSupply - ERC20 함수</h3><p><strong>토큰의 총 발행량</strong>을 반환한다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function totalSupply() external view virtual override returns (uint256) &#123;</span><br><span class="line">        return _totalSupply;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="balanceOf-ERC20-함수"><a href="#balanceOf-ERC20-함수" class="headerlink" title="balanceOf - ERC20 함수"></a>balanceOf - ERC20 함수</h3><p><strong>매핑된 값인 <code>_balanceOf</code> 에서 입력한 address</strong>인 a<strong>ccount가 가진 토큰의 수</strong>를 리턴한다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function balanceOf(address account) external view virtual override returns (uint256) &#123;</span><br><span class="line">         return _balances[account];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="transfer-ERC20-함수"><a href="#transfer-ERC20-함수" class="headerlink" title="transfer - ERC20 함수"></a>transfer - ERC20 함수</h3><p><strong>내부 함수인 <code>_transfer</code> 를 호출</strong>한다. 호출이 정상적으로 이뤄졌을 경우 <strong>Transfer event를 발생</strong>시킨다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function transfer(address recipient, uint amount) public virtual override returns (bool) &#123;</span><br><span class="line">        _transfer(msg.sender, recipient, amount);</span><br><span class="line">        emit Transfer(msg.sender, recipient, amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _transfer(address sender, address recipient, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(sender != address(0), &quot;ERC20: transfer from the zero address&quot;);</span><br><span class="line">        require(recipient != address(0), &quot;ERC20: transfer to the zero address&quot;);</span><br><span class="line">        uint256 senderBalance = _balances[sender];</span><br><span class="line">        require(senderBalance &gt;= amount, &quot;ERC20: transfer amount exceeds balance&quot;);</span><br><span class="line">        _balances[sender] = senderBalance - amount;</span><br><span class="line">        _balances[recipient] += amount;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>**<code>_transfer</code>**는 **<code>require</code>**를 통해 <strong>세가지 조건을 검사</strong>한다.</p>
+<ol>
+<li><strong>보내는 사람의 주소</strong>가 잘못되었는지 체크.</li>
+<li><strong>받는 사람의 주소</strong>가 잘못되었는지 체크.</li>
+<li>t**ransfer 함수를 실행한 사람(sender)**이 가진 **토큰(senderBalance)**이 <strong>신청한 값(amount)보다 많은</strong> 토큰을 가지고 있는지 체크.</li>
+</ol>
+<blockquote>
+<p>여기서 체크 함수로 require를 사용했다. 만약 해당 조건문 안에 exception이 throw 된다면 실행할 수 없다.</p>
+</blockquote>
+<p>위의 세 조건을 충족하면, 실행한 사람(sender)이 가진 토큰의 지갑에서 토큰의 개수만큼 빼고, 받을 사람(recipient)의 토큰 지갑에 개수만큼 더해준다.</p>
+<br>
+
+<h3 id="approve-ERC20-함수"><a href="#approve-ERC20-함수" class="headerlink" title="approve - ERC20 함수"></a>approve - ERC20 함수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function approve(address spender, uint amount) external virtual override returns (bool) &#123;</span><br><span class="line">        uint256 currentAllowance = _allowances[msg.sender][spender];</span><br><span class="line">        require(_balances[msg.sender] &gt;= amount,&quot;ERC20: The amount to be transferred exceeds the amount of tokens held by the owner.&quot;);</span><br><span class="line">        _approve(msg.sender, spender, currentAllownace, amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _approve(address owner, address spender, uint256 currentAmount, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(owner != address(0), &quot;ERC20: approve from the zero address&quot;);</span><br><span class="line">        require(spender != address(0), &quot;ERC20: approve to the zero address&quot;);</span><br><span class="line">        require(currentAmount == _allowances[owner][spender], &quot;ERC20: invalid currentAmount&quot;);</span><br><span class="line">        _allowances[owner][spender] = amount;</span><br><span class="line">        emit Approval(owner, spender, currentAmount, amount);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>내부 함수인 <code>_approve</code> 를 호출</strong>한다.</p>
+<p><code>_approve</code> 에서는 내가 **토큰을 양도할 상대방(spender)**에게 <strong>양도할 값(amount)를 allowances에 기록</strong>한다. 그리고 <strong>Approval event를 호출</strong>하여 <strong>기록</strong>한다. 이 상태는 <strong>양도가 실제로 이뤄진 것이 아닌, 양도를 할 주소와 양을 정한 것</strong>이다.</p>
+<p><code>approve</code>는 <strong>단순 변경을 위한 함수</strong>이기 때문에 <strong>내부적으로 값을 올리고, 내리는</strong> <strong><code>increaseApproval</code></strong> 과 <strong><code>decreaseApproval</code></strong> <strong>함수</strong>를 사용하기도 한다.</p>
+<p><code>approve</code>는 <code>spender</code> 가 <strong>당신의 계정으로부터 <code>amount</code> 한도 하에 여러번 출금하는 것을 허용</strong>한다. 이 함수를 <strong>여러번 호출</strong>시, 단순히 <strong>허용량을 <code>amount</code> 로 재설정</strong>한다.</p>
+<br>
+
+<h3 id="allowance-ERC20-함수"><a href="#allowance-ERC20-함수" class="headerlink" title="allowance - ERC20 함수"></a>allowance - ERC20 함수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function allowance(address owner, address spender) external view override returns (uint256) &#123;</span><br><span class="line">        return _allowances[owner][spender];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>**allowance**</code> 는 입력한 <strong>두개의 주소값에 대한 <code>_allowances</code> 값</strong>, 즉, <strong>owner가 spender에게 토큰을 등록한 양을 반환</strong>한다.</p>
+<br>
+
+<h3 id="transferFrom-ERC20-함수"><a href="#transferFrom-ERC20-함수" class="headerlink" title="transferFrom - ERC20 함수"></a>transferFrom - ERC20 함수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function transferFrom(address sender, address recipient, uint256 amount) external virtual override returns (bool) &#123;</span><br><span class="line">        _transfer(sender, recipient, amount);</span><br><span class="line">        emit Transfer(msg.sender, sender, recipient, amount);</span><br><span class="line">        uint256 currentAllowance = _allowances[sender][msg.sender];</span><br><span class="line">        require(currentAllowance &gt;= amount, &quot;ERC20: transfer amount exceeds allowance&quot;);</span><br><span class="line">        _approve(sender, msg.sender, currentAllowance, currentAllowance - amount);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _transfer(address sender, address recipient, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(sender != address(0), &quot;ERC20: transfer from the zero address&quot;);</span><br><span class="line">        require(recipient != address(0), &quot;ERC20: transfer to the zero address&quot;);</span><br><span class="line">        uint256 senderBalance = _balances[sender];</span><br><span class="line">        require(senderBalance &gt;= amount, &quot;ERC20: transfer amount exceeds balance&quot;);</span><br><span class="line">        _balances[sender] = senderBalance - amount;</span><br><span class="line">        _balances[recipient] += amount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _approve(address owner, address spender, uint256 currentAmount, uint256 amount) internal virtual &#123;</span><br><span class="line">        require(owner != address(0), &quot;ERC20: approve from the zero address&quot;);</span><br><span class="line">        require(spender != address(0), &quot;ERC20: approve to the zero address&quot;);</span><br><span class="line">        require(currentAmount == _allowances[owner][spender], &quot;ERC20: invalid currentAmount&quot;);</span><br><span class="line">        _allowances[owner][spender] = amount;</span><br><span class="line">        emit Approval(owner, spender, currentAmount, amount);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>**transferFrom**</code> 은 <strong>양도를 수행하는 거래 대행자(msg.sender)가 sender가 허락한 값만큼 상대방(recipient)에게 토큰을 이동</strong>한다.</p>
+<p><strong>이동</strong>을 위해 <code>**_transfer</code>함수를 실행**시킨다. <code>_transfer</code> 에서는 <strong>양도를 하는 sender의 잔고를 amount 만큼 줄이고, recipient의 잔고를 amount 만큼 늘린다.</strong></p>
+<p><code>**_transfer</code>함수 실행이 완료<strong>되고, <code>**require</code> 를 모두 통과</strong>하면 <strong>currentAllowance를 체크</strong>하여 <code>**_approve</code> 함수를 실행**한다.</p>
+<br>
+
+<hr>
+<br>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/BlockChain/">BlockChain</a><a class="post-meta__tags" href="/tags/SmartContract/">SmartContract</a><a class="post-meta__tags" href="/tags/ERC20/">ERC20</a></div><div class="post_share"><div class="social-share" data-image="/img/darksea.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/20/erc721method/"><img class="prev-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">ERC721 &amp; NFT</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/14/dlt/"><img class="next-cover" src="/img/darksea.jpg" onerror="onerror=null;src='/img/darksea.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">분산원장기술 / 트랜잭션</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/07/20/erc721method/" title="ERC721 &amp; NFT"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-20</div><div class="title">ERC721 &amp; NFT</div></div></a></div><div><a href="/2022/08/29/project2/" title="Project2 HALP ME!!"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">Project2 HALP ME!!</div></div></a></div><div><a href="/2022/08/16/project1/" title="Project1 UnderTheSea"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-16</div><div class="title">Project1 UnderTheSea</div></div></a></div><div><a href="/2022/10/03/project3/" title="Project3 JDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-03</div><div class="title">Project3 JDEX</div></div></a></div><div><a href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">Project4 Bithumb Dagao Neo</div></div></a></div><div><a href="/2023/04/14/project5/" title="Project5 YDEX"><img class="cover" src="/img/darksea.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-14</div><div class="title">Project5 YDEX</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/99964401?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">yu-uj</div><div class="author-info__description">BlockChain Dev</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">64</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" href="/profile/"><i class="fas fa-user-astronaut"></i><span>MY PROFILE</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yu-uj" target="_blank" title="Github" rel="external nofollow noopener noreferrer"><i class="fab fa-github-alt"></i></a><a class="social-icon" href="https://www.instagram.com/yu_u.jin" target="_blank" title="Instagram" rel="external nofollow noopener noreferrer"><i class="fab fa-instagram"></i></a><a class="social-icon" href="mailto:yuuuj72@gmail.com" target="_blank" title="Email" rel="external nofollow noopener noreferrer"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ERC20"><span class="toc-number">1.</span> <span class="toc-text">ERC20</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC-20"><span class="toc-number">1.1.</span> <span class="toc-text">ERC-20 ?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EIP-vs-ERC-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.1.1.</span> <span class="toc-text">EIP vs ERC 차이</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-20-1"><span class="toc-number">1.1.2.</span> <span class="toc-text">ERC-20</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC-20-%ED%86%A0%ED%81%B0-%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0"><span class="toc-number">1.2.</span> <span class="toc-text">ERC-20 토큰 개발하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EA%B0%9C%EB%B0%9C-%EC%A4%80%EB%B9%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">개발 준비</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC-20-%EC%A0%84%EC%B2%B4-%EC%BD%94%EB%93%9C"><span class="toc-number">1.3.</span> <span class="toc-text">ERC-20 전체 코드</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC-20-%ED%86%A0%ED%81%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">ERC-20 토큰</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC-20-%ED%86%A0%ED%81%B0-%EA%B5%AC%EC%A1%B0"><span class="toc-number">1.4.</span> <span class="toc-text">ERC-20 토큰 구조</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ERC20-Interface"><span class="toc-number">1.4.1.</span> <span class="toc-text">ERC20 Interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0-%ED%95%A8%EC%88%98-function-%EA%B5%AC%EC%84%B1"><span class="toc-number">1.4.2.</span> <span class="toc-text">솔리디티 함수(function) 구성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contract-Simple-Token"><span class="toc-number">1.4.3.</span> <span class="toc-text">Contract (Simple Token)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERC-20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.</span> <span class="toc-text">ERC-20 함수</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#totalSupply-ERC20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.1.</span> <span class="toc-text">totalSupply - ERC20 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#balanceOf-ERC20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.2.</span> <span class="toc-text">balanceOf - ERC20 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transfer-ERC20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.3.</span> <span class="toc-text">transfer - ERC20 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#approve-ERC20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.4.</span> <span class="toc-text">approve - ERC20 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#allowance-ERC20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.5.</span> <span class="toc-text">allowance - ERC20 함수</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transferFrom-ERC20-%ED%95%A8%EC%88%98"><span class="toc-number">1.5.6.</span> <span class="toc-text">transferFrom - ERC20 함수</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/24/dex-defi/" title="DEX와 DeFi"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="DEX와 DeFi"></a><div class="content"><a class="title" href="/2023/04/24/dex-defi/" title="DEX와 DeFi">DEX와 DeFi</a><time datetime="2023-04-24T14:08:20.000Z" title="Created 2023-04-24 23:08:20">2023-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Programmers - 중앙값 구하기"></a><div class="content"><a class="title" href="/2023/04/21/programmers1/" title="Programmers - 중앙값 구하기">Programmers - 중앙값 구하기</a><time datetime="2023-04-21T02:12:35.000Z" title="Created 2023-04-21 11:12:35">2023-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/14/project5/" title="Project5 YDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project5 YDEX"></a><div class="content"><a class="title" href="/2023/04/14/project5/" title="Project5 YDEX">Project5 YDEX</a><time datetime="2023-04-14T07:01:55.000Z" title="Created 2023-04-14 16:01:55">2023-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project4 Bithumb Dagao Neo"></a><div class="content"><a class="title" href="/2023/04/13/project4/" title="Project4 Bithumb Dagao Neo">Project4 Bithumb Dagao Neo</a><time datetime="2023-04-13T13:47:43.000Z" title="Created 2023-04-13 22:47:43">2023-04-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/project3/" title="Project3 JDEX"><img src="/img/darksea.jpg" onerror="this.onerror=null;this.src='/img/darksea.jpg'" alt="Project3 JDEX"></a><div class="content"><a class="title" href="/2022/10/03/project3/" title="Project3 JDEX">Project3 JDEX</a><time datetime="2022-10-03T12:21:50.000Z" title="Created 2022-10-03 21:21:50">2022-10-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By yu-uj</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is my  <a href="https://yu-uj.github.io/">Blog, Portfolio</a>.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://yu-uj.github.io/2022/07/14/erc20/'
+    this.page.identifier = '/2022/07/14/erc20/'
+    this.page.title = 'ERC20'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yu-ujblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
